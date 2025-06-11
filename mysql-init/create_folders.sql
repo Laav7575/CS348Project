@@ -7,3 +7,4 @@ create table IF NOT EXISTS Folders (
     folderName 	VARCHAR(30) not  NULL UNIQUE,
     primary key(fID, cID)
 );
+

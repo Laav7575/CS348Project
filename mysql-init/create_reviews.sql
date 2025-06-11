@@ -6,3 +6,5 @@ CREATE TABLE IF NOT EXISTS Reviews (
 	comment VARCHAR(255) NOT NULL,
 	PRIMARY KEY (uid, cid)
 );
+
+
