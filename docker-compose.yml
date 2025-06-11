@@ -6,11 +6,12 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ELHDD.J!w9bdNnL-
-      MYSQL_DATABASE: cs348_project
+      # MYSQL_DATABASE: cs348_project
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
 
   # phpmyadmin:
   #   image: phpmyadmin/phpmyadmin
