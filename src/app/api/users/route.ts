@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 
 export async function GET() {
     try {
-        const [rows] = await db.query("SELECT * FROM Cars");
+        const [rows] = await db.query("SELECT * FROM Users");
         return NextResponse.json(rows);
     } catch (err) {
         console.error(err);
