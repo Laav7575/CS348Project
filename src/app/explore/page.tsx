@@ -12,6 +12,9 @@ export default function Search() {
     const data = await res.json();
     setResults(data);
   };
+  const closeFilters = async () => {
+    setShowFilters(false);
+  }
 
   const toggleFilters = () => {
     console.log("here");
@@ -38,12 +41,16 @@ export default function Search() {
         </div>
         {showFilters ? (
           <div id="filters-menu" 
-            className="absolute left-0 top-0 p-4 h-full w-92 bg-white box-border border-1 border-solid border-amber-500">
+            className="absolute left-0 top-0 p-4 h-full w-92 bg-amber-600 box-border border-1 border-solid border-amber-500">
             <div>
               <b className="text-2xl">Filters</b>
             </div>
             <div className="mt-4 flex flex-col gap-2">
               {filterComponents}
+              <div></div>
+              <button onClick={closeFilters} className='bg-amber-900'>
+                Search
+              </button>
             </div>
           </div>
         ) : (<div></div>)}
