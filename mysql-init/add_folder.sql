@@ -1,0 +1,1 @@
+INSERT INTO Folders(uID, folderName) VALUES (3, 'LaavLoves');

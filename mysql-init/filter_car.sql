@@ -1,0 +1,3 @@
+SELECT * 
+FROM Cars
+WHERE year = 2022;

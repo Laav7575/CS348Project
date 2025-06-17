@@ -1,0 +1,2 @@
+DELETE FROM Saves
+WHERE cID = 2 AND fID = 2;

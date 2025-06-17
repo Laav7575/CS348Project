@@ -11,7 +11,7 @@ export default function Home() {
             <span className="text-amber-300 pr-3">Discover</span>your dream car.
           </div>
           <div>
-            <a className="inline-flex items-center gap-2 bg-white px-10 py-3 mt-6 w-fit rounded-md hover:bg-amber-300" href="/search">Explore →</a>
+            <a className="inline-flex items-center gap-2 bg-white text-black px-10 py-3 mt-6 w-fit rounded-md hover:bg-amber-300" href="/explore">Explore →</a>
           </div>
         </div>
         <div className="flex justify-center items-left">
