@@ -1,1 +1,1 @@
-INSERT INTO Folders (3, “LaavLoves”)
+INSERT INTO Folders(uID, folderName) VALUES (3, 'LaavLoves');

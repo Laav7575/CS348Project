@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS Reviews;
 DROP TABLE IF EXISTS Folders;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Cars;
+DROP TABLE IF EXISTS Saves;
 
 -- create tables
 CREATE TABLE Cars (
@@ -41,11 +42,16 @@ CREATE TABLE Reviews (
 CREATE TABLE Folders (
     fID INT AUTO_INCREMENT NOT NULL,
     uID INT NOT NULL,
-    cID INT NOT NULL,
     folderName VARCHAR(30) NOT NULL UNIQUE,
-    PRIMARY KEY(fID, cID),
-    FOREIGN KEY (uID) REFERENCES Users(uID) ON DELETE CASCADE,
-    FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
+    PRIMARY KEY(fID),
+    FOREIGN KEY (uID) REFERENCES Users(uID) ON DELETE CASCADE
+);
+
+CREATE TABLE Saves(
+    fID INT NOT NULL,
+    cID INT NOT NULL,
+    FOREIGN KEY (fID) REFERENCES Folders(fID),
+    FOREIGN KEY (cID) REFERENCES Cars(cID)
 );
 
 -- insert test data
@@ -90,9 +96,15 @@ INSERT INTO Reviews (uid, cid, comment) VALUES
 (4, 7, 'Mercedes AMG GT is elegant and powerful.'),
 (5, 9, 'GT500 is a beast on the track and the road.');
 
-INSERT INTO Folders (uID, cID, folderName) VALUES
-(1, 1, 'AngelaFavorites'),
-(2, 3, 'GloriaGarage'),
-(3, 5, 'LaavanyaLuxe'),
-(4, 7, 'JahnaviCollection'),
-(5, 9, 'AlexiaPicks');
+INSERT INTO Folders (uID, folderName) VALUES
+(1, 'AngelaFavorites'),
+(2, 'GloriaGarage'),
+(3, 'LaavanyaLuxe'),
+(4, 'JahnaviCollection'),
+(5, 'AlexiaPicks');
+
+INSERT INTO Saves (fID, cID) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);

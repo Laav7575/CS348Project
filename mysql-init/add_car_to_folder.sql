@@ -1,2 +1,1 @@
-INSERT INTO Saves (uID, cID)
-VALUES (5, 8)
+INSERT INTO Saves (fID, cID) VALUES (5, 8);

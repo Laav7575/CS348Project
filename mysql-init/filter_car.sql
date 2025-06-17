@@ -1,3 +1,3 @@
 SELECT * 
 FROM Cars
-WHERE year = 2022
+WHERE year = 2022;
