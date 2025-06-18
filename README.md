@@ -46,7 +46,7 @@ Follow these steps to get the project up and running on your local machine:
 The file contains the credentials required to login to the MySQL database.
 
 **3. Prepare Database (Initial Setup / Reset)**
-Open docker and run: 
+Download Docker, open Docker, login and run: 
    `docker-compose down -v`<br>
    `docker-compose up -d mysql`
 
