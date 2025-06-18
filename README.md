@@ -40,12 +40,19 @@ Our project is built using the following technologies:
 Follow these steps to get the project up and running on your local machine:
 
 **1. Clone the Repository:**
-   ```bash
-   git clone [https://github.com/Laav7575/CS348Project.git](https://github.com/Laav7575/CS348Project.git)
-   cd CS348Project
+   `git clone [https://github.com/Laav7575/CS348Project.git](https://github.com/Laav7575/CS348Project.git)
+   cd CS348Project`
 
 **2. Install Frontend Dependencies**
-   ```bash
-   npm install
+   `npm install`
 
-   
+**3. Prepare Database (Initial Setup / Reset)**
+`docker-compose down -v`
+`docker-compose up -d mysql`
+
+**4. Start Frontend**
+`npm run dev`
+
+**5. Access the Application**
+Main Page: http://localhost:3000
+Search Cars Page: http://localhost:3000/explore   
