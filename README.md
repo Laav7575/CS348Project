@@ -42,17 +42,17 @@ Follow these steps to get the project up and running on your local machine:
 **2. Install Frontend Dependencies** <br>
    `npm install`
 
-**3. Add the .env.local file into the root of your project**
+**3. Add the .env.local file into the root of your project** <br>
 The file contains the credentials required to login to the MySQL database.
 
 **3. Prepare Database (Initial Setup / Reset)** <br>
-Download Docker, open Docker, login and run: 
+Download Docker, open Docker, login and run: <br>
    `docker-compose down -v`<br>
    `docker-compose up -d mysql`
 
 **4. Start Frontend** <br>
 `npm run dev`
 
-**5. Access the Application**
+**5. Access the Application** <br>
 Main Page: http://localhost:3000<br>
 Search Cars Page: http://localhost:3000/explore   
