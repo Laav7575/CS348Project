@@ -32,25 +32,25 @@ Our project is built using the following technologies:
 * **Frontend:** React + Next.js web application.
 * **Backend:** Node.js.
 
-### Setup and Running the Application
+### Setup and Running the Application <br>
 Follow these steps to get the project up and running on your local machine:
 
-**1. Clone the Repository:**
-   `git clone [https://github.com/Laav7575/CS348Project.git](https://github.com/Laav7575/CS348Project.git)
-   cd CS348Project`
+**1. Clone the Repository:** <br>
+   `git clone https://github.com/Laav7575/CS348Project.git`<br>
+   `cd CS348Project`
 
-**2. Install Frontend Dependencies**
+**2. Install Frontend Dependencies** <br>
    `npm install`
 
 **3. Add the .env.local file into the root of your project**
 The file contains the credentials required to login to the MySQL database.
 
-**3. Prepare Database (Initial Setup / Reset)**
+**3. Prepare Database (Initial Setup / Reset)** <br>
 Download Docker, open Docker, login and run: 
    `docker-compose down -v`<br>
    `docker-compose up -d mysql`
 
-**4. Start Frontend**
+**4. Start Frontend** <br>
 `npm run dev`
 
 **5. Access the Application**
