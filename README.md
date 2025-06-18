@@ -4,7 +4,7 @@
 
 ### Project Overview
 
-Our application aims to provide users with an intuitive platform to discover and explore luxury cars for purchase or general interest. The primary users of the application are individuals interested in purchasing, Browse, or learning more about luxury cars. Developers will serve as administrators of the database system.
+Our application aims to provide users with an intuitive platform to discover and explore luxury cars for purchase or general interest. The primary users of the application are individuals interested in purchasing, browsing, or learning more about luxury cars. Developers will serve as administrators of the database system.
 
 The core data for our application is derived from a sports car dataset on Kaggle (link: https://www.kaggle.com/datasets/rkiattisak/sports-car-prices-dataset/data). This dataset includes vital information about cars such as:
 * **Make:** The brand or company that produced the car.
