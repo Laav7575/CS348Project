@@ -44,4 +44,8 @@ Follow these steps to get the project up and running on your local machine:
    git clone [https://github.com/Laav7575/CS348Project.git](https://github.com/Laav7575/CS348Project.git)
    cd CS348Project
 
+**2. Install Frontend Dependencies**
+   ```bash
+   npm install
+
    
