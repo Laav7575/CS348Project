@@ -1,4 +1,4 @@
-# CS348 Project: LuxeCar
+# CS348 Project: LuxeGarage
 
 ## Milestone 1
 
