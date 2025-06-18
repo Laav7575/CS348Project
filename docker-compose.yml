@@ -5,14 +5,13 @@ services:
     container_name: mysql-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ELHDD.J!w9bdNnL-
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: cs348_project
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
       # - ./sports_cars.csv:/docker-entrypoint-initdb.d/sports_cars.csv
 
   # phpmyadmin:
