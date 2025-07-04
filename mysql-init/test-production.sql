@@ -1,5 +1,5 @@
 SELECT * 
-FROM fullCars
+FROM Cars
 WHERE year = 2022
 LIMIT 10;
 
@@ -9,17 +9,17 @@ DELETE FROM Saves
 WHERE cID = 2 AND fID = 2;
 
 SELECT * 
-FROM fullCars 
+FROM Cars 
 WHERE make LIKE '%GT%' OR model LIKE '%GT%'
 LIMIT 10;
 
 INSERT INTO Folders(uID, folderName) VALUES (3, 'LaavsFolder');
 
-SELECT fullCars.*, Folders.folderName
+SELECT Cars.*, Folders.folderName
 FROM Saves
 JOIN Folders ON Saves.fID = Folders.fID
 JOIN Users ON Folders.uID = Users.uID
-JOIN fullCars ON Saves.cID = fullCars.cID
+JOIN Cars ON Saves.cID = Cars.cID
 WHERE Users.uID = 3
 LIMIT 10;
 
