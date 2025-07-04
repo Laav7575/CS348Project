@@ -47,9 +47,25 @@ CREATE TABLE Users (
     isAdmin        BOOLEAN,
     isDeleted      BOOLEAN,
     PRIMARY KEY (uID)
+    uID            INT AUTO_INCREMENT NOT NULL,
+    username       VARCHAR(30) UNIQUE,
+    email          VARCHAR(100) UNIQUE,
+    userPassword   VARCHAR(255),
+    isAdmin        BOOLEAN,
+    isDeleted      BOOLEAN,
+    PRIMARY KEY (uID)
 );
 
 CREATE TABLE Reviews (
+  uid              INT,
+  cid              INT,
+  comment              VARCHAR(255) NOT NULL,
+  createdDate DATE NOT NULL,
+  updatedDate DATE,
+  stars INT,
+  PRIMARY KEY (uid, cid),
+  FOREIGN KEY (uid) REFERENCES Users(uID),
+  FOREIGN KEY (cid) REFERENCES Cars(cID) ON DELETE CASCADE
   uid              INT,
   cid              INT,
   comment              VARCHAR(255) NOT NULL,
@@ -71,6 +87,11 @@ CREATE TABLE Folders (
 );
 
 CREATE TABLE Saves(
+  fID INT NOT NULL,
+  cID INT NOT NULL,
+  date DATE NOT NULL,
+  FOREIGN KEY (fID) REFERENCES Folders(fID) ON DELETE CASCADE,
+  FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
   fID INT NOT NULL,
   cID INT NOT NULL,
   date DATE NOT NULL,
@@ -118,6 +139,12 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- atest!
 ('alexia', 'alexia@example.com', ' $2b$10$uFuf3squWjlB6cF8fldvCeMmSPRNdhH837lXYGZDqkBd5gj0RZmRa', TRUE, FALSE);
 
+INSERT INTO Reviews (uid, cid, comment, createdDate, updatedDate, stars) VALUES
+(1, 1, 'Absolutely love the 911 – classic Porsche feel.', '2025-07-03', NULL, 3),
+(2, 3, 'The Ferrari 488 is stunning and sounds amazing.', '2025-07-03', NULL, 5),
+(3, 5, 'McLaren 720S is super fast. Unreal acceleration!', '2025-07-03', '2025-07-05', 2),
+(4, 7, 'Mercedes AMG GT is elegant and powerful.', '2025-07-03', '2025-07-07', 1),
+(5, 8, 'GT500 is a beast on the track and the road.', '2025-07-03', NULL, 3);
 INSERT INTO Reviews (uid, cid, comment, createdDate, updatedDate, stars) VALUES
 (1, 1, 'Absolutely love the 911 – classic Porsche feel.', '2025-07-03', NULL, 3),
 (2, 3, 'The Ferrari 488 is stunning and sounds amazing.', '2025-07-03', NULL, 5),
