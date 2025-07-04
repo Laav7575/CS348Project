@@ -11,8 +11,8 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./cleanedsports.csv:/docker-entrypoint-initdb.d/cleanedsports.csv
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       # - ./sports_cars.csv:/docker-entrypoint-initdb.d/sports_cars.csv
 
   # phpmyadmin:
