@@ -8,6 +8,7 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
 
   const handleSearch = async () => {
+    closeFilters();
     const res = await fetch(`/api/cars?action=search&q=${encodeURIComponent(query)}`);
     const data = await res.json();
     setResults(data);
@@ -15,11 +16,15 @@ export default function Search() {
   const closeFilters = async () => {
     setShowFilters(false);
   }
-
   const toggleFilters = () => {
     console.log("here");
     setShowFilters(!showFilters);
   };
+  const saveFilters = () => {
+    closeFilters();
+    // add logic to handle filtering
+    handleSearch();
+  }
 
   const filters = ["Price","Year","Engine Size","Horsepower","Torque","Acceleration"];
   const filterComponents = filters.map((filter) => (
@@ -35,7 +40,7 @@ export default function Search() {
             value={query} onChange={(e) => setQuery(e.target.value)}
             className="border p-2 grow-5" />
           <button onClick={handleSearch} 
-            className="grow-3 items-center gap-2 p-2 w-fit cursor-pointer border-2 border-solid border-amber-400 text-amber-500 hover:bg-amber-400 hover:text-white">
+            className="grow-3 items-center gap-2 p-2 w-fit cursor-pointer border-2 border-solid border-amber-400 text-amber-600 hover:bg-amber-400 hover:text-white">
             Search</button>
           <div className="align-middle m-auto select-none cursor-pointer" onClick={toggleFilters}>Filters</div>
         </div>
@@ -48,8 +53,8 @@ export default function Search() {
             <div className="mt-4 flex flex-col gap-2">
               {filterComponents}
               <div></div>
-              <button onClick={closeFilters} className='bg-amber-900'>
-                Search
+              <button onClick={saveFilters} className='p-2 cursor-pointer border-2 border-solid border-amber-400 text-black bg-amber-300 hover:bg-amber-400 hover:text-white'>
+                Save
               </button>
             </div>
           </div>
