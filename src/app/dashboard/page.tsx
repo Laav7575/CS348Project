@@ -1,22 +1,43 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from "../../components/NavBar";
 
-export default function Search() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [showFilters, setShowFilters] = useState(false);
+export default function MyDashboard() {
+  const [folders, setFolders] = useState([]);
+  const [error, setError] = useState('');
 
-  const handleSearch = async () => {
-    const res = await fetch(`/api/cars?action=search&q=${encodeURIComponent(query)}`);
-    const data = await res.json();
-    setResults(data);
-  };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setError("Not logged in");
+      return;
+    }
+
+    fetch("/api/folders", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) setError(data.error);
+        else setFolders(data);
+      });
+  }, []);
 
   return (
     <div className="h-screen">
       <NavBar />
       <div className="p-10 flex flex-col relative h-full">
+        { error ? (
+          <div className="text-xl font-semibold mb-4">{error}</div>
+        ) : (
+          <ul className="list-disc ml-6">
+          {folders.map((folder: any) => (
+            <li key={folder.fID}>{folder.folderName}</li>
+          ))}
+        </ul>
+      )}
         {/* <ul className="flex flex-col gap-4 mt-4">
           {results.map((car: any) => (
             <li key={car.cID} className="border p-4 rounded shadow">
