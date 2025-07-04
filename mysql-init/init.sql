@@ -124,15 +124,16 @@ CREATE TABLE IF NOT EXISTS fullCars (
     horsePower FLOAT,
     torque FLOAT,
     acceleration FLOAT,
-    price VARCHAR(30),
+    price FLOAT,
     PRIMARY KEY(cID)
 );
 
 -- Load data from CSV
 -- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
 -- Make sure your docker-compose.yml mounts the CSV correctly.
-LOAD DATA INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
-INTO TABLE fullCars
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Since CSV has a header row
+-- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
+-- INTO TABLE fullCars
+-- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+-- LINES TERMINATED BY '\n'
+-- IGNORE 1 ROWS
+-- (make, model, year, engineSize, horsePower, torque, acceleration, price);

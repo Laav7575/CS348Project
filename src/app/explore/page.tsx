@@ -63,7 +63,7 @@ export default function Search() {
               <p>Horsepower: {car.horsePower} HP</p>
               <p>Torque: {car.torque}lb⋅ft</p>
               <p>Acceleration (0-60MPH): {car.acceleration}s</p>
-              <p>Price: ${car.price.toLocaleString()}</p>
+              <p>Price: ${car.price? car.price.toLocaleString() : 'N/A'}</p>
             </li>
           ))}
         </ul>

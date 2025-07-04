@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS fullCars (
     horsePower FLOAT,
     torque FLOAT,
     acceleration FLOAT,
-    price VARCHAR(30),
+    price FLOAT,
     PRIMARY KEY(cID)
 );
 
