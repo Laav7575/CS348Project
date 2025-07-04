@@ -3,6 +3,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql-db
+    command: --secure-file-priv=""
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -12,7 +13,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
-      # - ./sports_cars.csv:/docker-entrypoint-initdb.d/sports_cars.csv
+      - ./cleanedsports.csv:/docker-entrypoint-initdb.d/cleanedsports.csv
 
   # phpmyadmin:
   #   image: phpmyadmin/phpmyadmin

@@ -1,6 +1,7 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import NavBar from "../../components/NavBar";
+import Link from "next/link";
 
 function FilterRange({
   name,
@@ -43,7 +44,7 @@ function FilterRange({
 }
 
 export default function Search() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
 
@@ -91,11 +92,30 @@ const [filters, setFilters] = useState(localFilters);
     const data = await res.json();
     setResults(data);
   };
-
+  const closeFilters = async () => {
+    setShowFilters(false);
+  };
+  
   const toggleFilters = () => {
     setShowFilters(show => !show);
   };
+  const saveFilters = () => {
+    closeFilters();
+    // add logic to handle filtering
+    handleSearch();
+  }
 
+//   const filters = [
+//     "Price",
+//     "Year",
+//     "Engine Size",
+//     "Horsepower",
+//     "Torque",
+//     "Acceleration",
+//   ];
+//   const filterComponents = filters.map((filter) => (
+//     <Filter key={filter} name={filter} />
+//   ));
 
   return (
     <div className="h-screen">
@@ -141,20 +161,27 @@ const [filters, setFilters] = useState(localFilters);
         </div>
       )}
 
-      <ul className="flex flex-col gap-4 mt-4">
-        {results.map((car: any) => (
-          <li key={car.cID} className="border p-4 rounded shadow">
-            <h2 className="text-xl font-semibold">{car.make} {car.model}</h2>
-            <p>Year: {car.year}</p>
-            <p>Engine: {car.engineSize}L</p>
-            <p>Horsepower: {car.horsePower} HP</p>
-            <p>Torque: {car.torque}lb⋅ft</p>
-            <p>Acceleration (0-60MPH): {car.acceleration}s</p>
-            <p>Price: ${car.price.toLocaleString()}</p>
-          </li>
-        ))}
-      </ul>
-      </div>
+        <ul className="flex flex-col gap-4 mt-4">
+          {results.map((car: any) => (
+            <li key={car.cID} className="border p-4 rounded shadow">
+              <Link
+                href={`/car/${car.cID}`}
+                className="block hover:bg-neutral-800/40 p-2 rounded"
+              >
+                <h2 className="text-xl font-semibold">
+                  {car.make} {car.model}
+                </h2>
+                <p>Year: {car.year}</p>
+                <p>Engine: {car.engineSize} L</p>
+                <p>Horsepower: {car.horsePower} HP</p>
+                <p>Torque: {car.torque} lb⋅ft</p>
+                <p>Acceleration (0‑60 MPH): {car.acceleration} s</p>
+                <p>Price: ${car.price}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+     
     </div>
   );
 }

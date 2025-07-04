@@ -89,11 +89,16 @@ INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque,
 VALUES ('Ford', 'Mustang Shelby GT500', 2022, FALSE, 5.2, 760.0, 625.0, 3.5, 81000.0);
 
 INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
-('angela', 'angela@example.com', 'passAngela!', TRUE, FALSE),
-('gloria', 'gloria@example.com', 'gloriaPass1', TRUE, FALSE),
-('laavanya', 'laavanya@example.com', 'laavPass2', TRUE, FALSE),
-('jahnavi', 'jahnavi@example.com', 'jahnaviPass', TRUE, FALSE),
-('alexia', 'alexia@example.com', 'alexia123', TRUE, FALSE);
+-- 123pass
+('angela', 'angela@email.com', '$2b$10$gqlGTqbsm9tlaGHNfLkhFe8lz4BhisclUhflbBIUFIlpmI02x9t3e', TRUE, FALSE),
+-- abc123
+('gloria', 'gloria@mail.com', '$2b$10$8wcmejw1rcAZ.rZwBKD4ie4iqomEA0Axj/1US/2EWYtAbXLfL5utW', TRUE, FALSE),
+-- password
+('laavanya', 'laavanya@gmail.com', '$2b$10$CXcRKRYpdRMoKHyyW5u8AuF/VvbSyqHoiN.YOYJjBXmN0pf1H2ZDa', TRUE, FALSE),
+-- secret01
+('jahnavi', 'jahnavi@example.com', '$2b$10$oEtjC96ZYYkEOD0PYVDyIubEhyUZJ4DDsHpWuqjSP7C06tVoD9G.i', TRUE, FALSE),
+-- atest!
+('alexia', 'alexia@example.com', ' $2b$10$uFuf3squWjlB6cF8fldvCeMmSPRNdhH837lXYGZDqkBd5gj0RZmRa', TRUE, FALSE);
 
 INSERT INTO Reviews (uid, cid, comment) VALUES
 (1, 1, 'Absolutely love the 911 – classic Porsche feel.'),
@@ -114,3 +119,26 @@ INSERT INTO Saves (fID, cID) VALUES
 (2, 2),
 (3, 3),
 (4, 4);
+
+CREATE TABLE IF NOT EXISTS fullCars (
+    cID INT AUTO_INCREMENT NOT NULL,
+    make VARCHAR(30) NOT NULL,
+    model VARCHAR(30) NOT NULL,
+    year INT,
+    engineSize FLOAT,
+    horsePower FLOAT,
+    torque FLOAT,
+    acceleration FLOAT,
+    price FLOAT,
+    PRIMARY KEY(cID)
+);
+
+-- Load data from CSV
+-- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
+-- Make sure your docker-compose.yml mounts the CSV correctly.
+-- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
+-- INTO TABLE fullCars
+-- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+-- LINES TERMINATED BY '\n'
+-- IGNORE 1 ROWS
+-- (make, model, year, engineSize, horsePower, torque, acceleration, price);

@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
 
   if (action === 'all') {
     try {
-        const [rows] = await db.query("SELECT * FROM Cars");
+        const [rows] = await db.query("SELECT * FROM fullCars");
         return NextResponse.json(rows);
     } catch (err) {
         console.error(err);
@@ -49,11 +49,15 @@ export async function GET(request: NextRequest) {
 
     const [rows] = await db.query(sql, values);
     return NextResponse.json(rows);
-  } catch (err) {
-    console.error('Search error:', err);
-    return NextResponse.json({ error: 'Database query failed' }, { status: 500 });
-  }
+    } catch (err) {
+      console.error('Search error:', err);
+      return NextResponse.json({ error: 'Database query failed' }, { status: 500 });
+    }
 
+  } else if (action === 'details') {
+    const cid = searchParams.get('cid');
+    const [rows] = await db.query('SELECT * FROM Cars WHERE cID = ?', [cid]);
+    return NextResponse.json(rows);
   } else {
     return NextResponse.json({ error: 'No action specified' }, { status: 500 });
   }
