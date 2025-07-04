@@ -25,7 +25,7 @@ async function seed() {
     const [make, model, year, engineSize, horsePower, torque, acceleration, price] = row.split(',');
 
     await connection.execute(
-      'INSERT INTO fullCars (make, model, year, engineSize, horsePower, torque, acceleration, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO Cars (make, model, year, engineSize, horsePower, torque, acceleration, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
       [
         make,
         model,

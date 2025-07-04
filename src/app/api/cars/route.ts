@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
 
   if (action === 'all') {
     try {
-        const [rows] = await db.query("SELECT * FROM fullCars");
+        const [rows] = await db.query("SELECT * FROM Cars");
         return NextResponse.json(rows);
     } catch (err) {
         console.error(err);
