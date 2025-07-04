@@ -181,7 +181,7 @@ const [filters, setFilters] = useState(localFilters);
             </li>
           ))}
         </ul>
-     
+     </div>
     </div>
   );
 }
