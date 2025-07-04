@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
 
   if (action === 'all') {
     try {
-        const [rows] = await db.query("SELECT * FROM Cars");
+        const [rows] = await db.query("SELECT * FROM fullCars");
         return NextResponse.json(rows);
     } catch (err) {
         console.error(err);
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
   } else if (action === 'search') {
     try {
         const [rows] = await db.query(
-            `SELECT * FROM Cars WHERE make LIKE ? OR model LIKE ?`,
+            `SELECT * FROM fullCars WHERE make LIKE ? OR model LIKE ?`,
             [`%${query}%`, `%${query}%`]
         );
         console.log("here",rows);

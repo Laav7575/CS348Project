@@ -9,9 +9,9 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
 
   const handleSearch = async () => {
-    const res = await fetch(
-      `/api/cars?action=search&q=${encodeURIComponent(query)}`
-    );
+    closeFilters();
+    const res = await fetch(`/api/cars?action=search&q=${encodeURIComponent(query)}`);
+    
     const data = await res.json();
     setResults(data);
   };
@@ -19,10 +19,16 @@ export default function Search() {
     setShowFilters(false);
   };
 
+  
   const toggleFilters = () => {
     console.log("here");
     setShowFilters(!showFilters);
   };
+  const saveFilters = () => {
+    closeFilters();
+    // add logic to handle filtering
+    handleSearch();
+  }
 
   const filters = [
     "Price",
@@ -72,8 +78,9 @@ export default function Search() {
             <div className="mt-4 flex flex-col gap-2">
               {filterComponents}
               <div></div>
-              <button onClick={closeFilters} className="bg-amber-900">
-                Search
+
+              <button onClick={saveFilters} className='p-2 cursor-pointer border-2 border-solid border-amber-400 text-black bg-amber-300 hover:bg-amber-400 hover:text-white'>
+                Save
               </button>
             </div>
           </div>
