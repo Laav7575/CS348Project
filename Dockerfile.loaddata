@@ -1,9 +1,0 @@
-FROM node:20-alpine
-
-WORKDIR /app
-
-COPY loaddata.js package*.json ./
-
-RUN npm install
-
-CMD ["node", "loaddata.js"]
