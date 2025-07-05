@@ -3,17 +3,16 @@ FROM Cars
 WHERE year = 2022
 LIMIT 10;
 
-INSERT INTO Saves (fID, cID, date) VALUES (5, 8, '2025-07-03');
-
-DELETE FROM Saves
-WHERE cID = 2 AND fID = 2;
-
 SELECT * 
 FROM Cars 
 WHERE make LIKE '%GT%' OR model LIKE '%GT%'
 LIMIT 10;
 
-INSERT INTO Folders(uID, folderName) VALUES (3, 'LaavsFolder');
+INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) 
+VALUES ('fred', 'fred@example.com', 'fred123', FALSE, FALSE);
+
+DELETE FROM Saves
+WHERE cID = 2 AND fID = 2;
 
 SELECT Cars.*, Folders.folderName
 FROM Saves
