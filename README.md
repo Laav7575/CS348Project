@@ -7,7 +7,7 @@ Users can sign in to personalize their experience. Once logged in, they can save
 > To test the login functionality, please use one of the emails and passwords provided in the Sample Dataset.
 
 **2. Search & Filter**  
-While browsing cars, users can easily navigate cars by filtering results by: Price, Year, Engine size, Horsepower, Torque, and Acceleration.
+While browsing cars, users can easily navigate cars by searching by the make and model or by filtering results by: Price, Year, Engine size, Horsepower, Torque, and Acceleration.
 
 **3. Folders**  
 This feature requires the user to be logged in. After logging in, navigate to the Car **Explore** page, click on a specific car, and add it to your **Liked** folder or any custom folder you’ve created.
