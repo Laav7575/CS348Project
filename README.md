@@ -1,9 +1,29 @@
 # CS348 Project: LuxeGarage
 
+## Milestone 2
+### Implemented Functionalities
+**1. User Authentication**  
+Users can sign in to personalize their experience. Once logged in, they can save specific cars to folders for easy access later.  
+> To test the login functionality, please use one of the emails and passwords provided in the Sample Dataset.
+
+**2. Search & Filter**  
+While browsing cars, users can easily navigate cars by searching by the make and model or by filtering results by: Price, Year, Engine size, Horsepower, Torque, and Acceleration.
+
+**3. Folders**  
+This feature requires the user to be logged in. After logging in, navigate to the Car **Explore** page, click on a specific car, and add it to your **Liked** folder or any custom folder you’ve created.
+
+**4. Full Production Dataset**  
+To update the production dataset in the database:
+1. Upload the **Sports Car** CSV file from Kaggle to the `mysql-init` folder in the project root directory.  
+   Rename the file to `fullsports.csv`.
+
+2. To perform a one-time data clean, run the following commands:
+
+   ```bash
+   pip install -r requirements.txt
+   python ./clean_data.py
+---
 ## Milestone 1
-
-### Project Overview
-
 Our application aims to provide users with an intuitive platform to discover and explore luxury cars for purchase or general interest. The primary users of the application are individuals interested in purchasing, browsing, or learning more about luxury cars. Developers will serve as administrators of the database system.
 
 The core data for our application is derived from a sports car dataset on Kaggle (link: https://www.kaggle.com/datasets/rkiattisak/sports-car-prices-dataset/data). This dataset includes vital information about cars such as:
