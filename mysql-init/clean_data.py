@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # 1. Load the CSV
-df = pd.read_csv('fullspors.csv', na_values=['N/A', 'n/a', '', 'NA', '-'])
+df = pd.read_csv('fullsports.csv', na_values=['N/A', 'n/a', '', 'NA', '-'])
 
 # 2. Remove commas in 'Price (in USD)' and convert to numeric
 df['Price (in USD)'] = df['Price (in USD)'].str.replace(',', '', regex=False)
