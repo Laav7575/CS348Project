@@ -14,13 +14,16 @@ This feature requires the user to be logged in. After logging in, navigate to th
 
 **4. Full Production Dataset**  
 To update the entire production dataset in the database (this has already been done for our project):
-1. Upload the **Sports Car** CSV file from Kaggle to the `mysql-init` folder in the project root directory.  
+1. Download the Sports Car CSV file from Kaggle: https://www.kaggle.com/datasets/rkiattisak/sports-car-prices-dataset/data
+3. Upload the **Sports Car** CSV file from Kaggle to the `mysql-init` folder in the project root directory.  
    Rename the file to `fullsports.csv`.
-2. To perform a one-time data clean, run the following commands:
+4. To perform a one-time data clean, we use Pandas and python to normalize the data and put the cleaned CSV into the project root folder by running the following commands:
 
    ```bash
    pip install -r requirements.txt
+   cd mysql-init
    python ./clean_data.py
+5. Finally, the docker-compose.yml file loads the data into the MySQL database by running loaddata.js upon a new Docker container. The loaddata.js file connects to our MySQL database then runs the INSERT INTO Cars command for every row of the dataset.
 ---
 ## Milestone 1
 Our application aims to provide users with an intuitive platform to discover and explore luxury cars for purchase or general interest. The primary users of the application are individuals interested in purchasing, browsing, or learning more about luxury cars. Developers will serve as administrators of the database system.
