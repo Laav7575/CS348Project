@@ -8,18 +8,17 @@ FROM Cars
 WHERE make LIKE '%GT%' OR model LIKE '%GT%'
 LIMIT 10;
 
-INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) 
-VALUES ('fred', 'fred@example.com', 'fred123', FALSE, FALSE);
+INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
+('alexia', 'alexia@example.com', ' $2b$10$uFuf3squWjlB6cF8fldvCeMmSPRNdhH837lXYGZDqkBd5gj0RZmRa', TRUE, FALSE);
 
 DELETE FROM Saves
 WHERE cID = 2 AND fID = 2;
 
-SELECT Cars.*, Folders.folderName
-FROM Saves
-JOIN Folders ON Saves.fID = Folders.fID
-JOIN Users ON Folders.uID = Users.uID
-JOIN Cars ON Saves.cID = Cars.cID
-WHERE Users.uID = 3
+SELECT f.fID, c.cID, c.make, c.model, c.year
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON c.cID = s.cID
+WHERE f.uID = 3
 LIMIT 10;
 
 UPDATE Reviews
