@@ -13,10 +13,9 @@ While browsing cars, users can easily navigate cars by searching by the make and
 This feature requires the user to be logged in. After logging in, navigate to the Car **Explore** page, click on a specific car, and add it to your **Liked** folder or any custom folder you’ve created.
 
 **4. Full Production Dataset**  
-To update the production dataset in the database:
+To update the entire production dataset in the database (this has already been done for our project):
 1. Upload the **Sports Car** CSV file from Kaggle to the `mysql-init` folder in the project root directory.  
    Rename the file to `fullsports.csv`.
-
 2. To perform a one-time data clean, run the following commands:
 
    ```bash
