@@ -73,15 +73,15 @@ CREATE TABLE Adds(
 
 -- insert test data
 INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
-('Porsche', '911', 2022, FALSE, 3.0, 379.0, 331.0, 4.0, 101200.0),
-('Lamborghini', 'Huracan', 2021, FALSE, 5.2, 630.0, 443.0, 2.8, 274390.0),
-('Ferrari', '488 GTB', 2022, FALSE, 3.9, 661.0, 561.0, 3.0, 333750.0),
-('Audi', 'R8', 2022, FALSE, 5.2, 562.0, 406.0, 3.2, 142700.0),
-('McLaren', '720S', 2021, FALSE, 4.0, 710.0, 568.0, 2.7, 298000.0),
-('BMW', 'M8', 2022, FALSE, 4.4, 617.0, 553.0, 3.1, 130000.0),
-('Mercedes-Benz', 'AMG GT', 2021, FALSE, 4.0, 523.0, 494.0, 3.8, 118500.0),
-('Chevrolet', 'Corvette', 2021, FALSE, 6.2, 490.0, 465.0, 2.8, 59900.0),
-('Ford', 'Mustang Shelby GT500', 2022, FALSE, 5.2, 760.0, 625.0, 3.5, 81000.0);
+('Tesla', 'Model S Plaid', 2023, TRUE, NULL, 1020.0, 1050.0, 1.99, 89990.0),
+('Lucid', 'Air Grand Touring', 2023, TRUE, NULL, 819.0, 885.0, 3.0, 125600.0),
+('Nissan', 'GT-R Nismo', 2021, FALSE, 3.8, 600.0, 481.0, 2.9, 210740.0),
+('Aston Martin', 'DB11', 2022, FALSE, 5.2, 630.0, 516.0, 3.7, 205600.0),
+('Jaguar', 'F-Type R', 2021, FALSE, 5.0, 575.0, 516.0, 3.5, 103200.0),
+('Dodge', 'Challenger SRT Hellcat', 2022, FALSE, 6.2, 717.0, 656.0, 3.6, 74500.0),
+('Koenigsegg', 'Jesko', 2022, FALSE, 5.0, 1600.0, 1106.0, 2.5, 3000000.0),
+('Rimac', 'Nevera', 2022, TRUE, NULL, 1914.0, 1741.0, 1.85, 2400000.0),
+('Lotus', 'Evora GT', 2021, FALSE, 3.5, 416.0, 317.0, 3.8, 99600.0);
 
 INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- 123pass
@@ -120,9 +120,8 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 5, '2025-07-03'),
 (3, 6, '2025-07-03'),
 (1, 7, '2025-07-03'),
-(, 8, '2025-07-03'),
-(1, 9, '2025-07-03'),
-(1, 10, '2025-07-03');
+(3, 8, '2025-07-03'),
+(1, 9, '2025-07-03');
 
 -- Load data from CSV
 -- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
