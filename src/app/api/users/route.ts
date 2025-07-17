@@ -1,60 +1,98 @@
+//app/api/users/route.ts
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import bcrypt from 'bcryptjs';
-import Jwt from 'jsonwebtoken';
+import bcrypt from "bcryptjs";
+import Jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
   const body = await req.json();
   const { email, password, type } = body;
 
   if (!email || !password) {
-    return NextResponse.json({ error: 'Missing email or password' }, { status: 400 });
+    return NextResponse.json(
+      { error: "Missing email or password" },
+      { status: 400 }
+    );
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  if (type === 'signup') {
+  if (type === "signup") {
     try {
-      await db.query('INSERT INTO Users (email, userPassword, isAdmin, isDeleted) VALUES (?, ?, FALSE, FALSE)', [email, hashedPassword]);
+      await db.query(
+        "INSERT INTO Users (email, userPassword, isAdmin, isDeleted) VALUES (?, ?, FALSE, FALSE)",
+        [email, hashedPassword]
+      );
       // return NextResponse.json({ message: 'User registered' });
 
-      const [rows] = await db.query('SELECT * FROM Users WHERE email = ?', [email]);
+      const [rows] = await db.query("SELECT * FROM Users WHERE email = ?", [
+        email,
+      ]);
       const user = Array.isArray(rows) ? (rows as any[])[0] : null;
 
-      if (!user) return NextResponse.json({ error: 'Error retrieving user after signup' }, { status: 500 });
+      if (!user)
+        return NextResponse.json(
+          { error: "Error retrieving user after signup" },
+          { status: 500 }
+        );
 
-      const token = Jwt.sign({ id: user.uID, email: user.email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+      const token = Jwt.sign(
+        { id: user.uID, email: user.email },
+        process.env.JWT_SECRET!,
+        { expiresIn: "24h" }
+      );
 
       return NextResponse.json({ token, user: { email: user.email } });
     } catch (e: any) {
-      return NextResponse.json({ error: 'User already exists' }, { status: 409 });
+      return NextResponse.json(
+        { error: "User already exists" },
+        { status: 409 }
+      );
     }
   }
 
-  if (type === 'login') {
-    const [rows] = await db.query('SELECT * FROM Users WHERE email = ?', [email]);
+  if (type === "login") {
+    const [rows] = await db.query("SELECT * FROM Users WHERE email = ?", [
+      email,
+    ]);
     const user = Array.isArray(rows) ? (rows as any[])[0] : null;
 
-    if (!user) return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    if (!user)
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
 
     console.log(password, user.userPassword);
     const valid = await bcrypt.compare(password, user.userPassword);
-    if (!valid) return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+    if (!valid)
+      return NextResponse.json(
+        { error: "Invalid credentials" },
+        { status: 401 }
+      );
 
-    const token = Jwt.sign({ id: user.uID, email: user.email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+    const token = Jwt.sign(
+      { id: user.uID, email: user.email },
+      process.env.JWT_SECRET!,
+      { expiresIn: "1h" }
+    );
 
     return NextResponse.json({ token, user: { email: user.email } });
   }
 
-  return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 }
 
-export async function GET(request: Request) {
+export async function GET(req: Request) {
+  const token = req.headers.get("authorization")?.split(" ")[1];
+
+  if (!token) {
+    return NextResponse.json({ error: "No token" }, { status: 401 });
+  }
+
   try {
-      const [rows] = await db.query("SELECT * FROM Users");
-      return NextResponse.json(rows);
+    const decoded = Jwt.verify(token, process.env.JWT_SECRET!) as {
+      id: number;
+    };
+    return NextResponse.json({ id: decoded.id });
   } catch (err) {
-      console.error(err);
-      return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json({ error: "Invalid token" }, { status: 403 });
   }
 }
