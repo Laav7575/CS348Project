@@ -76,7 +76,8 @@ export default function AddReview({ cid }: { cid: string }) {
             </button>
             </form>
             ) :
-            ( <button onClick={toggleShowReview} className="cursor-pointer bg-amber-400 text-white px-4 py-2 rounded hover:bg-amber-500">+ Add Review</button> )
+            ( <button onClick={toggleShowReview} className="cursor-pointer bg-amber-400 text-white px-4 py-2 rounded hover:bg-amber-500">
+                + Add Review</button> )
         }
         {feedbackMsg && <p className="text-blue-600">{feedbackMsg}</p>}
         </div>

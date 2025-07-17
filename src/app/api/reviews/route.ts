@@ -21,7 +21,7 @@ export async function GET(req: Request) {
 
     try {
         const [rows] = await db.query(
-        "SELECT * FROM Reviews WHERE cID = ?", cid
+        "SELECT r.*, u.email FROM Reviews r JOIN Users u ON u.uID = r.uID WHERE cID = ?", cid
         );
 
         return NextResponse.json(rows);
