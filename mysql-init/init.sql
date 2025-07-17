@@ -1,3 +1,5 @@
+-- init.sql
+
 CREATE DATABASE IF NOT EXISTS cs348_project;
 
 USE cs348_project;
@@ -9,19 +11,34 @@ DROP TABLE IF EXISTS Reviews;
 DROP TABLE IF EXISTS Users;
 
 
-CREATE TABLE Cars (
-  cID                     INT AUTO_INCREMENT not NULL,
-  make                    VARCHAR(50) not NULL,
-  model                   VARCHAR(50) not NULL,
-  image                   VARBINARY(1000),
-  year                    INT,
-  isElectric              boolean,
-  engineSize              float,
-  horsePower              float,
-  torque                  float,
-  acceleration            float,
-  price                   float,
-  primary key(cID)
+CREATE TABLE IF NOT EXISTS Cars (
+    cID INT AUTO_INCREMENT NOT NULL,
+    make VARCHAR(30) NOT NULL,
+    model VARCHAR(30) NOT NULL,
+    year INT,
+    isElectric BOOLEAN,
+    engineSize FLOAT,
+    horsePower FLOAT,
+    torque FLOAT,
+    acceleration FLOAT,
+    price FLOAT,
+    PRIMARY KEY(cID)
+);
+
+-- create tables
+CREATE TABLE testCars (
+   cID                     INT AUTO_INCREMENT not NULL,
+   make                    VARCHAR(50) not NULL,
+   model                   VARCHAR(50) not NULL,
+   image                   VARBINARY(1000),
+   year                    INT,
+   isElectric		           BOOLEAN,
+   engineSize              float,
+   horsePower              float,
+   torque                  float,
+   acceleration            float,
+   price                   float,
+   primary key(cID)
 );
 
 CREATE TABLE Users (
@@ -72,7 +89,7 @@ CREATE TABLE Adds(
 );
 
 -- insert test data
-INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
+INSERT INTO testCars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
 ('Tesla', 'Model S Plaid', 2023, TRUE, NULL, 1020.0, 1050.0, 1.99, 89990.0),
 ('Lucid', 'Air Grand Touring', 2023, TRUE, NULL, 819.0, 885.0, 3.0, 125600.0),
 ('Nissan', 'GT-R Nismo', 2021, FALSE, 3.8, 600.0, 481.0, 2.9, 210740.0),

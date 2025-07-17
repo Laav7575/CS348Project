@@ -1,3 +1,4 @@
+# clean_data.py
 import pandas as pd
 import numpy as np
 import os
@@ -9,13 +10,22 @@ df = pd.read_csv('fullsports.csv', na_values=['N/A', 'n/a', '', 'NA', '-'])
 df['Price (in USD)'] = df['Price (in USD)'].str.replace(',', '', regex=False)
 df['Price (in USD)'] = pd.to_numeric(df['Price (in USD)'], errors='coerce')
 
-# 3. Make sure any other problematic columns (like Engine Size) are handled
+# 3. isElectric is true if the original Engine Size string contains 'electric'
+df['isElectric'] = df['Engine Size (L)'].astype(str).str.lower().str.contains('electric', na=False)
+
+# 4. Convert Engine Size to float (numeric), only for non-electric rows
 df['Engine Size (L)'] = pd.to_numeric(df['Engine Size (L)'], errors='coerce')
 
-# 4. isElectric is true if engine size is null and false otherwise
-df['isElectric'] = df['Engine Size (L)'].isna()
+# 5. Remove duplicates
+df = df.drop_duplicates()
 
-# 4. Save cleaned CSV to the project root
+# 6. Move 'isElectric' after 'Year'
+cols = df.columns.tolist()
+year_idx = cols.index('Year')
+cols.insert(year_idx + 1, cols.pop(cols.index('isElectric')))
+df = df[cols]
+
+# 7. Save cleaned CSV to the project root
 # Get the directory of the current script
 script_dir = os.path.dirname(__file__)
 # Go up one level to the project root (assuming script is one level down from root)

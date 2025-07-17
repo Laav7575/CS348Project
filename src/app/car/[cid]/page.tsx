@@ -8,6 +8,7 @@ interface Car {
   make: string;
   model: string;
   year: number;
+  isElectric: boolean;
   engineSize: number;
   horsePower: number;
   torque: number;
