@@ -1,5 +1,6 @@
 // app/car/[cid]/page.tsx
 import { notFound } from "next/navigation";
+import SaveToFolder from "@/components/SaveToFolder";
 import LikeButton from "@/components/LikeButton";
 import NavBar from "@/components/NavBar";
 
@@ -53,6 +54,7 @@ export default async function CarDetails({
         </ul>
 
         <LikeButton cID={car.cID} />
+        <SaveToFolder cID={car.cID} />
       </div>
     </div>
   );

@@ -50,6 +50,7 @@ CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
    uID 			INT NOT NULL,
    folderName 		VARCHAR(30) NOT NULL UNIQUE,
+   isLikes BOOLEAN DEFAULT FALSE,
    PRIMARY KEY(fID),
    FOREIGN KEY(uID) REFERENCES Users(uID) ON DELETE CASCADE
 );
@@ -58,7 +59,6 @@ CREATE TABLE Saves(
   fID INT NOT NULL,
   cID INT NOT NULL,
   date DATE NOT NULL,
-  isLikes BOOLEAN,
   FOREIGN KEY (fID) REFERENCES Folders(fID) ON DELETE CASCADE,
   FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
 );
@@ -70,6 +70,19 @@ CREATE TABLE Adds(
   FOREIGN KEY (uID) REFERENCES Users(uID) ON DELETE CASCADE,
   FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
 );
+
+DELIMITER //
+
+CREATE TRIGGER create_likes_folder_after_user_insert
+AFTER INSERT ON Users
+FOR EACH ROW
+BEGIN
+  INSERT INTO Folders (uID, folderName, isLikes)
+  VALUES (NEW.uID, 'Likes', TRUE);
+END;
+//
+
+DELIMITER;
 
 -- insert test data
 INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
