@@ -41,6 +41,7 @@ CREATE TABLE testCars (
    primary key(cID)
 );
 
+
 CREATE TABLE Users (
     uID            INT AUTO_INCREMENT NOT NULL,
     username       VARCHAR(30) UNIQUE,
@@ -89,7 +90,7 @@ CREATE TABLE Adds(
 );
 
 -- insert test data
-INSERT INTO testCars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
+INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
 ('Tesla', 'Model S Plaid', 2023, TRUE, NULL, 1020.0, 1050.0, 1.99, 89990.0),
 ('Lucid', 'Air Grand Touring', 2023, TRUE, NULL, 819.0, 885.0, 3.0, 125600.0),
 ('Nissan', 'GT-R Nismo', 2021, FALSE, 3.8, 600.0, 481.0, 2.9, 210740.0),
@@ -139,13 +140,3 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 7, '2025-07-03'),
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
-
--- Load data from CSV
--- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
--- Make sure your docker-compose.yml mounts the CSV correctly.
--- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
--- INTO TABLE fullCars
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS
--- (make, model, year, engineSize, horsePower, torque, acceleration, price);
