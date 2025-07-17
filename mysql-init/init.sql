@@ -1,3 +1,5 @@
+-- init.sql
+
 CREATE DATABASE IF NOT EXISTS cs348_project;
 
 USE cs348_project;
@@ -14,6 +16,7 @@ CREATE TABLE IF NOT EXISTS Cars (
     make VARCHAR(30) NOT NULL,
     model VARCHAR(30) NOT NULL,
     year INT,
+    isElectric BOOLEAN,
     engineSize FLOAT,
     horsePower FLOAT,
     torque FLOAT,
@@ -29,7 +32,7 @@ CREATE TABLE testCars (
    model                   VARCHAR(50) not NULL,
    image                   VARBINARY(1000),
    year                    INT,
-   isElectric		       boolean,
+   isElectric		           BOOLEAN,
    engineSize              float,
    horsePower              float,
    torque                  float,
@@ -120,13 +123,3 @@ INSERT INTO Saves (fID, cID, date) VALUES
 (2, 2, '2025-07-03'),
 (3, 3, '2025-07-03'),
 (4, 4, '2025-07-03');
-
--- Load data from CSV
--- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
--- Make sure your docker-compose.yml mounts the CSV correctly.
--- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
--- INTO TABLE fullCars
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS
--- (make, model, year, engineSize, horsePower, torque, acceleration, price);

@@ -7,6 +7,7 @@ interface Car {
   make: string;
   model: string;
   year: number;
+  isElectric: boolean;
   engineSize: number;
   horsePower: number;
   torque: number;
@@ -34,6 +35,7 @@ export default async function CarDetails({ params }: { params: { cid: string } }
       <h1 className="text-4xl font-bold">{car.make} {car.model}</h1>
       <ul className="mt-4 leading-8">
         <li>Year: {car.year}</li>
+        <li>Electric: {car.isElectric ? 'Yes': 'No'}</li>
         <li>Engine: {car.engineSize} L</li>
         <li>Horsepower: {car.horsePower} HP</li>
         <li>Torque: {car.torque} lb⋅ft</li>
