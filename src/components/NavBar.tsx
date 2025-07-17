@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -24,6 +26,7 @@ export default function NavBar() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
+    router.replace('/');
   };
 
   return (
