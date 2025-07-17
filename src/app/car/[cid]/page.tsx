@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import SaveToFolder from "@/components/SaveToFolder";
 import LikeButton from "@/components/LikeButton";
 import NavBar from "@/components/NavBar";
+import AddReview from "@/components/AddReview";
+import AllReviews from "@/components/AllReviews";
 
 interface Car {
   cID: string;
@@ -30,18 +32,17 @@ async function getCar(cid: string): Promise<Car | null> {
   return data[0];
 }
 
-export default async function CarDetails({
-  params,
-}: {
+export default async function CarDetails({ params }: {
   params: { cid: string };
 }) {
-  const car = await getCar(params.cid);
+  const { cid } = await params;
+  const car = await getCar(cid);
   if (!car) return notFound();
 
   return (
     <div className="h-screen">
       <NavBar />
-      <div className="p-10 text-white">
+      <div className="p-10 bg-white text-black">
         <h1 className="text-4xl font-bold">
           {car.make} {car.model}
         </h1>
@@ -58,6 +59,13 @@ export default async function CarDetails({
         <LikeButton cID={car.cID} />
         <SaveToFolder cID={car.cID} />
       </div>
+      <div className="p-10 bg-white text-black">
+        <AddReview cid={car.cID} />
+      </div>
+      <div className="p-10 bg-white text-black">
+        <AllReviews cid={car.cID} />
+      </div>
     </div>
   );
 }
+
