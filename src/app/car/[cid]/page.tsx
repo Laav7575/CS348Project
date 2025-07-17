@@ -46,6 +46,7 @@ export default async function CarDetails({
         </h1>
         <ul className="mt-4 leading-8">
           <li>Year: {car.year}</li>
+          <li>Electric: {car.isElectric ? "Yes" : "No"}</li>
           <li>Engine: {car.engineSize} L</li>
           <li>Horsepower: {car.horsePower} HP</li>
           <li>Torque: {car.torque} lb⋅ft</li>
