@@ -4,7 +4,7 @@ import { db } from '@/lib/db';
 export async function GET(req: NextRequest) {
     try {
         const [rows] = await db.query(
-            `SELECT top.cID, c.make, c.model, c.price, top.saveCount,
+            `SELECT top.cID, c.make, c.model, c.price, c.year, top.saveCount,
             (top.cID = mostSaved.cID) AS isMostSaved
             FROM (
                 SELECT s.cID, COUNT(*) AS saveCount
