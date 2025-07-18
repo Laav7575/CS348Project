@@ -22,8 +22,7 @@ export async function GET(req: NextRequest) {
                 GROUP BY s.cID
                 ORDER BY COUNT(*) DESC
                 LIMIT 1
-            ) AS mostSaved ON mostSaved.cID = top.cID; 
-            `
+            ) AS mostSaved ON mostSaved.cID = top.cID;`
         )
         console.log("Fetched rows:", rows);
         return NextResponse.json(rows);
