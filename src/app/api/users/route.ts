@@ -6,11 +6,11 @@ import Jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { email, password, type } = body;
+  const { email, password, username, type } = body;
 
-  if (!email || !password) {
+  if (!email || !password || !username) {
     return NextResponse.json(
-      { error: "Missing email or password" },
+      { error: "Missing required field" },
       { status: 400 }
     );
   }
@@ -20,8 +20,8 @@ export async function POST(req: Request) {
   if (type === "signup") {
     try {
       await db.query(
-        "INSERT INTO Users (email, userPassword, isAdmin, isDeleted) VALUES (?, ?, FALSE, FALSE)",
-        [email, hashedPassword]
+        "INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES (?, ?, ?, FALSE, FALSE)",
+        [username, email, hashedPassword]
       );
       // return NextResponse.json({ message: 'User registered' });
 
@@ -44,17 +44,32 @@ export async function POST(req: Request) {
 
       return NextResponse.json({ token, user: { email: user.email } });
     } catch (e: any) {
+      if (e.code === "ER_DUP_ENTRY") {
+        if (e.sqlMessage.includes("username")) {
+          return NextResponse.json(
+            { error: "Username already exists" },
+            { status: 409 }
+          );
+        }
+        if (e.sqlMessage.includes("email")) {
+          return NextResponse.json(
+            { error: "Email already exists" },
+            { status: 409 }
+          );
+        }
+      }
       return NextResponse.json(
-        { error: "User already exists" },
+        { error: "Could not sign up" },
         { status: 409 }
       );
     }
   }
 
   if (type === "login") {
-    const [rows] = await db.query("SELECT * FROM Users WHERE email = ?", [
-      email,
+    const [rows] = await db.query("SELECT * FROM Users WHERE email = ? OR username = ?", [
+      email,username
     ]);
+    if ((rows as any[]).length > 1) return NextResponse.json({ error: "Multiple results found" }, { status: 400 }); 
     const user = Array.isArray(rows) ? (rows as any[])[0] : null;
 
     if (!user)
@@ -71,7 +86,7 @@ export async function POST(req: Request) {
     const token = Jwt.sign(
       { id: user.uID, email: user.email },
       process.env.JWT_SECRET!,
-      { expiresIn: "1h" }
+      { expiresIn: "24h" }
     );
 
     return NextResponse.json({ token, user: { email: user.email } });
