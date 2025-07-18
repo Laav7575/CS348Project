@@ -42,7 +42,7 @@ export default function TrendingPage() {
                 className="block hover:bg-neutral-800/40 p-2 rounded"
               >
                
-              <h3 className="text-xl font-bold"> {car.year} {car.make} {car.model}
+              <h3 className="text-xl font-bold"> {car.year} {car.make} {car.model} 
                 {car.isMostSaved === 1 && (
                 <span className="ml-2 text-amber-500 text-sm font-semibold">
                     ⭐ Most Popular
