@@ -43,6 +43,7 @@ export default function MyDashboard() {
       .then((data) => {
         if (data.error) setError(data.error);
         else setLikes(data);
+        console.log(likes);
       });
   }, []);
 
@@ -70,23 +71,6 @@ export default function MyDashboard() {
                     {folder.folderName}
                   </Link>
                 </h2>
-              </div>
-            ))}
-
-            {likes.map((likeFolder: any) => (
-              <div key={likeFolder.fID} className="border p-4 rounded shadow">
-                <h2 className="text-xl font-semibold mb-2">Likes</h2>
-                {likeFolder.cars.length > 0 ? (
-                  <ul className="list-disc ml-6 space-y-1">
-                    {likeFolder.cars.map((car: any) => (
-                      <li key={car.cID}>
-                        {car.year} {car.make} {car.model}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-500">No cars liked yet.</p>
-                )}
               </div>
             ))}
           </div>

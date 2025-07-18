@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import Jwt from "jsonwebtoken";
+import { use } from "react";
 
 async function getUserId(req: Request): Promise<number | null> {
   const token = req.headers.get("authorization")?.split(" ")[1];
@@ -14,20 +15,15 @@ async function getUserId(req: Request): Promise<number | null> {
   }
 }
 
-export async function GET(
-  req: Request,
-  { params }: { params: { fid: string } }
-) {
+export async function GET(req: Request) {
     const userId = await getUserId(req);
     if (!userId)
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const folderId = params.fid;
-
   try {
     const [cars] = await db.query(
-      "SELECT * FROM carsInFolder WHERE fID = ? ORDER BY year DESC",
-      [folderId]
+      "SELECT DISTINCT cID, make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price FROM carsInFolder WHERE uid = ? ORDER BY year DESC",
+      [userId]
     );
 
     if ((cars as any[]).length === 0) {
@@ -41,12 +37,14 @@ export async function GET(
          ROUND(AVG(price)) AS avgPrice,  
          (
            SELECT make FROM carsInFolder
+           WHERE uid = ?
            GROUP BY make
            ORDER BY COUNT(*) DESC
            LIMIT 1
          ) AS commonMake,
          (
            SELECT model FROM carsInFolder
+           WHERE uid = ?
            GROUP BY model
            ORDER BY COUNT(*) DESC
            LIMIT 1
@@ -57,7 +55,9 @@ export async function GET(
          ROUND(AVG(horsePower)) AS avgHorsePower,
          ROUND(AVG(torque)) AS avgTorque,
          ROUND(AVG(acceleration), 2) AS avgAcceleration
-       FROM carsInFolder`
+       FROM carsInFolder
+       WHERE uid = ?`,
+       [userId, userId, userId]
     );
 
     const stats = (rawStats as any[])[0];
@@ -69,6 +69,6 @@ export async function GET(
 
   } catch (err) {
     console.error("[FOLDER-GET-BY-ID] DB error:", err);
-    return NextResponse.json({ error: "Database error" }, { status: 500 });
+    return NextResponse.json({ error: "Database error 2" }, { status: 500 });
   }
 }

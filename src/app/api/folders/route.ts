@@ -22,7 +22,7 @@ export async function GET(req: Request) {
 
   try {
     const [folders] = await db.query(
-      "SELECT fID, folderName FROM Folders WHERE uID = ? AND isLikes = FALSE",
+      "SELECT fID, folderName FROM Folders WHERE uID = ?",
       [userId]
     );
 
@@ -31,7 +31,7 @@ export async function GET(req: Request) {
          FROM Folders f
          JOIN Saves s ON f.fID = s.fID
          JOIN Cars c ON c.cID = s.cID
-         WHERE f.uID = ? AND f.isLikes = FALSE`,
+         WHERE f.uID = ?`,
       [userId]
     );
 

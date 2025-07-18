@@ -160,11 +160,17 @@ INSERT INTO Adds (uID, cID, date) VALUES
 
 
 CREATE OR REPLACE VIEW carsInFolder AS
-SELECT f.fID, c.*
+SELECT DISTINCT f.uID, f.fID, c.*
 FROM Folders f
 JOIN Saves s ON f.fID = s.fID
 JOIN Cars c ON s.cID = c.cID;
 
+CREATE OR REPLACE VIEW likesFolder AS
+SELECT DISTINCT f.uID, f.fID, c.*
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON s.cID = c.cID
+WHERE isLikes = TRUE;
 -- Load data from CSV
 -- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
 -- Make sure your docker-compose.yml mounts the CSV correctly.
