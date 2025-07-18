@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar";
 
 export default function MyDashboard() {
   const [folders, setFolders] = useState([]);
+  const [likes, setLikes] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -25,12 +26,31 @@ export default function MyDashboard() {
       });
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setError("Not logged in");
+      return;
+    }
+
+    fetch("/api/likes", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) setError(data.error);
+        else setLikes(data);
+      });
+  }, []);
+
   return (
     <div className="h-screen">
       <NavBar />
       <div className="p-10 flex flex-col relative h-full">
         {error ? (
-          <div className="text-xl font-semibold mb-4">{error}</div>
+          <div className="text-xl font-semibold mb-4 text-red-600">{error}</div>
         ) : (
           <div className="space-y-6">
             {folders.map((folder: any) => (
@@ -48,6 +68,23 @@ export default function MyDashboard() {
                   </ul>
                 ) : (
                   <p className="text-gray-500">No cars in this folder.</p>
+                )}
+              </div>
+            ))}
+
+            {likes.map((likeFolder: any) => (
+              <div key={likeFolder.fID} className="border p-4 rounded shadow">
+                <h2 className="text-xl font-semibold mb-2">Likes</h2>
+                {likeFolder.cars.length > 0 ? (
+                  <ul className="list-disc ml-6 space-y-1">
+                    {likeFolder.cars.map((car: any) => (
+                      <li key={car.cID}>
+                        {car.year} {car.make} {car.model}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-500">No cars liked yet.</p>
                 )}
               </div>
             ))}

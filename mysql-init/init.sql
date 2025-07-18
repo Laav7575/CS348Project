@@ -1,3 +1,5 @@
+-- init.sql
+
 CREATE DATABASE IF NOT EXISTS cs348_project;
 
 USE cs348_project;
@@ -9,20 +11,36 @@ DROP TABLE IF EXISTS Reviews;
 DROP TABLE IF EXISTS Users;
 
 
-CREATE TABLE Cars (
-  cID                     INT AUTO_INCREMENT not NULL,
-  make                    VARCHAR(50) not NULL,
-  model                   VARCHAR(50) not NULL,
-  image                   VARBINARY(1000),
-  year                    INT,
-  isElectric              boolean,
-  engineSize              float,
-  horsePower              float,
-  torque                  float,
-  acceleration            float,
-  price                   float,
-  primary key(cID)
+CREATE TABLE IF NOT EXISTS Cars (
+    cID INT AUTO_INCREMENT NOT NULL,
+    make VARCHAR(30) NOT NULL,
+    model VARCHAR(30) NOT NULL,
+    year INT,
+    isElectric BOOLEAN,
+    engineSize FLOAT,
+    horsePower FLOAT,
+    torque FLOAT,
+    acceleration FLOAT,
+    price FLOAT,
+    PRIMARY KEY(cID)
 );
+
+-- create tables
+CREATE TABLE testCars (
+   cID                     INT AUTO_INCREMENT not NULL,
+   make                    VARCHAR(50) not NULL,
+   model                   VARCHAR(50) not NULL,
+   image                   VARBINARY(1000),
+   year                    INT,
+   isElectric		           BOOLEAN,
+   engineSize              float,
+   horsePower              float,
+   torque                  float,
+   acceleration            float,
+   price                   float,
+   primary key(cID)
+);
+
 
 CREATE TABLE Users (
     uID            INT AUTO_INCREMENT NOT NULL,
@@ -50,6 +68,7 @@ CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
    uID 			INT NOT NULL,
    folderName 		VARCHAR(30) NOT NULL UNIQUE,
+   isLikes BOOLEAN DEFAULT FALSE,
    PRIMARY KEY(fID),
    FOREIGN KEY(uID) REFERENCES Users(uID) ON DELETE CASCADE
 );
@@ -58,7 +77,6 @@ CREATE TABLE Saves(
   fID INT NOT NULL,
   cID INT NOT NULL,
   date DATE NOT NULL,
-  isLikes BOOLEAN,
   FOREIGN KEY (fID) REFERENCES Folders(fID) ON DELETE CASCADE,
   FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
 );
@@ -70,6 +88,19 @@ CREATE TABLE Adds(
   FOREIGN KEY (uID) REFERENCES Users(uID) ON DELETE CASCADE,
   FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
 );
+
+DELIMITER //
+
+CREATE TRIGGER create_likes_folder_after_user_insert
+AFTER INSERT ON Users
+FOR EACH ROW
+BEGIN
+  INSERT INTO Folders (uID, folderName, isLikes)
+  VALUES (NEW.uID, 'Likes', TRUE);
+END;
+//
+
+DELIMITER;
 
 -- insert test data
 INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
@@ -122,13 +153,3 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 7, '2025-07-03'),
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
-
--- Load data from CSV
--- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
--- Make sure your docker-compose.yml mounts the CSV correctly.
--- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
--- INTO TABLE fullCars
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS
--- (make, model, year, engineSize, horsePower, torque, acceleration, price);

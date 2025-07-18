@@ -176,6 +176,7 @@ const [filters, setFilters] = useState(localFilters);
                   {car.make} {car.model}
                 </h2>
                 <p>Year: {car.year}</p>
+                <p>Electric: {car.isElectric ? 'Yes':'No'}</p>
                 <p>Engine: {car.engineSize} L</p>
                 <p>Horsepower: {car.horsePower} HP</p>
                 <p>Torque: {car.torque} lb⋅ft</p>
