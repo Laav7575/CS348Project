@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 export default function SignUpPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
@@ -38,7 +39,7 @@ export default function SignUpPage() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password, type: 'signup' }),
+      body: JSON.stringify({ email, password, username, type: 'signup' }),
     });
     const data = await res.json();
     if (!res.ok) {
@@ -47,7 +48,7 @@ export default function SignUpPage() {
     }
 
     localStorage.setItem('token', data.token);
-    window.location.href = '/explore';
+    window.location.href = '/dashboard';
   };
 
   return (
@@ -57,6 +58,7 @@ export default function SignUpPage() {
         <form className="flex flex-col items-center gap-4 box-border" onSubmit={handleSignUp}>
           <h2 className="text-2xl mb-4">Welcome!</h2>
           <input className="border p-2 w-full max-w-100" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+          <input className="border p-2 w-full max-w-100" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
           <input className="border p-2 w-full max-w-100" value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
           {error && <div className="text-red-600 text-sm">{error}</div>}
           <div className="mt-4 gap-4 w-full max-w-100 flex flex-col">

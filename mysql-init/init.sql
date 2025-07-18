@@ -49,7 +49,9 @@ CREATE TABLE Users (
     userPassword   VARCHAR(255),
     isAdmin        BOOLEAN,
     isDeleted      BOOLEAN,
-    PRIMARY KEY (uID)
+    PRIMARY KEY (uID),
+    CHECK (username REGEXP '^[A-Za-z0-9_-]+$'),
+    CHECK (email LIKE '%@%')
 );
 
 CREATE TABLE Reviews (
@@ -121,9 +123,9 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- abc123
 ('gloria', 'gloria@mail.com', '$2b$10$8wcmejw1rcAZ.rZwBKD4ie4iqomEA0Axj/1US/2EWYtAbXLfL5utW', TRUE, FALSE),
 -- password
-('laavanya', 'laavanya@gmail.com', '$2b$10$CXcRKRYpdRMoKHyyW5u8AuF/VvbSyqHoiN.YOYJjBXmN0pf1H2ZDa', TRUE, FALSE),
+('laavanya', 'laavanya@gmail.com', '$2b$10$CXcRKRYpdRMoKHyyW5u8AuF/VvbSyqHoiN.YOYJjBXmN0pf1H2ZDa', FALSE, FALSE),
 -- secret01
-('jahnavi', 'jahnavi@example.com', '$2b$10$oEtjC96ZYYkEOD0PYVDyIubEhyUZJ4DDsHpWuqjSP7C06tVoD9G.i', TRUE, FALSE);
+('jahnavi', 'jahnavi@example.com', '$2b$10$oEtjC96ZYYkEOD0PYVDyIubEhyUZJ4DDsHpWuqjSP7C06tVoD9G.i', FALSE, FALSE);
 
 INSERT INTO Reviews (uid, cid, comment, createdDate, updatedDate, stars) VALUES
 (1, 1, 'Absolutely love the 911 – classic Porsche feel.', '2025-07-03', NULL, 3),
