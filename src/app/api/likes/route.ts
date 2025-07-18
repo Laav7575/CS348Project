@@ -22,7 +22,7 @@ export async function GET(req: Request) {
 
   try {
     const [folders] = await db.query(
-      "SELECT fID, folderName FROM Folders WHERE uID = ? AND isLikes = FALSE",
+      "SELECT fID, folderName FROM Folders WHERE uID = ? AND isLikes = TRUE",
       [userId]
     );
 
@@ -31,7 +31,7 @@ export async function GET(req: Request) {
          FROM Folders f
          JOIN Saves s ON f.fID = s.fID
          JOIN Cars c ON c.cID = s.cID
-         WHERE f.uID = ? AND f.isLikes = FALSE`,
+         WHERE f.uID = ? AND f.isLikes = TRUE`,
       [userId]
     );
 
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
 
   try {
     const [existing] = await db.query(
-      "SELECT fID FROM Folders WHERE uID = ? AND folderName = ?",
+      "SELECT fID FROM Folders WHERE uID = ? AND folderName = ? AND isLikes = TRUE",
       [userId, folderName]
     );
 
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
     }
 
     const [result] = await db.query(
-      "INSERT INTO Folders (uID, folderName) VALUES (?, ?)",
+      "INSERT INTO Folders (uID, folderName, isLikes) VALUES (?, ?, TRUE)",
       [userId, folderName]
     );
 

@@ -1,1008 +1,720 @@
-Car Make,Car Model,Year,Engine Size (L),Horsepower,Torque (lb-ft),0-60 MPH Time (seconds),Price (in USD),isElectric
-Porsche,911,2022,3.0,379,331,4,101200,False
-Lamborghini,Huracan,2021,5.2,630,443,2.8,274390,False
-Ferrari,488 GTB,2022,3.9,661,561,3,333750,False
-Audi,R8,2022,5.2,562,406,3.2,142700,False
-McLaren,720S,2021,4.0,710,568,2.7,298000,False
-BMW,M8,2022,4.4,617,553,3.1,130000,False
-Mercedes-Benz,AMG GT,2021,4.0,523,494,3.8,118500,False
-Chevrolet,Corvette,2021,6.2,490,465,2.8,59900,False
-Ford,Mustang Shelby GT500,2022,5.2,760,625,3.5,81000,False
-Nissan,GT-R Nismo,2021,3.8,600,481,2.5,212000,False
-Aston Martin,DB11,2021,5.2,630,516,3.5,201495,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.4,3000000,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,61000,False
-Jaguar,F-Type,2022,3.0,296,295,5.4,70100,False
-Koenigsegg,Jesko,2021,5.0,1280,1015,2.5,2800000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,104450,False
-Maserati,GranTurismo,2021,4.7,454,384,4.8,150000,False
-Porsche,Boxster,2021,2.0,300,280,4.7,62000,False
-Alfa Romeo,Giulia Quadrifoglio,2022,2.9,505,443,3.8,78000,False
-Ariel,Atom,2021,2.0,320,243,2.8,75000,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,225000,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Mercedes-AMG,SLS AMG,2021,6.2,622,468,3.5,248000,False
-Pagani,Huayra,2021,6.0,720,737,2.8,2800000,False
-Polestar,1,2021,2.0,600,738,4.1,155000,False
-Rimac,Nevera,2022,,1914,1696,1.85,2400000,True
-Porsche,Cayman GT4,2022,4.0,414,309,3.8,100200,False
-Lamborghini,Aventador SVJ,2021,6.5,759,531,2.8,517770,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS7,2022,4.0,591,590,3.5,117000,False
-McLaren,Artura,2021,3.0,671,531,3,225000,False
-BMW,M4,2022,3.0,503,479,3.8,72800,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.2,222000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.5,45690,False
-Porsche,Taycan 4S,2022,,562,479,3.8,104000,True
-Lamborghini,Urus,2021,4.0,641,626,3.5,218000,False
-Ferrari,Roma,2021,3.9,611,561,3.3,222000,False
-Audi,RS3,2022,2.5,394,369,3.9,57000,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-BMW,i8,2020,,369,420,4.2,148500,True
-Mercedes-Benz,CLS63 AMG,2019,4.0,603,627,3.4,132000,False
-Porsche,Cayman,2021,2.0,300,280,5.1,58900,False
-Lamborghini,Aventador SVJ,2021,6.5,759,531,2.8,518000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS3,2022,2.5,394,369,3.9,56200,False
-McLaren,570S,2021,3.8,562,443,2.8,192500,False
-BMW,M4,2022,3.0,503,479,3.8,71800,False
-Mercedes-Benz,AMG C63,2021,4.0,503,516,3.8,68000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4.1,42500,False
-Ford,Mustang GT,2022,5.0,460,420,4.3,39000,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.8,46100,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,142100,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-Porsche,Panamera,2021,2.9,325,331,5.1,87200,False
-Lamborghini,Urus,2021,4.0,641,627,3.2,218000,False
-Ferrari,Roma,2021,3.9,612,560,3.4,222000,False
-Audi,S5,2022,3.0,349,369,4.4,52500,False
-McLaren,600LT,2021,3.8,592,457,2.8,241000,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Aston Martin,Vantage,2022,4.0,503,505,3.5,146000,False
-Audi,RS5,2021,2.9,444,443,3.6,75400,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42900,False
-Dodge,Challenger SRT Hellcat Redeye,2022,6.2,797,707,3.4,78595,False
-Ford,GT,2021,3.5,660,550,3,500000,False
-Jaguar,F-Type,2022,2.0,296,295,5.4,62750,False
-Lamborghini,Aventador,2021,6.5,770,531,2.9,417826,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,150980,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Mercedes-Benz,C63 AMG,2021,4.0,503,516,3.8,70100,False
-Nissan,370Z,2021,3.7,332,270,5,30090,False
-Porsche,Panamera,2022,2.9,325,331,5.3,88700,False
-Audi,TT RS,2021,2.5,394,354,3.6,67600,False
-BMW,M4,2022,3.0,473,406,4.1,72800,False
-Chevrolet,Corvette Stingray,2021,6.2,490,465,2.8,59900,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.8,274280,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4.3,52915,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,218009,False
-Porsche,718 Cayman,2022,2.0,300,280,4.5,61000,False
-Acura,NSX,2022,3.5,573,476,2.9,159495,False
-Aston Martin,Vantage,2022,4.0,503,505,3.5,142086,False
-Bentley,Continental GT,2021,6.0,626,664,3.3,219800,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.4,3000000,False
-Dodge,Challenger SRT Hellcat Redeye,2022,6.2,797,707,3.4,74290,False
-Jaguar,F-Type,2022,3.0,380,339,4.9,71900,False
-Koenigsegg,Jesko,2022,5.0,1600,1106,2.5,3000000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-Maserati,GranTurismo,2022,4.7,454,384,4.7,134300,False
-Mazda,MX-5 Miata,2021,2.0,181,151,6.5,26830,False
-McLaren,GT,2022,4.0,620,465,3.1,213195,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.7,221580,False
-Pagani,Huayra,2022,6.0,764,738,2.8,2800000,False
-Porsche,718 Cayman GT4,2022,4.0,414,309,4.2,100550,False
-Rimac,Nevera,2022,,1914,1696,1.95,2400000,True
-Rolls-Royce,Wraith,2021,6.8,624,605,4.4,330000,False
-Tesla,Roadster,2022,,1000+,737,1.9,200000,True
-Toyota,Supra,2022,3.0,382,368,3.9,43090,False
-W Motors,Fenyr Supersport,2022,3.8,800,723,2.7,1700000,False
-Porsche,718 Cayman,2022,2.0,300,280,4.7,60500,False
-Lamborghini,Aventador,2021,6.5,770,531,2.9,522000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,TT RS,2022,2.5,394,354,3.4,67000,False
-McLaren,GT,2021,4.0,612,465,3.1,212500,False
-BMW,M4,2022,3.0,503,479,3.8,75000,False
-Mercedes-Benz,SL 63 AMG,2021,4.0,603,664,3.5,155000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64000,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Nissan,370Z,2021,3.7,332,270,4.7,31015,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.4,304995,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.4,3000000,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-McLaren,570S,2021,3.8,562,443,3.2,192500,False
-Porsche,Panamera Turbo S E-Hybrid,2021,4.0,690,642,3.2,190000,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,222000,False
-Ferrari,Roma,2021,3.9,611,561,3.3,222000,False
-Audi,RS7,2021,4.0,591,590,3.5,115000,False
-BMW,M2,2022,3.0,405,406,4.2,59000,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102100,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,417826,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.2,304995,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,220300,False
-Audi,RS7,2022,4.0,591,590,3.5,114000,False
-Mercedes-Benz,SLS AMG,2021,6.2,622,468,3.7,239100,False
-McLaren,570S,2021,3.8,562,443,3.1,192500,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,62500,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,65290,False
-Ferrari,Portofino,2021,3.9,592,560,3.5,219750,False
-Porsche,Panamera Turbo S,2022,4.0,620,604,2.9,187700,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,222004,False
-Mercedes-Benz,AMG C63,2021,4.0,469,479,3.8,71350,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,146000,False
-Audi,S5,2022,3.0,349,369,4.4,52500,False
-Porsche,Cayman,2022,2.5,365,309,4.5,68900,False
-Lamborghini,Aventador,2021,6.5,730,507,2.8,517770,False
-Ferrari,F8 Tributo,2022,3.9,710,568,2.9,276550,False
-Audi,TT RS,2021,2.5,394,354,3.6,67600,False
-McLaren,570S,2021,3.8,562,443,3.1,192500,False
-BMW,Z4 M40i,2022,3.0,382,369,3.9,63700,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.7,221580,False
-Chevrolet,Camaro SS,2022,6.2,455,455,4.1,44000,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4,51720,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.9,45790,False
-Porsche,Panamera,2022,2.9,325,331,5.4,88550,False
-Lamborghini,Urus,2021,4.0,641,627,3.5,218009,False
-Ferrari,Roma,2021,3.9,612,561,3.3,222620,False
-Audi,RS 3,2022,2.5,401,369,3.6,56200,False
-McLaren,GT,2021,4.0,612,465,3.2,200000,False
-BMW,M2 CS,2022,3.0,444,406,3.8,84595,False
-Mercedes-Benz,AMG C63,2021,4.0,503,516,3.8,77500,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,62500,False
-Acura,NSX,2021,3.5,573,476,2.7,157500,False
-Aston Martin,DB11,2022,4.0,503,513,3.7,204100,False
-Bentley,Continental GT,2021,6.0,626,664,3.4,220300,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.4,3000000,False
-Dodge,Viper,2017,8.4,645,600,3.3,120000,False
-Jaguar,F-Type,2022,3.0,380,339,4.9,69900,False
-Koenigsegg,Jesko,2022,5.0,1600,1106,2.5,3000000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105950,False
-Maserati,GranTurismo,2020,4.7,454,384,4.8,150000,False
-McLaren,570S,2020,3.8,562,443,3.1,204550,False
-Pagani,Huayra,2020,6.0,720,738,3,2700000,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102900,False
-Rimac,C_Two,2022,,1914,1696,1.9,2400000,True
-Rolls-Royce,Wraith,2021,6.6,624,605,4.3,330000,False
-Shelby,Cobra,1965,7.0,435,440,4.2,1000000,False
-Tesla,Model S Plaid,2021,,1020,1050,1.98,131190,True
-Toyota,GR Supra,2022,3.0,382,368,3.9,43090,False
-TVR,Griffith,2022,5.0,500,479,3.8,123500,False
-W Motors,Lykan Hypersport,2015,3.7,780,708,2.8,3400000,False
-Porsche,718 Cayman,2021,2.0,300,280,4.5,61500,False
-Lamborghini,Aventador SVJ,2021,6.5,770,531,2.8,518000,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,507000,False
-Audi,RS 6,2021,4.0,591,590,3.5,109000,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-BMW,M2 CS,2022,3.0,444,406,3.8,84595,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.6,228000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42000,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,45000,False
-Porsche,Taycan,2021,,750,774,2.6,185000,True
-Lamborghini,Urus,2021,4.0,641,627,3.6,222004,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.9,276550,False
-Audi,RS 3,2022,2.5,401,354,3.5,56000,False
-McLaren,570S,2021,3.8,562,443,3.1,191000,False
-BMW,M5,2022,4.4,600,553,3.2,104000,False
-Mercedes-Benz,AMG C 63,2021,4.0,469,479,3.9,69900,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64000,False
-Porsche,Taycan,2022,2.0,402,254,5.1,81250,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,517700,False
-Aston Martin,DBS Superleggera,2022,5.2,715,663,3.4,330000,False
-Audi,RS 6 Avant,2021,4.0,591,590,3.5,109000,False
-McLaren,600LT,2021,3.8,592,457,2.8,242500,False
-Mercedes-AMG,C 63 S Coupe,2022,4.0,503,516,3.7,77000,False
-BMW,M4,2022,3.0,473,406,4.1,72800,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,62000,False
-Dodge,Challenger SRT Hellcat Redeye,2022,6.2,797,707,3.5,76000,False
-Ford,GT,2022,3.5,660,550,2.9,500000,False
-Nissan,370Z,2021,3.7,332,270,4.9,30090,False
-Porsche,Panamera,2022,2.9,325,332,5.3,87200,False
-Lamborghini,Urus,2021,4.0,641,626,3.5,218000,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.3,3000000,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.9,274280,False
-Audi,RS 7,2021,4.0,591,590,3.5,114000,False
-McLaren,570S,2021,3.8,562,443,3.1,191000,False
-Aston Martin,Vantage,2022,4.0,503,505,3.5,142086,False
-Jaguar,F-Type,2022,5.0,575,516,3.5,103200,False
-Porsche,Panamera Turbo S,2021,4.0,620,604,2.9,177700,False
-Lamborghini,Aventador S,2021,6.5,729,509,2.9,417650,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS7,2022,4.0,591,590,3.5,115045,False
-McLaren,600LT,2021,3.8,592,457,2.9,256500,False
-BMW,M2 Competition,2022,3.0,405,406,4,59895,False
-Mercedes-Benz,S63 AMG,2021,4.0,603,664,3.4,152500,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,69995,False
-Ford,GT,2022,3.5,660,550,2.9,500000,False
-Porsche,Taycan Turbo S,2021,,750,774,2.6,185000,True
-Lamborghini,Urus,2021,4.0,641,627,3.2,218009,False
-Ferrari,812 Superfast,2021,6.5,789,530,2.9,363730,False
-Audi,R8 Spyder,2022,5.2,562,406,3.5,183300,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-BMW,M4,2022,3.0,473,406,4.1,73795,False
-Mercedes-Benz,AMG GT R,2021,4.0,577,516,3.5,183000,False
-Chevrolet,Corvette Stingray,2021,6.2,495,470,2.9,60995,False
-Aston Martin,DB11,2022,5.2,630,516,3.5,207000,False
-Bentley,Continental GT,2022,6.0,626,664,3.5,203825,False
-Jaguar,F-Type R,2021,5.0,575,516,3.5,103200,False
-Acura,NSX,2022,3.5,573,476,2.7,157500,False
-Lotus,Evora GT,2021,3.5,416,317,3.7,99800,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,100200,False
-Alfa Romeo,4C,2020,1.7,237,258,4.1,67150,False
-Audi,RS5,2022,2.9,444,443,3.7,77250,False
-BMW,M2 Competition,2021,3.0,405,406,4,58900,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Dodge,Charger SRT Hellcat,2022,6.2,717,650,3.6,71490,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-Maserati,GranTurismo,2020,4.7,454,384,4.8,150400,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.6,47820,False
-Rolls-Royce,Wraith,2022,6.8,624,605,4.4,330000,False
-Subaru,WRX STI,2021,2.5,310,290,4.6,38170,False
-Tesla,Model S Plaid,2022,,1020,1050,1.9,131190,True
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102000,False
-Lamborghini,Aventador,2021,6.5,729,507,2.9,393695,False
-Ferrari,Portofino,2022,3.9,591,413,3.3,218750,False
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-McLaren,600LT,2021,3.8,592,457,2.8,256500,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Mercedes-Benz,AMG GT,2021,4.0,523,494,3.8,118500,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4.1,40590,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4,52720,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.6,45000,False
-Porsche,Panamera Turbo,2022,4.0,620,604,3.1,174300,False
-Lamborghini,Urus,2021,4.0,641,627,3.2,222004,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,TT RS,2022,2.5,394,354,3.4,67895,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,62290,False
-Aston Martin,DBS Superleggera,2021,5.2,715,663,3.2,304995,False
-Jaguar,F-Type R,2021,5.0,575,516,3.5,103200,False
-Lexus,LC 500,2022,5.0,471,398,4.4,93050,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,101200,False
-BMW,M2 Competition,2022,3.0,405,406,4,59895,False
-Audi,RS 5 Coupe,2021,2.9,444,443,3.7,75100,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64195,False
-Lotus,Evora GT,2022,3.5,416,317,3.8,105000,False
-McLaren,GT,2021,4.0,612,465,3.1,211000,False
-Mercedes-Benz,SLS AMG Black Series,2014,6.2,622,468,3.5,275000,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.4,2998000,False
-Koenigsegg,Jesko,2021,5.0,1280,1015,2.5,3000000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Lamborghini,Aventador SVJ,2020,6.5,770,531,2.8,573966,False
-Rimac,C_Two,2022,,1914,1732,1.85,2400000,True
-Pagani,Huayra Roadster BC,2021,6.0,791,774,2.5,3500000,False
-Pininfarina,Battista,2022,,1874,1696,1.9,2500000,True
-Acura,NSX,2022,3.5,573,476,2.9,157500,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,146000,False
-Bentley,Continental GT,2022,4.0,542,568,3.9,219800,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,70000,False
-Jaguar,F-Type,2022,2.0,296,295,5.4,61600,False
-Kia,Stinger,2022,3.3,368,376,4.7,52200,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100450,False
-Maserati,GranTurismo,2021,4.7,454,384,4.8,134300,False
-Porsche,718 Cayman GT4,2022,4.0,414,309,4.2,102550,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,76400,False
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Chevrolet,Camaro ZL1,2022,6.2,650,650,3.5,69000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Lamborghini,Aventador,2021,6.5,770,531,2.8,417826,False
-McLaren,Artura,2021,3.0,671,531,3,225000,False
-Mercedes-Benz,SLS AMG,2021,4.0,577,516,3.6,247500,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.8,45790,False
-Porsche,Taycan,2022,,616,774,2.6,79900,True
-Tesla,Model S,2022,,1020,1050,1.98,119000,True
-Aston Martin,DBS Superleggera,2022,5.2,715,664,3.2,307820,False
-Bentley,Continental GT,2022,4.0,542,568,3.4,207825,False
-Bugatti,Chiron,2021,8.0,1479,1180,2.3,2998000,False
-McLaren,570S,2021,3.8,562,443,3.1,202500,False
-Porsche,Taycan Turbo S,2021,,750,774,2.6,185000,True
-Lamborghini,Aventador S,2021,6.5,730,509,2.9,417826,False
-Ferrari,F8 Tributo,2022,3.9,710,568,2.8,276550,False
-Audi,RS 7,2022,4.0,591,590,3.5,114000,False
-BMW,M2 CS,2022,3.0,444,406,4,84595,False
-Mercedes-Benz,SLS AMG,2021,6.2,622,468,3.2,275000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Jaguar,F-Type,2021,5.0,575,516,3.5,103200,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,96950,False
-Maserati,GranTurismo,2022,4.7,454,384,4.8,134300,False
-McLaren,765LT,2021,4.0,755,590,2.8,358000,False
-Nissan,370Z,2021,3.7,332,270,5,30000,False
-Pagani,Huayra,2021,6.0,730,738,3,2600000,False
-Porsche,Panamera Turbo S,2021,4.0,620,604,2.9,180000,False
-Tesla,Model S Plaid,2021,,1020,1050,1.9,131100,True
-Aston Martin,DB11,2021,4.0,503,513,4,201495,False
-Dodge,Challenger Hellcat Redeye,2022,6.2,797,707,3.4,82190,False
-Lotus,Evora,2021,3.5,416,317,3.8,96950,False
-Acura,NSX,2021,3.5,573,476,2.7,159495,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,76950,False
-Bentley,Continental GT,2021,6.0,626,664,3.3,202500,False
-Jaguar,F-Type,2022,3.0,380,339,4.9,70100,False
-Koenigsegg,Jesko,2022,5.0,1280,1015,2.5,3000000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Maserati,GranTurismo,2022,4.7,454,384,4.8,132795,False
-McLaren,GT,2022,4.0,612,465,3.1,215500,False
-Mercedes-AMG,C 63 S Coupe,2022,4.0,503,516,3.7,80900,False
-Porsche,718 Cayman,2021,2.0,300,280,4.9,59900,False
-Rolls-Royce,Wraith,2021,6.8,624,605,4.3,330000,False
-Tesla,Roadster,2022,,1000+,,1.9,200000,True
-Chevrolet,Camaro SS,2021,6.2,455,455,4,40000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Acura,NSX,2022,3.5,573,476,2.7,157500,False
-Aston Martin,DB11,2021,5.2,630,516,3.7,209000,False
-Bentley,Continental GT,2022,4.0,542,568,3.9,202500,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.4,3000000,False
-Dodge,Challenger Hellcat,2022,6.2,717,656,3.5,67500,False
-Jaguar,F-Type,2021,5.0,575,516,3.5,103200,False
-Koenigsegg,Jesko,2022,5.0,1280,1106,2.5,2800000,False
-Lexus,LC,2021,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,104200,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,133050,False
-McLaren,570S,2021,3.8,562,443,3.1,196350,False
-Mercedes-Benz,AMG C63,2022,4.0,503,516,3.8,69900,False
-Pagani,Huayra BC,2021,6.0,791,774,2.7,2600000,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102900,False
-Rimac,Nevera,2022,,1914,1696,1.85,2400000,True
-Rolls-Royce,Wraith,2021,6.7,624,605,4.4,338000,False
-Tesla,Roadster,2022,,1000+,"10,000+",1.9,200000,True
-Acura,NSX,2022,3.5,573,476,2.7,157500,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,150000,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,218400,False
-Dodge,Challenger SRT Hellcat Redeye,2021,6.2,797,707,3.5,73000,False
-Jaguar,F-Type R,2022,5.0,575,516,3.5,103200,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,104970,False
-Maserati,GranTurismo,2021,4.7,454,384,4.8,132400,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,101200,False
-Tesla,Roadster,2023,,"1,000+",737,< 1.9,200000,True
-Alpine,A110,2021,1.8,288,236,4.4,71500,False
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-BMW,M4,2021,3.0,473,406,4.1,71800,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64195,False
-Dodge,Viper,2017,8.4,645,600,3.3,118795,False
-Ferrari,Portofino,2021,3.9,591,560,3.5,218750,False
-Jaguar,F-Type,2022,3.0,296,295,5.4,61600,False
-Lamborghini,Aventador SVJ,2021,6.5,770,531,2.8,517700,False
-McLaren,600LT,2021,3.8,592,457,2.8,240000,False
-Aston Martin,DB11,2021,5.2,630,516,3.5,221400,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,202500,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.4,3000000,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,64100,False
-Jaguar,F-Type R,2022,5.0,575,516,3.5,103200,False
-Koenigsegg,Jesko,2022,5.0,1280,1015,2.5,2800000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100450,False
-Maserati,GranTurismo,2021,4.7,454,384,4.8,150980,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Mercedes-AMG,C 63 S,2022,4.0,503,516,3.7,81550,False
-Pagani,Huayra,2021,6.0,764,738,2.8,3500000,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102550,False
-Rimac,C_Two,2022,,1888,1696,1.8,2400000,True
-Rolls-Royce,Wraith,2021,6.6,624,642,4.4,330000,False
-Tesla,Roadster,2022,,10000+,0,1.9,200000,True
-Toyota,Supra,2022,3.0,382,368,3.9,43090,False
-Acura,NSX,2021,3.5,573,476,2.7,157500,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,146000,False
-Bentley,Continental GT,2022,4.0,542,568,3.9,207825,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,64195,False
-Jaguar,F-Type,2022,3.0,380,339,4.8,62250,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92000,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-Maserati,GranTurismo,2022,4.7,454,384,4.7,134300,False
-McLaren,570S,2022,3.8,562,443,2.9,204550,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102000,False
-Tesla,Model S Plaid,2021,,1020,1050,1.9,141190,True
-Audi,RS 5,2021,2.9,444,443,3.5,75100,False
-BMW,M2 Competition,2022,3.0,405,406,4,59895,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64995,False
-Dodge,Viper ACR,2017,8.4,645,600,3.3,126190,False
-Ford,GT,2021,3.5,660,550,2.9,500000,False
-Porsche,Taycan 4S,2022,2.5,482,472,3.8,102900,False
-Lamborghini,Aventador S,2021,6.5,730,509,2.9,417650,False
-Aston Martin,DB11,2021,5.2,630,516,3.5,205000,False
-Alfa Romeo,Giulia Quadrifoglio,2022,2.9,505,443,3.8,81250,False
-Audi,RS7 Sportback,2022,4.0,591,590,3.5,115045,False
-BMW,M4 Competition,2021,3.0,503,479,3.9,75695,False
-Chevrolet,Camaro SS,2022,6.2,455,455,4.1,42000,False
-Dodge,Charger Hellcat,2021,6.2,717,650,3.6,71490,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.9,274280,False
-Ford,GT,2021,3.5,660,550,2.8,500000,False
-Jaguar,F-Type R,2021,5.0,575,516,3.5,103200,False
-Koenigsegg,Jesko Absolut,2022,5.0,1600,1106,2.1,2800000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,93050,False
-Lotus,Evija,2022,,1973,1254,2.5,2750000,True
-McLaren,GT,2022,4.0,612,465,3.2,210000,False
-Mercedes-Benz,AMG GT Black Series,2021,4.0,720,590,3.2,326050,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102500,False
-Lamborghini,Aventador,2021,6.5,770,531,2.8,417650,False
-Ferrari,Portofino,2021,3.9,591,560,3.3,218750,False
-Audi,TT RS,2022,2.5,394,354,3.6,69000,False
-McLaren,600LT Spider,2021,3.8,592,457,2.8,256500,False
-BMW,M4,2022,3.0,473,406,4.1,72800,False
-Mercedes-Benz,AMG C 63,2022,4.0,503,516,3.8,70000,False
-Chevrolet,Camaro SS 1LE,2021,6.2,455,455,4,44500,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4,51000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5.2,45000,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,146000,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.4,3000000,False
-Koenigsegg,Jesko,2021,5.0,1262,1106,2.5,3000000,False
-Pagani,Huayra,2021,6.0,764,738,2.6,2600000,False
-McLaren,Speedtail,2021,4.0,1035,848,2.5,2300000,False
-Lamborghini,Sián,2021,6.5,819,531,2.8,3600000,False
-Rimac,C_Two,2021,,1914,1732,1.8,2400000,True
-Porsche,Cayman,2022,2.0,300,280,4.9,59900,False
-Lamborghini,Aventador,2021,6.5,770,531,2.8,393695,False
-Ferrari,Portofino,2021,3.9,591,413,3.5,215000,False
-Audi,RS 5,2022,2.9,444,443,3.7,75100,False
-McLaren,GT,2021,4.0,620,465,3.1,210000,False
-BMW,Z4 M40i,2022,3.0,382,369,4.3,63700,False
-Mercedes-Benz,SLC 43,2020,3.0,385,384,4.6,62000,False
-Chevrolet,Camaro SS,2022,6.2,455,455,4.3,42500,False
-Ford,Mustang GT,2022,5.0,460,420,4.3,36120,False
-Nissan,370Z Nismo,2020,3.7,350,276,4.6,45790,False
-Aston Martin,Vantage,2022,4.0,503,505,3.6,146000,False
-Bentley,Continental GT,2021,4.0,626,664,3.3,220000,False
-Porsche,718 Boxster,2022,2.0,300,280,4.9,62000,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,222004,False
-Ferrari,F8 Spider,2021,3.9,710,568,2.9,280000,False
-Audi,TT RS,2022,2.5,394,354,3.6,69900,False
-McLaren,570S,2021,3.8,562,443,2.9,208800,False
-BMW,M4,2022,3.0,473,406,4,72800,False
-Porsche,718 Cayman,2022,2.0,300,280,4.9,60500,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,393695,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,RS5,2022,2.9,444,443,3.7,75100,False
-McLaren,GT,2021,4.0,612,465,3.2,208800,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.6,229000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,62000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2020,3.7,350,276,5.2,46200,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.6,71000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,663,3.2,308000,False
-Alfa Romeo,Giulia Quadrifoglio,2022,2.9,505,443,3.8,80500,False
-Jaguar,F-Type R,2021,5.0,575,516,3.5,105900,False
-Lotus,Evora GT,2020,3.5,416,317,3.8,96950,False
-Maserati,GranTurismo,2019,4.7,454,384,4.7,150980,False
-Porsche,Panamera Turbo S,2022,4.0,630,604,2.9,180800,False
-Lamborghini,Urus,2021,4.0,641,627,3.2,218000,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,146000,False
-Lotus,Evora,2021,3.5,416,317,3.8,94000,False
-Alfa Romeo,4C Spider,2020,1.7,237,258,4.1,67150,False
-Jaguar,F-Type,2022,3.0,380,339,4.9,70900,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,134300,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,100200,False
-Audi,RS5 Coupe,2022,2.9,444,443,3.7,76450,False
-BMW,M2 Competition,2021,3.0,405,406,4,58900,False
-Chevrolet,Camaro ZL1,2022,6.2,650,650,3.5,64000,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,61500,False
-Ford,GT,2021,3.5,647,550,2.8,500000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-McLaren,570S,2022,3.8,562,443,3.1,198950,False
-Mercedes-AMG,C63 S Coupe,2021,4.0,503,516,3.7,77950,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.9,45790,False
-Porsche,718 Boxster,2021,2.0,300,280,4.9,62000,False
-Lamborghini,Aventador S,2021,6.5,729,507,2.9,417826,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.9,274280,False
-Audi,TT RS Coupe,2021,2.5,394,354,3.6,67600,False
-BMW,M4 Coupe,2021,3.0,473,406,3.8,71800,False
-Acura,NSX,2021,3.5,573,476,2.7,159495,False
-Aston Martin,DBS Superleggera,2022,5.2,715,664,3.4,314500,False
-Bentley,Continental GT,2022,6.0,626,664,3.3,214425,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.3,3000000,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,71490,False
-Jaguar,F-Type,2021,5.0,575,516,3.5,105900,False
-Koenigsegg,Jesko,2021,5.0,1280,1106,2.5,2800000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,104400,False
-Maserati,GranTurismo,2022,4.7,454,384,4.7,150980,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Pagani,Huayra,2021,6.0,764,738,2.6,2600000,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102000,False
-Rimac,C_Two,2021,,1914,1696,1.9,2400000,True
-Rolls-Royce,Wraith,2021,6.8,624,605,4.4,335550,False
-Tesla,Model S Plaid,2021,,1020,1050,1.9,141990,True
-Toyota,GR Supra,2022,3.0,382,368,3.9,43090,False
-TVR,Griffith,2021,5.0,500,420,3.9,157500,False
-Ultima,RS,2021,6.2,1200,1300,2.3,220000,False
-W Motors,Fenyr SuperSport,2022,3.8,800,723,2.7,1550000,False
-Acura,NSX,2021,3.5,573,476,2.9,157500,False
-Aston Martin,DBS Superleggera,2022,5.2,715,663,3.2,308000,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,202500,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.3,3000000,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,65000,False
-Jaguar,F-Type,2021,3.0,380,339,4.9,63100,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Lotus,Evija,2022,,1973,1254,2.5,2600000,True
-Maserati,GranTurismo,2021,4.7,454,384,4.8,134300,False
-Porsche,Taycan,2021,,616,774,2.6,185000,True
-Rimac,C_Two,2022,,1914,1696,1.9,2400000,True
-Tesla,Model S Plaid,2022,,1020,1050,1.98,140000,True
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Mercedes-Benz,AMG GT Black Series,2021,4.0,720,590,3.1,325000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Ford,GT,2021,3.5,647,550,3,500000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.4,307820,False
-Jaguar,F-Type,2022,5.0,575,516,3.5,103200,False
-Dodge,Challenger SRT Hellcat Redeye,2021,6.2,797,707,3.5,80190,False
-Lotus,Evora GT,2022,3.5,416,317,3.8,105000,False
-Alfa Romeo,4C Spider,2020,1.8,237,258,4.1,68745,False
-Subaru,WRX STI,2022,2.5,310,290,5.2,38170,False
-Acura,NSX,2022,3.5,573,476,2.7,157500,False
-Koenigsegg,Jesko,2021,5.0,1280,1015,2.5,2800000,False
-Tesla,Model S Plaid,2022,,1020,1050,1.98,139990,True
-Bugatti,Chiron Super Sport 300+,2022,8.0,1578,1180,2.3,5200000,False
-McLaren,Senna,2020,4.0,789,590,2.7,1500000,False
-Porsche,Taycan Turbo S,2022,,750,774,2.6,185000,True
-Mercedes-Benz,SLS AMG Black Series,2014,6.2,622,468,3.5,275000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,93050,False
-Chevrolet,Camaro ZL1,2022,6.2,650,650,3.5,65000,False
-Audi,RS 7 Sportback,2022,4.0,591,590,3.5,114000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-BMW,M2 CS,2022,3.0,444,406,3.8,84595,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102550,False
-Lamborghini,Aventador,2022,6.5,770,531,2.8,393695,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,146000,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,96950,False
-Porsche,Panamera Turbo S,2021,4.0,620,604,2.9,180000,False
-Lamborghini,Aventador S,2022,6.5,729,507,2.9,460247,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS 6 Avant,2022,4.0,591,590,3.1,110045,False
-McLaren,570S,2021,3.8,562,443,3.1,192500,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Mercedes-Benz,AMG C 63 S,2021,4.0,503,516,3.7,77400,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,64195,False
-Ford,GT,2021,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2020,3.7,350,276,5,46815,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102550,False
-Audi,TT RS,2021,2.5,394,354,3.6,67895,False
-Chevrolet,Corvette Z06,2023,5.5,625,650,2.6,85000,False
-Lamborghini,Urus,2022,4.0,641,626,3.2,218009,False
-Mercedes-Benz,AMG GT 63 S,2021,4.0,630,664,3.1,162900,False
-Ferrari,Portofino M,2022,3.9,612,560,3.5,245000,False
-Bugatti,Chiron,2021,8.0,1479,1180,2.5,3000000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.4,304995,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100450,False
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,100200,False
-Acura,NSX,2021,3.5,573,476,2.7,157500,False
-Lexus,LC,2021,5.0,471,398,4.4,92950,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,74750,False
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-Bentley,Continental GT,2021,6.0,626,664,3.3,218400,False
-BMW,M5,2021,4.4,600,553,3.2,103500,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Dodge,Challenger Hellcat,2021,6.2,717,656,3.5,70595,False
-Ford,GT,2022,3.5,647,550,3,500000,False
-Jaguar,F-Type R,2021,5.0,575,516,3.5,103200,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,393695,False
-McLaren,570S,2021,3.8,562,443,3.1,203500,False
-Mercedes-Benz,SLS AMG,2015,6.2,583,479,3.6,221580,False
-Nissan,370Z Nismo,2020,3.7,350,276,4.7,47190,False
-Porsche,Boxster,2021,2.0,300,280,4.9,62000,False
-Porsche,718 Cayman,2022,2.0,300,280,4.9,61500,False
-Lamborghini,Aventador,2021,6.5,759,531,2.9,393695,False
-Ferrari,Roma,2021,3.9,612,561,3.3,222630,False
-Audi,RS 5,2022,2.9,444,442,3.5,75400,False
-McLaren,570S,2020,3.8,562,443,3.1,208000,False
-BMW,M2,2022,3.0,405,406,4.2,58900,False
-Mercedes-Benz,SL,2022,3.0,429,384,4.9,96250,False
-Chevrolet,Camaro,2021,6.2,455,455,4,25000,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,45000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.4,307820,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100450,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,134300,False
-Porsche,Panamera,2022,2.9,325,331,5.2,88550,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,218009,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS 6,2022,4.0,591,590,3.5,109000,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Porsche,Taycan 4S,2021,,429,472,3.8,103800,True
-Lamborghini,Aventador S,2021,6.5,730,509,2.9,417650,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS 7,2022,4.0,591,590,3.5,117000,False
-McLaren,570S,2021,3.8,562,443,3.1,192500,False
-BMW,M4,2021,3.0,473,406,4,72800,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.5,228000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42000,False
-Ford,GT,2021,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,48000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.2,307820,False
-Lexus,LC 500,2021,5.0,471,398,4.4,93000,False
-Bentley,Continental GT,2021,4.0,626,664,3.3,202500,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,150980,False
-Tesla,Model S Plaid,2022,,1020,1050,1.98,131190,True
-Rolls-Royce,Dawn,2021,6.6,563,605,4.3,346300,False
-Bugatti,Chiron Pur Sport,2021,8.0,1500,1180,2.3,3599000,False
-McLaren,Senna,2019,4.0,789,590,2.7,1050000,False
-Porsche,Panamera Turbo S E-Hybrid,2021,,690,641,3,186350,True
-Acura,NSX,2021,3.5,573,476,2.7,157500,False
-Aston Martin,DB11,2021,4.0,503,498,3.7,205600,False
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,201000,False
-Bugatti,Chiron,2021,8.0,1500,1180,2.5,3000000,False
-Chevrolet,Camaro ZL1,2022,6.2,650,650,3.5,67000,False
-Dodge,Challenger Hellcat,2021,6.2,717,656,3.5,64000,False
-Ferrari,812 Superfast,2021,6.5,789,530,2.8,340000,False
-Lamborghini,Aventador SVJ,2021,6.5,770,531,2.8,517770,False
-McLaren,600LT Spider,2021,3.8,592,457,2.8,256500,False
-Mercedes-AMG,GT Black Series,2021,4.0,720,590,3.1,325000,False
-Nissan,400Z,2023,3.0,400,350,4,40000,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,101000,False
-Rimac,Nevera,2021,,1914,1696,1.9,2400000,True
-Rolls-Royce,Wraith,2021,6.8,624,605,4.4,330000,False
-Tesla,Model S Plaid,2021,,1020,,1.9,139990,True
-Toyota,Supra,2021,3.0,382,368,3.9,43000,False
-Porsche,718 Boxster,2021,2.0,300,280,4.9,62000,False
-Porsche,718 Boxster,2022,2.0,300,280,4.9,62000,False
-Lamborghini,Aventador S,2021,6.5,730,509,2.9,417826,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,RS 7,2022,4.0,591,590,3.5,114000,False
-McLaren,Artura,2021,3.0,671,531,3,225000,False
-BMW,M2,2022,3.0,405,406,4.1,58900,False
-Mercedes-Benz,SLS AMG,2015,6.2,583,479,3.6,221580,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Ford,GT,2022,3.5,647,550,3,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.8,45000,False
-Dodge,Charger Hellcat,2021,6.2,707,650,3.6,69995,False
-Aston Martin,DBS Superleggera,2021,5.2,715,663,3.2,305000,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,75000,False
-Audi,TT RS,2021,2.5,394,354,3.6,68000,False
-Bentley,Continental GT,2021,6.0,626,664,3.6,203825,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Chevrolet,Corvette Stingray,2021,6.2,495,470,2.9,58900,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,63000,False
-Ford,Mustang GT,2022,5.0,460,420,4,45000,False
-Porsche,Cayman,2022,2.0,300,280,4.9,59900,False
-Lamborghini,Aventador,2021,6.5,770,531,2.8,417826,False
-Ferrari,Roma,2022,3.9,612,560,3.3,222630,False
-Audi,RS7,2022,4.0,591,590,3.5,114000,False
-McLaren,570S,2021,3.8,562,443,2.7,204995,False
-BMW,M4,2022,3.0,473,406,4.1,71800,False
-Mercedes-Benz,SLS AMG,2021,6.2,622,468,3.5,243600,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42000,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,47190,False
-Porsche,Panamera,2022,2.9,325,331,5.4,88550,False
-Lamborghini,Urus,2021,4.0,641,627,3.2,218000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS6,2022,4.0,591,590,3.5,113000,False
-McLaren,Artura,2021,3.0,671,531,3,225000,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Mercedes-Benz,GT 63,2021,4.0,577,590,3.3,161200,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Aston Martin,DBS Superleggera,2021,5.2,715,663,3.2,310000,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.4,3000000,False
-Koenigsegg,Jesko,2021,5.0,1280,1106,2.5,2800000,False
-Pagani,Huayra,2021,6.0,764,737,3,2600000,False
-Rimac,C_Two,2022,,1914,1696,1.85,2400000,True
-McLaren,Senna,2021,4.0,789,590,2.7,1000000,False
-Porsche,918 Spyder,2015,4.6,887,944,2.2,1800000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Lamborghini,Aventador SVJ,2020,6.5,759,531,2.8,517000,False
-Audi,RS 6 Avant,2021,4.0,591,590,3.5,110000,False
-Bentley,Continental GT Speed,2022,6.0,650,664,3.5,300000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,68000,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,65000,False
-Ford,GT,2021,3.5,660,550,2.9,500000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92000,False
-Lotus,Evija,2022,,1972,1254,2.5,2700000,True
-Mercedes-AMG,GT Black Series,2021,4.0,720,590,3.1,330000,False
-Aston Martin,DB11,2021,4.0,503,513,3.9,205000,False
-Bentley,Continental GT,2022,4.0,542,568,3.9,229000,False
-Jaguar,F-Type,2022,2.0,296,295,5.4,62750,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100000,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,135000,False
-Porsche,Boxster,2022,2.0,300,280,4.9,63000,False
-Alfa Romeo,4C,2020,1.8,237,258,4.2,67150,False
-Chevrolet,Camaro,2022,6.2,455,455,4,62195,False
-Dodge,Challenger,2022,3.6,305,268,6.4,28000,False
-Ford,GT,2022,3.5,660,550,2.9,500000,False
-Audi,RS7,2022,4.0,591,590,3.5,115045,False
-BMW,M4,2022,3.0,473,406,4.1,71800,False
-Lamborghini,Aventador,2021,6.5,729,507,2.9,393695,False
-Mercedes-Benz,AMG C 63,2021,4.0,469,479,3.8,69900,False
-Nissan,370Z,2021,3.7,350,276,5.3,30090,False
-Porsche,Cayman,2022,2.0,300,280,4.9,68000,False
-BMW,i8,2022,1.5,369,184,4.2,147500,False
-Chevrolet,Corvette Stingray,2021,6.2,495,470,2.9,58900,False
-Porsche,Taycan Turbo S,2022,,750,774,2.6,185000,True
-Lamborghini,Aventador S,2021,6.5,729,507,2.9,417650,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,RS7,2022,4.0,591,590,3.5,115000,False
-McLaren,GT,2022,4.0,620,465,3.1,208000,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Mercedes-Benz,SLS AMG,2021,4.0,730,590,2.9,250000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,46100,False
-Porsche,Panamera Turbo S,2022,4.0,630,604,3.1,180000,False
-Lamborghini,Urus,2021,4.0,641,627,3.2,218000,False
-Ferrari,Portofino,2022,3.9,591,561,3.4,250000,False
-Audi,TT RS,2022,2.5,394,354,3.6,70000,False
-McLaren,570S,2021,3.8,562,443,3.1,200000,False
-BMW,i8,2022,,369,184,4.2,148500,True
-Porsche,718 Cayman,2022,2.0,300,280,4.9,61500,False
-Lamborghini,Aventador,2021,6.5,770,531,2.8,417826,False
-Ferrari,Portofino,2022,3.9,612,561,3.3,245000,False
-Audi,TT RS,2022,2.5,394,354,3.6,67800,False
-McLaren,GT,2022,4.0,620,465,3.1,211300,False
-BMW,M4,2022,3.0,473,406,4.1,71800,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.5,222500,False
-Chevrolet,Camaro SS,2022,6.2,455,455,4,43995,False
-Ford,GT,2022,3.5,660,550,2.9,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.8,45790,False
-Porsche,911 Turbo S,2022,3.8,640,590,2.6,208000,False
-McLaren,765LT,2021,4.0,755,590,2.8,358000,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,218009,False
-Mercedes-AMG,GT Black Series,2021,4.0,720,590,3.1,325000,False
-BMW,M5 Competition,2022,4.4,617,553,3.1,103500,False
-Audi,RS7,2022,4.0,591,590,3.5,115000,False
-Aston Martin,Vantage,2022,4.0,503,505,3.5,152995,False
-Ferrari,F8 Spider,2021,3.9,710,568,2.9,274280,False
-Lexus,LC 500,2022,5.0,471,398,4.4,102550,False
-Porsche,Taycan,2022,,469,479,3.8,79900,True
-Lamborghini,Aventador SVJ,2021,6.5,759,531,2.8,517770,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS6 Avant,2021,4.0,591,590,3.5,109000,False
-McLaren,600LT Spider,2021,3.8,592,457,2.8,256500,False
-BMW,M4,2022,3.0,473,406,3.8,71800,False
-Mercedes-Benz,AMG GT R,2021,4.0,577,516,3.5,180000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64695,False
-Ford,GT,2022,3.5,660,550,3,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,5,48000,False
-Porsche,Panamera Turbo S E-Hybrid,2021,4.0,690,642,3,190000,False
-Lamborghini,Urus,2021,4.0,641,627,3.5,218000,False
-Ferrari,Portofino M,2021,3.9,612,561,3.4,235000,False
-Audi,TT RS,2022,2.5,394,354,3.6,67600,False
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-BMW,M2 CS,2022,3.0,444,406,3.8,84595,False
-Mercedes-Benz,SLS AMG Black Series,2021,6.2,622,468,3.5,335000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42000,False
-Porsche,718 Boxster,2022,2.0,300,280,4.9,63000,False
-Lamborghini,Aventador SVJ,2020,6.5,759,531,2.8,573966,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,TT RS Coupe,2022,2.5,394,354,3.5,68000,False
-McLaren,GT,2020,4.0,612,465,3.1,210000,False
-BMW,Z4 Roadster,2022,2.0,255,295,5.2,50000,False
-Mercedes-Benz,SLS AMG,2015,6.2,622,468,3.6,200000,False
-Chevrolet,Camaro SS Convertible,2022,6.2,455,455,4,49000,False
-Ford,GT,2021,3.5,660,550,2.9,500000,False
-Nissan,370Z Coupe,2020,3.7,332,270,5,30090,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,142086,False
-Bentley,Continental GT,2022,6.0,626,664,3.3,225000,False
-Bugatti,Chiron,2021,8.0,1479,1180,2.4,3000000,False
-Dodge,Challenger SRT Hellcat,2022,6.2,717,656,3.5,68000,False
-Jaguar,F-Type,2022,2.0,296,295,5.4,63700,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100000,False
-Maserati,GranTurismo,2022,4.7,454,384,4.7,150980,False
-Aston Martin,DBS Superleggera,2021,5.2,715,664,3.2,304995,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,98395,False
-Porsche,Panamera Turbo S E-Hybrid,2021,4.0,689,642,3,190000,False
-Lamborghini,Aventador SVJ,2021,6.5,759,531,2.8,517000,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS7,2022,4.0,591,590,3.5,117000,False
-Mercedes-Benz,S63 AMG,2021,4.0,603,664,3.4,168000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,64500,False
-Ford,GT,2021,3.5,660,550,2.8,500000,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.7,46000,False
-Porsche,718 Cayman GT4,2022,4.0,414,309,4.2,102000,False
-Mercedes-AMG,C63 S Coupe,2021,4.0,503,516,3.7,77500,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,147000,False
-McLaren,570S,2021,3.8,562,443,3.1,193000,False
-BMW,M5,2022,4.4,600,553,3.2,103500,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,64000,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92950,False
-Mercedes-AMG,GT 63 S,2021,4.0,630,664,3.1,162000,False
-Audi,TT RS,2021,2.5,394,354,3.6,67600,False
-Acura,NSX,2021,3.5,573,476,2.9,157500,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102000,False
-Lamborghini,Aventador S,2021,6.5,730,509,2.9,417826,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS 5,2022,2.9,444,443,3.5,76700,False
-McLaren,570S Spider,2020,3.8,562,443,3.1,208800,False
-BMW,M2 Competition,2022,3.0,405,406,4.2,58900,False
-Mercedes-Benz,C 63 AMG,2022,4.0,469,479,3.9,69000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4,42000,False
-Ford,Mustang GT,2022,5.0,460,420,4.5,43000,False
-Dodge,Challenger R/T,2021,5.7,372,400,5.1,35000,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,151000,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-Alfa Romeo,4C Spider,2020,1.7,237,258,4.1,69000,False
-Jaguar,F-Type,2022,2.0,296,295,5.4,62500,False
-Tesla,Roadster,2022,,1000,737,1.9,200000,True
-Koenigsegg,Jesko,2022,5.0,1600,1106,2.5,3000000,False
-Bugatti,Chiron Super Sport 300+,2021,8.0,1578,1180,2.4,5200000,False
-Rimac,Nevera,2021,,1914,1696,1.85,2400000,True
-Porsche,Cayman GT4,2022,4.0,414,309,4.2,102100,False
-Chevrolet,Camaro ZL1,2022,6.2,650,650,3.5,63000,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,142086,False
-Alfa Romeo,Giulia Quadrifoglio,2022,2.9,505,443,3.8,83250,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,65000,False
-Lexus,LC 500,2022,5.0,471,398,4.4,93050,False
-Audi,RS 7 Sportback,2021,4.0,591,590,3.5,114000,False
-BMW,M4 Competition,2022,3.0,503,479,3.8,74700,False
-Mercedes-Benz,C63 S AMG,2022,4.0,503,516,3.9,77600,False
-Ford,GT,2022,3.5,660,550,2.9,500000,False
-McLaren,GT,2021,4.0,620,465,3.1,210000,False
-Porsche,Panamera Turbo S,2022,4.0,630,604,2.9,181100,False
-Lamborghini,Aventador S,2021,6.5,730,507,2.9,417826,False
-Aston Martin,DBS Superleggera,2022,5.2,715,664,3.2,329100,False
-Audi,TT RS,2022,2.5,394,354,3.6,67600,False
-Mercedes-Benz,AMG C43 Coupe,2021,3.0,385,384,4.5,59900,False
-BMW,i8,2022,1.5,369,184,4.2,147500,False
-Chevrolet,Corvette Stingray,2021,6.2,490,465,2.9,59900,False
-Porsche,Taycan,2022,,469,263,3.8,81250,True
-Lamborghini,Aventador,2021,6.5,730,509,2.9,517000,False
-Ferrari,Roma,2021,3.9,611,560,3.3,222620,False
-Audi,RS7,2022,4.0,591,590,3.5,115000,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-BMW,M2,2022,3.0,405,406,4.2,58900,False
-Mercedes-Benz,C63 AMG,2021,4.0,469,479,3.9,77000,False
-Chevrolet,Camaro SS,2021,6.2,455,455,4.1,43995,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4.1,51720,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.8,46610,False
-Porsche,Panamera,2022,2.9,325,331,5.3,88550,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,218009,False
-Ferrari,SF90 Stradale,2021,,986,590,2.5,625000,True
-Audi,RS6,2022,4.0,591,590,3.5,120000,False
-McLaren,570S,2021,3.8,562,443,3.1,192500,False
-BMW,M4,2022,3.0,503,479,3.8,74000,False
-Mercedes-Benz,AMG A45,2021,2.0,382,354,4,50000,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63995,False
-Acura,NSX,2021,3.5,573,476,2.7,157500,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,142086,False
-Bentley,Continental GT,2021,4.0,542,568,3.3,202500,False
-Bugatti,Chiron,2022,8.0,1479,1180,2.4,2900000,False
-Ferrari,F8 Tributo,2022,3.9,710,568,2.8,275000,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,517000,False
-McLaren,GT,2021,4.0,612,465,3.1,201500,False
-Mercedes-Benz,AMG GT R,2021,4.0,577,516,3.5,183000,False
-Porsche,Taycan Turbo S,2021,,750,774,2.6,185000,True
-Audi,RS7,2021,4.0,591,590,3.5,114000,False
-BMW,M4,2021,3.0,473,406,4.1,71800,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Dodge,Challenger SRT Hellcat Redeye,2022,6.2,797,707,3.5,80190,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Jaguar,F-Type,2021,3.0,380,339,4.4,62750,False
-Lexus,LC 500,2021,5.0,471,398,4.4,92000,False
-Lotus,Evija,2021,,2000,1254,2.8,2800000,True
-Maserati,GranTurismo,2021,,550,,2.8,200000,True
-Nissan,370Z,2021,3.7,332,270,5,30090,False
-Rolls-Royce,Ghost,2021,6.8,563,627,4.6,332500,False
-Porsche,Taycan,2021,2.0,402,254,5.1,81250,False
-Aston Martin,DB11,2021,4.0,630,516,3.7,198995,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,105000,False
-Acura,NSX,2022,3.5,573,476,2.7,157500,False
-Tesla,Roadster,2022,0.0,"10,000","7,376",1.9,200000,False
-Chevrolet,Camaro,2022,6.2,455,455,4,25000,False
-Dodge,Charger,2021,6.2,797,707,3.3,72000,False
-Jaguar,F-Type,2021,3.0,380,339,4.9,62750,False
-Lexus,LC 500,2021,5.0,471,398,4.4,93000,False
-BMW,M4,2022,3.0,473,406,4.1,71800,False
-Ford,GT,2021,3.5,660,550,2.9,500000,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,150980,False
-McLaren,600LT,2021,3.8,592,457,2.8,256500,False
-Mercedes-Benz,SLS AMG,2021,6.2,622,468,3.6,254995,False
-Nissan,370Z,2021,3.7,332,270,5.2,30000,False
-Audi,RS 7,2021,4.0,591,590,3.4,114000,False
-Bentley,Continental GT,2021,4.0,542,568,3.9,220000,False
-Bugatti,Chiron,2021,8.0,"1,500","1,180",2.4,3000000,False
-Porsche,Cayman,2022,2.0,300,280,4.5,59900,False
-Aston Martin,Vantage,2021,4.0,503,505,3.5,147000,False
-Alfa Romeo,4C Spider,2020,1.7,237,258,4.1,67150,False
-Audi,RS 5,2022,2.9,444,443,3.5,75100,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,60695,False
-Ferrari,F8 Spider,2022,3.9,710,568,2.9,274390,False
-Jaguar,F-Type,2021,3.0,296,295,5.4,64700,False
-Lamborghini,Aventador,2021,6.5,759,531,2.9,517770,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,99990,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,150800,False
-McLaren,GT,2021,4.0,612,465,3.1,210000,False
-Mercedes-Benz,AMG C 63,2021,4.0,469,479,3.8,67600,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.5,45790,False
-Porsche,Panamera,2022,2.9,325,331,5.3,88800,False
-Subaru,WRX STI,2021,2.5,310,290,5.2,38170,False
-Tesla,Roadster,2022,,"10,000+",,1.9,200000,True
-Porsche,718 Cayman,2022,2.0,300,280,4.9,61500,False
-Lamborghini,Aventador,2021,6.5,729,509,2.9,393695,False
-Ferrari,SF90 Stradale,2022,4.0,986,590,2.5,625000,False
-Audi,RS5 Coupe,2022,2.9,444,443,3.5,76350,False
-McLaren,570S,2021,3.8,562,443,3.1,202000,False
-BMW,M2,2022,3.0,405,406,4,58900,False
-Mercedes-Benz,SL,2022,3.0,429,384,4.4,96000,False
-Chevrolet,Camaro,2021,6.2,455,455,4,25000,False
-Ford,GT,2022,3.5,660,550,2.8,500000,False
-Nissan,370Z,2021,3.7,332,270,5.3,33000,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,75250,False
-Aston Martin,DB11,2022,4.0,630,516,3.7,201495,False
-Bentley,Continental GT,2021,6.0,626,664,3.3,201000,False
-Dodge,Challenger,2021,6.4,485,475,3.8,62000,False
-Jaguar,F-Type R,2022,5.0,575,516,3.5,103200,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,99000,False
-Maserati,GranTurismo,2021,4.7,454,384,4.7,150000,False
-Porsche,Cayman GT4,2021,4.0,414,309,4.2,102500,False
-Aston Martin,Vantage,2022,4.0,503,505,3.5,149995,False
-Dodge,Charger SRT Hellcat,2022,6.2,717,650,3.5,78595,False
-Audi,RS 7,2021,4.0,591,590,3.5,114000,False
-Chevrolet,Camaro SS,2022,6.2,455,455,4.1,37500,False
-Ford,Mustang GT,2022,5.0,460,420,4,38500,False
-Jaguar,F-Type R,2022,5.0,575,516,3.5,103200,False
-Lexus,LC 500,2022,5.0,471,398,4.4,92950,False
-McLaren,570S,2021,3.8,562,443,3.1,208800,False
-Mercedes-Benz,AMG C63,2022,4.0,469,479,3.8,71450,False
-Nissan,370Z Nismo,2021,3.7,350,276,4.9,47820,False
-Porsche,Panamera GTS,2021,4.0,473,457,3.9,134150,False
-Audi,TT RS,2022,2.5,394,354,3.6,67600,False
-BMW,M4,2021,3.0,473,406,3.8,71800,False
-Ferrari,F8 Tributo,2021,3.9,710,568,2.8,274280,False
-Lamborghini,Aventador,2021,6.5,770,531,2.9,393695,False
-McLaren,GT,2021,4.0,612,465,3.1,250000,False
-Mercedes-Benz,AMG GT 4-Door Coupe,2021,4.0,630,664,3.1,171200,False
-Aston Martin,DBS Superleggera,2022,5.2,715,663,3.4,321000,False
-Lotus,Evora GT,2021,3.5,416,317,3.8,100500,False
-Porsche,Taycan Turbo S,2021,,750,774,2.6,185000,True
-McLaren,570S,2021,3.8,562,443,3.1,195000,False
-Lamborghini,Aventador SVJ,2021,6.5,759,531,2.8,517770,False
-Ford,GT,2021,3.5,660,550,3,500000,False
-Audi,RS7 Sportback,2022,4.0,591,590,3.5,114000,False
-BMW,M4,2022,3.0,473,406,4.1,72800,False
-Mercedes-AMG,C63 S,2022,4.0,503,516,3.7,78100,False
-Chevrolet,Camaro ZL1,2021,6.2,650,650,3.5,63000,False
-Dodge,Charger Hellcat,2021,6.2,717,650,3.6,70000,False
-Alfa Romeo,Giulia Quadrifoglio,2021,2.9,505,443,3.8,78450,False
-Tesla,Model S Plaid,2022,,"1,020","1,050",1.9,141190,True
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Porsche,Panamera Turbo S E-Hybrid,2021,,689,642,3,190000,True
-McLaren,Artura,2022,3.0,671,531,3,225000,False
-Lamborghini,Urus,2021,4.0,641,627,3.6,222000,False
-Ford,Mustang Mach 1,2021,5.0,480,420,4,52915,False
-Porsche,911,2022,3.0,379,331,4,101200,False
-Lamborghini,Huracan,2021,5.2,630,443,2.8,274390,False
-Ferrari,488 GTB,2022,3.9,661,561,3,333750,False
-Audi,R8,2022,5.2,562,406,3.2,142700,False
-McLaren,720S,2021,4.0,710,568,2.7,298000,False
-BMW,M8,2022,4.4,617,553,3.1,130000,False
-Mercedes-Benz,AMG GT,2021,4.0,523,494,3.8,118500,False
-Chevrolet,Corvette,2021,6.2,490,465,2.8,59900,False
-Ford,Mustang Shelby GT500,2022,5.2,760,625,3.5,81000,False
-Nissan,GT-R Nismo,2021,3.8,600,481,2.5,212000,False
-Dodge,Challenger SRT Hellcat,2021,6.2,717,656,3.5,64195,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,147000,False
-Bugatti,Chiron,2022,8.0,1500,1180,2.5,3900000,False
-Koenigsegg,Jesko,2022,5.0,1280,1015,2.5,3000000,False
-Pagani,Huayra,2021,6.0,764,740,2.8,2600000,False
-Rimac,Nevera,2022,,1914,1696,1.85,2400000,True
-Lotus,Evija,2022,,1973,1254,2.5,2000000,True
-Pininfarina,Battista,2021,,1872,1696,1.9,2500000,True
-Maserati,MC20,2021,3.0,621,538,2.9,210000,False
-Porsche,Cayman,2021,2.0,300,280,5.1,59900,False
-Lamborghini,Aventador,2021,6.5,730,509,2.9,393695,False
-Ferrari,SF90 Stradale,2021,4.0,986,590,2.5,625000,False
-Audi,RS 5,2021,2.9,444,443,3.5,75100,False
-McLaren,GT,2022,4.0,612,465,3.1,210000,False
-BMW,M2,2021,3.0,405,406,4,58900,False
-Mercedes-Benz,SLS AMG,2021,6.3,622,468,3.6,254500,False
-Chevrolet,Camaro,2021,6.2,455,455,4,25000,False
-Ford,Mustang,2021,2.3,310,350,5.3,27205,False
-Nissan,370Z,2021,3.7,332,270,5.1,30090,False
-Aston Martin,Vantage,2021,4.0,503,505,3.6,146000,False
-Bugatti,Chiron,2021,8.0,1479,1180,2.4,3000000,False
-Koenigsegg,Jesko,2022,5.0,1280,1106,2.5,3000000,False
-Lotus,Evija,2021,,1972,1254,2,2000000,True
-McLaren,Senna,2021,4.0,789,590,2.7,1000000,False
-Pagani,Huayra,2021,6.0,764,738,3,2600000,False
-Rimac,Nevera,2021,,1888,1696,1.85,2400000,True
+Car Make,Car Model,Year,isElectric,Engine Size (L),Horsepower,Torque (lb-ft),0-60 MPH Time (seconds),Price (in USD)
+Porsche,911,2022,False,3.0,379,331,4,101200
+Lamborghini,Huracan,2021,False,5.2,630,443,2.8,274390
+Ferrari,488 GTB,2022,False,3.9,661,561,3,333750
+Audi,R8,2022,False,5.2,562,406,3.2,142700
+McLaren,720S,2021,False,4.0,710,568,2.7,298000
+BMW,M8,2022,False,4.4,617,553,3.1,130000
+Mercedes-Benz,AMG GT,2021,False,4.0,523,494,3.8,118500
+Chevrolet,Corvette,2021,False,6.2,490,465,2.8,59900
+Ford,Mustang Shelby GT500,2022,False,5.2,760,625,3.5,81000
+Nissan,GT-R Nismo,2021,False,3.8,600,481,2.5,212000
+Aston Martin,DB11,2021,False,5.2,630,516,3.5,201495
+Bugatti,Chiron,2021,False,8.0,1500,1180,2.4,3000000
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,61000
+Jaguar,F-Type,2022,False,3.0,296,295,5.4,70100
+Koenigsegg,Jesko,2021,False,5.0,1280,1015,2.5,2800000
+Lexus,LC 500,2021,False,5.0,471,398,4.4,92950
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,104450
+Maserati,GranTurismo,2021,False,4.7,454,384,4.8,150000
+Porsche,Boxster,2021,False,2.0,300,280,4.7,62000
+Alfa Romeo,Giulia Quadrifoglio,2022,False,2.9,505,443,3.8,78000
+Ariel,Atom,2021,False,2.0,320,243,2.8,75000
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,225000
+McLaren,Artura,2022,False,3.0,671,531,3,225000
+Mercedes-AMG,SLS AMG,2021,False,6.2,622,468,3.5,248000
+Pagani,Huayra,2021,False,6.0,720,737,2.8,2800000
+Polestar,1,2021,False,2.0,600,738,4.1,155000
+Rimac,Nevera,2022,True,,1914,1696,1.85,2400000
+Porsche,Cayman GT4,2022,False,4.0,414,309,3.8,100200
+Lamborghini,Aventador SVJ,2021,False,6.5,759,531,2.8,517770
+Ferrari,SF90 Stradale,2021,False,4.0,986,590,2.5,625000
+Audi,RS7,2022,False,4.0,591,590,3.5,117000
+McLaren,Artura,2021,False,3.0,671,531,3,225000
+BMW,M4,2022,False,3.0,503,479,3.8,72800
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.2,222000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,64695
+Ford,GT,2022,False,3.5,660,550,3,500000
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.5,45690
+Porsche,Taycan 4S,2022,True,,562,479,3.8,104000
+Lamborghini,Urus,2021,False,4.0,641,626,3.5,218000
+Ferrari,Roma,2021,False,3.9,611,561,3.3,222000
+Audi,RS3,2022,False,2.5,394,369,3.9,57000
+McLaren,GT,2021,False,4.0,612,465,3.1,210000
+BMW,i8,2020,True,,369,420,4.2,148500
+Mercedes-Benz,CLS63 AMG,2019,False,4.0,603,627,3.4,132000
+Porsche,Cayman,2021,False,2.0,300,280,5.1,58900
+Lamborghini,Aventador SVJ,2021,False,6.5,759,531,2.8,518000
+Audi,RS3,2022,False,2.5,394,369,3.9,56200
+McLaren,570S,2021,False,3.8,562,443,2.8,192500
+BMW,M4,2022,False,3.0,503,479,3.8,71800
+Mercedes-Benz,AMG C63,2021,False,4.0,503,516,3.8,68000
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4.1,42500
+Ford,Mustang GT,2022,False,5.0,460,420,4.3,39000
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.8,46100
+Aston Martin,Vantage,2021,False,4.0,503,505,3.5,142100
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,105000
+Porsche,Panamera,2021,False,2.9,325,331,5.1,87200
+Lamborghini,Urus,2021,False,4.0,641,627,3.2,218000
+Ferrari,Roma,2021,False,3.9,612,560,3.4,222000
+Audi,S5,2022,False,3.0,349,369,4.4,52500
+McLaren,600LT,2021,False,3.8,592,457,2.8,241000
+BMW,M5,2022,False,4.4,600,553,3.2,103500
+Aston Martin,Vantage,2022,False,4.0,503,505,3.5,146000
+Audi,RS5,2021,False,2.9,444,443,3.6,75400
+BMW,M2,2022,False,3.0,405,406,4,58900
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4,42900
+Dodge,Challenger SRT Hellcat Redeye,2022,False,6.2,797,707,3.4,78595
+Ford,GT,2021,False,3.5,660,550,3,500000
+Jaguar,F-Type,2022,False,2.0,296,295,5.4,62750
+Lamborghini,Aventador,2021,False,6.5,770,531,2.9,417826
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,150980
+Mercedes-Benz,C63 AMG,2021,False,4.0,503,516,3.8,70100
+Nissan,370Z,2021,False,3.7,332,270,5,30090
+Porsche,Panamera,2022,False,2.9,325,331,5.3,88700
+Audi,TT RS,2021,False,2.5,394,354,3.6,67600
+BMW,M4,2022,False,3.0,473,406,4.1,72800
+Chevrolet,Corvette Stingray,2021,False,6.2,490,465,2.8,59900
+Ferrari,F8 Tributo,2021,False,3.9,710,568,2.8,274280
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4.3,52915
+Lamborghini,Urus,2021,False,4.0,641,627,3.6,218009
+Porsche,718 Cayman,2022,False,2.0,300,280,4.5,61000
+Acura,NSX,2022,False,3.5,573,476,2.9,159495
+Aston Martin,Vantage,2022,False,4.0,503,505,3.5,142086
+Bentley,Continental GT,2021,False,6.0,626,664,3.3,219800
+Bugatti,Chiron,2022,False,8.0,1500,1180,2.4,3000000
+Dodge,Challenger SRT Hellcat Redeye,2022,False,6.2,797,707,3.4,74290
+Jaguar,F-Type,2022,False,3.0,380,339,4.9,71900
+Koenigsegg,Jesko,2022,False,5.0,1600,1106,2.5,3000000
+Lexus,LC 500,2022,False,5.0,471,398,4.4,92950
+Maserati,GranTurismo,2022,False,4.7,454,384,4.7,134300
+Mazda,MX-5 Miata,2021,False,2.0,181,151,6.5,26830
+McLaren,GT,2022,False,4.0,620,465,3.1,213195
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.7,221580
+Pagani,Huayra,2022,False,6.0,764,738,2.8,2800000
+Porsche,718 Cayman GT4,2022,False,4.0,414,309,4.2,100550
+Rimac,Nevera,2022,True,,1914,1696,1.95,2400000
+Rolls-Royce,Wraith,2021,False,6.8,624,605,4.4,330000
+Tesla,Roadster,2022,True,,1000+,737,1.9,200000
+Toyota,Supra,2022,False,3.0,382,368,3.9,43090
+W Motors,Fenyr Supersport,2022,False,3.8,800,723,2.7,1700000
+Porsche,718 Cayman,2022,False,2.0,300,280,4.7,60500
+Lamborghini,Aventador,2021,False,6.5,770,531,2.9,522000
+Audi,TT RS,2022,False,2.5,394,354,3.4,67000
+McLaren,GT,2021,False,4.0,612,465,3.1,212500
+BMW,M4,2022,False,3.0,503,479,3.8,75000
+Mercedes-Benz,SL 63 AMG,2021,False,4.0,603,664,3.5,155000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,64000
+Ford,GT,2022,False,3.5,660,550,2.8,500000
+Nissan,370Z,2021,False,3.7,332,270,4.7,31015
+Aston Martin,DBS Superleggera,2021,False,5.2,715,664,3.4,304995
+McLaren,570S,2021,False,3.8,562,443,3.2,192500
+Porsche,Panamera Turbo S E-Hybrid,2021,False,4.0,690,642,3.2,190000
+Lamborghini,Urus,2021,False,4.0,641,627,3.6,222000
+Audi,RS7,2021,False,4.0,591,590,3.5,115000
+BMW,M2,2022,False,3.0,405,406,4.2,59000
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,102100
+Lamborghini,Aventador,2021,False,6.5,730,509,2.9,417826
+Aston Martin,DBS Superleggera,2021,False,5.2,715,664,3.2,304995
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,220300
+Audi,RS7,2022,False,4.0,591,590,3.5,114000
+Mercedes-Benz,SLS AMG,2021,False,6.2,622,468,3.7,239100
+McLaren,570S,2021,False,3.8,562,443,3.1,192500
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,62500
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,65290
+Ferrari,Portofino,2021,False,3.9,592,560,3.5,219750
+Porsche,Panamera Turbo S,2022,False,4.0,620,604,2.9,187700
+Lamborghini,Urus,2021,False,4.0,641,627,3.6,222004
+Mercedes-Benz,AMG C63,2021,False,4.0,469,479,3.8,71350
+Aston Martin,Vantage,2021,False,4.0,503,505,3.6,146000
+Porsche,Cayman,2022,False,2.5,365,309,4.5,68900
+Lamborghini,Aventador,2021,False,6.5,730,507,2.8,517770
+Ferrari,F8 Tributo,2022,False,3.9,710,568,2.9,276550
+BMW,Z4 M40i,2022,False,3.0,382,369,3.9,63700
+Chevrolet,Camaro SS,2022,False,6.2,455,455,4.1,44000
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4,51720
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.9,45790
+Porsche,Panamera,2022,False,2.9,325,331,5.4,88550
+Lamborghini,Urus,2021,False,4.0,641,627,3.5,218009
+Ferrari,Roma,2021,False,3.9,612,561,3.3,222620
+Audi,RS 3,2022,False,2.5,401,369,3.6,56200
+McLaren,GT,2021,False,4.0,612,465,3.2,200000
+BMW,M2 CS,2022,False,3.0,444,406,3.8,84595
+Mercedes-Benz,AMG C63,2021,False,4.0,503,516,3.8,77500
+Acura,NSX,2021,False,3.5,573,476,2.7,157500
+Aston Martin,DB11,2022,False,4.0,503,513,3.7,204100
+Bentley,Continental GT,2021,False,6.0,626,664,3.4,220300
+Dodge,Viper,2017,False,8.4,645,600,3.3,120000
+Jaguar,F-Type,2022,False,3.0,380,339,4.9,69900
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,105950
+Maserati,GranTurismo,2020,False,4.7,454,384,4.8,150000
+McLaren,570S,2020,False,3.8,562,443,3.1,204550
+Pagani,Huayra,2020,False,6.0,720,738,3,2700000
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,102900
+Rimac,C_Two,2022,False,,1914,1696,1.9,2400000
+Rolls-Royce,Wraith,2021,False,6.6,624,605,4.3,330000
+Shelby,Cobra,1965,False,7.0,435,440,4.2,1000000
+Tesla,Model S Plaid,2021,False,,1020,1050,1.98,131190
+Toyota,GR Supra,2022,False,3.0,382,368,3.9,43090
+TVR,Griffith,2022,False,5.0,500,479,3.8,123500
+W Motors,Lykan Hypersport,2015,False,3.7,780,708,2.8,3400000
+Porsche,718 Cayman,2021,False,2.0,300,280,4.5,61500
+Lamborghini,Aventador SVJ,2021,False,6.5,770,531,2.8,518000
+Ferrari,SF90 Stradale,2022,False,4.0,986,590,2.5,507000
+Audi,RS 6,2021,False,4.0,591,590,3.5,109000
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.6,228000
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4,42000
+Nissan,370Z Nismo,2021,False,3.7,350,276,5,45000
+Porsche,Taycan,2021,True,,750,774,2.6,185000
+Ferrari,F8 Tributo,2021,False,3.9,710,568,2.9,276550
+Audi,RS 3,2022,False,2.5,401,354,3.5,56000
+McLaren,570S,2021,False,3.8,562,443,3.1,191000
+BMW,M5,2022,False,4.4,600,553,3.2,104000
+Mercedes-Benz,AMG C 63,2021,False,4.0,469,479,3.9,69900
+Porsche,Taycan,2022,False,2.0,402,254,5.1,81250
+Lamborghini,Aventador,2021,False,6.5,730,509,2.9,517700
+Aston Martin,DBS Superleggera,2022,False,5.2,715,663,3.4,330000
+Audi,RS 6 Avant,2021,False,4.0,591,590,3.5,109000
+McLaren,600LT,2021,False,3.8,592,457,2.8,242500
+Mercedes-AMG,C 63 S Coupe,2022,False,4.0,503,516,3.7,77000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,62000
+Dodge,Challenger SRT Hellcat Redeye,2022,False,6.2,797,707,3.5,76000
+Ford,GT,2022,False,3.5,660,550,2.9,500000
+Nissan,370Z,2021,False,3.7,332,270,4.9,30090
+Porsche,Panamera,2022,False,2.9,325,332,5.3,87200
+Bugatti,Chiron,2021,False,8.0,1500,1180,2.3,3000000
+Ferrari,F8 Tributo,2021,False,3.9,710,568,2.9,274280
+Audi,RS 7,2021,False,4.0,591,590,3.5,114000
+Jaguar,F-Type,2022,False,5.0,575,516,3.5,103200
+Porsche,Panamera Turbo S,2021,False,4.0,620,604,2.9,177700
+Lamborghini,Aventador S,2021,False,6.5,729,509,2.9,417650
+Audi,RS7,2022,False,4.0,591,590,3.5,115045
+McLaren,600LT,2021,False,3.8,592,457,2.9,256500
+BMW,M2 Competition,2022,False,3.0,405,406,4,59895
+Mercedes-Benz,S63 AMG,2021,False,4.0,603,664,3.4,152500
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,69995
+Porsche,Taycan Turbo S,2021,False,,750,774,2.6,185000
+Lamborghini,Urus,2021,False,4.0,641,627,3.2,218009
+Ferrari,812 Superfast,2021,False,6.5,789,530,2.9,363730
+Audi,R8 Spyder,2022,False,5.2,562,406,3.5,183300
+BMW,M4,2022,False,3.0,473,406,4.1,73795
+Mercedes-Benz,AMG GT R,2021,False,4.0,577,516,3.5,183000
+Chevrolet,Corvette Stingray,2021,False,6.2,495,470,2.9,60995
+Aston Martin,DB11,2022,False,5.2,630,516,3.5,207000
+Bentley,Continental GT,2022,False,6.0,626,664,3.5,203825
+Jaguar,F-Type R,2021,False,5.0,575,516,3.5,103200
+Acura,NSX,2022,False,3.5,573,476,2.7,157500
+Lotus,Evora GT,2021,False,3.5,416,317,3.7,99800
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,100200
+Alfa Romeo,4C,2020,False,1.7,237,258,4.1,67150
+Audi,RS5,2022,False,2.9,444,443,3.7,77250
+BMW,M2 Competition,2021,False,3.0,405,406,4,58900
+Dodge,Charger SRT Hellcat,2022,False,6.2,717,650,3.6,71490
+Maserati,GranTurismo,2020,False,4.7,454,384,4.8,150400
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.6,47820
+Rolls-Royce,Wraith,2022,False,6.8,624,605,4.4,330000
+Subaru,WRX STI,2021,False,2.5,310,290,4.6,38170
+Tesla,Model S Plaid,2022,False,,1020,1050,1.9,131190
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,102000
+Lamborghini,Aventador,2021,False,6.5,729,507,2.9,393695
+Ferrari,Portofino,2022,False,3.9,591,413,3.3,218750
+Audi,RS7,2021,False,4.0,591,590,3.5,114000
+McLaren,600LT,2021,False,3.8,592,457,2.8,256500
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4.1,40590
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4,52720
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.6,45000
+Porsche,Panamera Turbo,2022,False,4.0,620,604,3.1,174300
+Lamborghini,Urus,2021,False,4.0,641,627,3.2,222004
+Ferrari,SF90 Stradale,2022,False,4.0,986,590,2.5,625000
+Audi,TT RS,2022,False,2.5,394,354,3.4,67895
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,62290
+Aston Martin,DBS Superleggera,2021,False,5.2,715,663,3.2,304995
+Lexus,LC 500,2022,False,5.0,471,398,4.4,93050
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,101200
+Audi,RS 5 Coupe,2021,False,2.9,444,443,3.7,75100
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,64195
+Lotus,Evora GT,2022,False,3.5,416,317,3.8,105000
+McLaren,GT,2021,False,4.0,612,465,3.1,211000
+Mercedes-Benz,SLS AMG Black Series,2014,False,6.2,622,468,3.5,275000
+Bugatti,Chiron,2021,False,8.0,1500,1180,2.4,2998000
+Koenigsegg,Jesko,2021,False,5.0,1280,1015,2.5,3000000
+Lamborghini,Aventador SVJ,2020,False,6.5,770,531,2.8,573966
+Rimac,C_Two,2022,True,,1914,1732,1.85,2400000
+Pagani,Huayra Roadster BC,2021,False,6.0,791,774,2.5,3500000
+Pininfarina,Battista,2022,True,,1874,1696,1.9,2500000
+Acura,NSX,2022,False,3.5,573,476,2.9,157500
+Aston Martin,Vantage,2021,False,4.0,503,505,3.5,146000
+Bentley,Continental GT,2022,False,4.0,542,568,3.9,219800
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,70000
+Jaguar,F-Type,2022,False,2.0,296,295,5.4,61600
+Kia,Stinger,2022,False,3.3,368,376,4.7,52200
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,100450
+Maserati,GranTurismo,2021,False,4.7,454,384,4.8,134300
+Porsche,718 Cayman GT4,2022,False,4.0,414,309,4.2,102550
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,76400
+Chevrolet,Camaro ZL1,2022,False,6.2,650,650,3.5,69000
+Lamborghini,Aventador,2021,False,6.5,770,531,2.8,417826
+Mercedes-Benz,SLS AMG,2021,False,4.0,577,516,3.6,247500
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.8,45790
+Porsche,Taycan,2022,True,,616,774,2.6,79900
+Tesla,Model S,2022,True,,1020,1050,1.98,119000
+Aston Martin,DBS Superleggera,2022,False,5.2,715,664,3.2,307820
+Bentley,Continental GT,2022,False,4.0,542,568,3.4,207825
+Bugatti,Chiron,2021,False,8.0,1479,1180,2.3,2998000
+McLaren,570S,2021,False,3.8,562,443,3.1,202500
+Porsche,Taycan Turbo S,2021,True,,750,774,2.6,185000
+Lamborghini,Aventador S,2021,False,6.5,730,509,2.9,417826
+Ferrari,F8 Tributo,2022,False,3.9,710,568,2.8,276550
+Audi,RS 7,2022,False,4.0,591,590,3.5,114000
+BMW,M2 CS,2022,False,3.0,444,406,4,84595
+Mercedes-Benz,SLS AMG,2021,False,6.2,622,468,3.2,275000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,63000
+Jaguar,F-Type,2021,False,5.0,575,516,3.5,103200
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,96950
+Maserati,GranTurismo,2022,False,4.7,454,384,4.8,134300
+McLaren,765LT,2021,False,4.0,755,590,2.8,358000
+Nissan,370Z,2021,False,3.7,332,270,5,30000
+Pagani,Huayra,2021,False,6.0,730,738,3,2600000
+Porsche,Panamera Turbo S,2021,False,4.0,620,604,2.9,180000
+Tesla,Model S Plaid,2021,True,,1020,1050,1.9,131100
+Aston Martin,DB11,2021,False,4.0,503,513,4,201495
+Dodge,Challenger Hellcat Redeye,2022,False,6.2,797,707,3.4,82190
+Lotus,Evora,2021,False,3.5,416,317,3.8,96950
+Acura,NSX,2021,False,3.5,573,476,2.7,159495
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,76950
+Bentley,Continental GT,2021,False,6.0,626,664,3.3,202500
+Jaguar,F-Type,2022,False,3.0,380,339,4.9,70100
+Koenigsegg,Jesko,2022,False,5.0,1280,1015,2.5,3000000
+Maserati,GranTurismo,2022,False,4.7,454,384,4.8,132795
+McLaren,GT,2022,False,4.0,612,465,3.1,215500
+Mercedes-AMG,C 63 S Coupe,2022,False,4.0,503,516,3.7,80900
+Porsche,718 Cayman,2021,False,2.0,300,280,4.9,59900
+Rolls-Royce,Wraith,2021,False,6.8,624,605,4.3,330000
+Tesla,Roadster,2022,False,,1000+,,1.9,200000
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4,40000
+Aston Martin,DB11,2021,False,5.2,630,516,3.7,209000
+Bentley,Continental GT,2022,False,4.0,542,568,3.9,202500
+Dodge,Challenger Hellcat,2022,False,6.2,717,656,3.5,67500
+Koenigsegg,Jesko,2022,False,5.0,1280,1106,2.5,2800000
+Lexus,LC,2021,False,5.0,471,398,4.4,92950
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,104200
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,133050
+McLaren,570S,2021,False,3.8,562,443,3.1,196350
+Mercedes-Benz,AMG C63,2022,False,4.0,503,516,3.8,69900
+Pagani,Huayra BC,2021,False,6.0,791,774,2.7,2600000
+Rolls-Royce,Wraith,2021,False,6.7,624,605,4.4,338000
+Tesla,Roadster,2022,True,,1000+,"10,000+",1.9,200000
+Aston Martin,Vantage,2021,False,4.0,503,505,3.5,150000
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,218400
+Dodge,Challenger SRT Hellcat Redeye,2021,False,6.2,797,707,3.5,73000
+Jaguar,F-Type R,2022,False,5.0,575,516,3.5,103200
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,104970
+Maserati,GranTurismo,2021,False,4.7,454,384,4.8,132400
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,101200
+Tesla,Roadster,2023,True,,"1,000+",737,< 1.9,200000
+Alpine,A110,2021,False,1.8,288,236,4.4,71500
+BMW,M4,2021,False,3.0,473,406,4.1,71800
+Dodge,Viper,2017,False,8.4,645,600,3.3,118795
+Ferrari,Portofino,2021,False,3.9,591,560,3.5,218750
+Jaguar,F-Type,2022,False,3.0,296,295,5.4,61600
+Lamborghini,Aventador SVJ,2021,False,6.5,770,531,2.8,517700
+McLaren,600LT,2021,False,3.8,592,457,2.8,240000
+Aston Martin,DB11,2021,False,5.2,630,516,3.5,221400
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,202500
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,64100
+Koenigsegg,Jesko,2022,False,5.0,1280,1015,2.5,2800000
+Maserati,GranTurismo,2021,False,4.7,454,384,4.8,150980
+Mercedes-AMG,C 63 S,2022,False,4.0,503,516,3.7,81550
+Pagani,Huayra,2021,False,6.0,764,738,2.8,3500000
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,102550
+Rimac,C_Two,2022,False,,1888,1696,1.8,2400000
+Rolls-Royce,Wraith,2021,False,6.6,624,642,4.4,330000
+Tesla,Roadster,2022,False,,10000+,0,1.9,200000
+Bentley,Continental GT,2022,False,4.0,542,568,3.9,207825
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,64195
+Jaguar,F-Type,2022,False,3.0,380,339,4.8,62250
+Lexus,LC 500,2022,False,5.0,471,398,4.4,92000
+McLaren,570S,2022,False,3.8,562,443,2.9,204550
+Tesla,Model S Plaid,2021,True,,1020,1050,1.9,141190
+Audi,RS 5,2021,False,2.9,444,443,3.5,75100
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,64995
+Dodge,Viper ACR,2017,False,8.4,645,600,3.3,126190
+Ford,GT,2021,False,3.5,660,550,2.9,500000
+Porsche,Taycan 4S,2022,False,2.5,482,472,3.8,102900
+Lamborghini,Aventador S,2021,False,6.5,730,509,2.9,417650
+Aston Martin,DB11,2021,False,5.2,630,516,3.5,205000
+Alfa Romeo,Giulia Quadrifoglio,2022,False,2.9,505,443,3.8,81250
+Audi,RS7 Sportback,2022,False,4.0,591,590,3.5,115045
+BMW,M4 Competition,2021,False,3.0,503,479,3.9,75695
+Chevrolet,Camaro SS,2022,False,6.2,455,455,4.1,42000
+Dodge,Charger Hellcat,2021,False,6.2,717,650,3.6,71490
+Ford,GT,2021,False,3.5,660,550,2.8,500000
+Koenigsegg,Jesko Absolut,2022,False,5.0,1600,1106,2.1,2800000
+Lexus,LC 500,2021,False,5.0,471,398,4.4,93050
+Lotus,Evija,2022,True,,1973,1254,2.5,2750000
+McLaren,GT,2022,False,4.0,612,465,3.2,210000
+Mercedes-Benz,AMG GT Black Series,2021,False,4.0,720,590,3.2,326050
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,102500
+Lamborghini,Aventador,2021,False,6.5,770,531,2.8,417650
+Ferrari,Portofino,2021,False,3.9,591,560,3.3,218750
+Audi,TT RS,2022,False,2.5,394,354,3.6,69000
+McLaren,600LT Spider,2021,False,3.8,592,457,2.8,256500
+Mercedes-Benz,AMG C 63,2022,False,4.0,503,516,3.8,70000
+Chevrolet,Camaro SS 1LE,2021,False,6.2,455,455,4,44500
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4,51000
+Nissan,370Z Nismo,2021,False,3.7,350,276,5.2,45000
+Koenigsegg,Jesko,2021,False,5.0,1262,1106,2.5,3000000
+Pagani,Huayra,2021,False,6.0,764,738,2.6,2600000
+McLaren,Speedtail,2021,False,4.0,1035,848,2.5,2300000
+Lamborghini,Sián,2021,False,6.5,819,531,2.8,3600000
+Rimac,C_Two,2021,True,,1914,1732,1.8,2400000
+Porsche,Cayman,2022,False,2.0,300,280,4.9,59900
+Lamborghini,Aventador,2021,False,6.5,770,531,2.8,393695
+Ferrari,Portofino,2021,False,3.9,591,413,3.5,215000
+Audi,RS 5,2022,False,2.9,444,443,3.7,75100
+McLaren,GT,2021,False,4.0,620,465,3.1,210000
+BMW,Z4 M40i,2022,False,3.0,382,369,4.3,63700
+Mercedes-Benz,SLC 43,2020,False,3.0,385,384,4.6,62000
+Chevrolet,Camaro SS,2022,False,6.2,455,455,4.3,42500
+Ford,Mustang GT,2022,False,5.0,460,420,4.3,36120
+Nissan,370Z Nismo,2020,False,3.7,350,276,4.6,45790
+Aston Martin,Vantage,2022,False,4.0,503,505,3.6,146000
+Bentley,Continental GT,2021,False,4.0,626,664,3.3,220000
+Porsche,718 Boxster,2022,False,2.0,300,280,4.9,62000
+Ferrari,F8 Spider,2021,False,3.9,710,568,2.9,280000
+Audi,TT RS,2022,False,2.5,394,354,3.6,69900
+McLaren,570S,2021,False,3.8,562,443,2.9,208800
+BMW,M4,2022,False,3.0,473,406,4,72800
+Porsche,718 Cayman,2022,False,2.0,300,280,4.9,60500
+Lamborghini,Aventador,2021,False,6.5,730,509,2.9,393695
+Audi,RS5,2022,False,2.9,444,443,3.7,75100
+McLaren,GT,2021,False,4.0,612,465,3.2,208800
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.6,229000
+Nissan,370Z Nismo,2020,False,3.7,350,276,5.2,46200
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.6,71000
+Aston Martin,DBS Superleggera,2021,False,5.2,715,663,3.2,308000
+Alfa Romeo,Giulia Quadrifoglio,2022,False,2.9,505,443,3.8,80500
+Jaguar,F-Type R,2021,False,5.0,575,516,3.5,105900
+Lotus,Evora GT,2020,False,3.5,416,317,3.8,96950
+Maserati,GranTurismo,2019,False,4.7,454,384,4.7,150980
+Porsche,Panamera Turbo S,2022,False,4.0,630,604,2.9,180800
+Lotus,Evora,2021,False,3.5,416,317,3.8,94000
+Alfa Romeo,4C Spider,2020,False,1.7,237,258,4.1,67150
+Jaguar,F-Type,2022,False,3.0,380,339,4.9,70900
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,134300
+Audi,RS5 Coupe,2022,False,2.9,444,443,3.7,76450
+Chevrolet,Camaro ZL1,2022,False,6.2,650,650,3.5,64000
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,61500
+Ford,GT,2021,False,3.5,647,550,2.8,500000
+McLaren,570S,2022,False,3.8,562,443,3.1,198950
+Mercedes-AMG,C63 S Coupe,2021,False,4.0,503,516,3.7,77950
+Porsche,718 Boxster,2021,False,2.0,300,280,4.9,62000
+Lamborghini,Aventador S,2021,False,6.5,729,507,2.9,417826
+Audi,TT RS Coupe,2021,False,2.5,394,354,3.6,67600
+BMW,M4 Coupe,2021,False,3.0,473,406,3.8,71800
+Aston Martin,DBS Superleggera,2022,False,5.2,715,664,3.4,314500
+Bentley,Continental GT,2022,False,6.0,626,664,3.3,214425
+Bugatti,Chiron,2022,False,8.0,1500,1180,2.3,3000000
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,71490
+Jaguar,F-Type,2021,False,5.0,575,516,3.5,105900
+Koenigsegg,Jesko,2021,False,5.0,1280,1106,2.5,2800000
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,104400
+Maserati,GranTurismo,2022,False,4.7,454,384,4.7,150980
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,102000
+Rimac,C_Two,2021,True,,1914,1696,1.9,2400000
+Rolls-Royce,Wraith,2021,False,6.8,624,605,4.4,335550
+Tesla,Model S Plaid,2021,True,,1020,1050,1.9,141990
+TVR,Griffith,2021,False,5.0,500,420,3.9,157500
+Ultima,RS,2021,False,6.2,1200,1300,2.3,220000
+W Motors,Fenyr SuperSport,2022,False,3.8,800,723,2.7,1550000
+Acura,NSX,2021,False,3.5,573,476,2.9,157500
+Aston Martin,DBS Superleggera,2022,False,5.2,715,663,3.2,308000
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,65000
+Jaguar,F-Type,2021,False,3.0,380,339,4.9,63100
+Lotus,Evija,2022,True,,1973,1254,2.5,2600000
+Porsche,Taycan,2021,True,,616,774,2.6,185000
+Rimac,C_Two,2022,True,,1914,1696,1.9,2400000
+Tesla,Model S Plaid,2022,True,,1020,1050,1.98,140000
+Mercedes-Benz,AMG GT Black Series,2021,False,4.0,720,590,3.1,325000
+Ford,GT,2021,False,3.5,647,550,3,500000
+Aston Martin,DBS Superleggera,2021,False,5.2,715,664,3.4,307820
+Dodge,Challenger SRT Hellcat Redeye,2021,False,6.2,797,707,3.5,80190
+Alfa Romeo,4C Spider,2020,False,1.8,237,258,4.1,68745
+Subaru,WRX STI,2022,False,2.5,310,290,5.2,38170
+Tesla,Model S Plaid,2022,True,,1020,1050,1.98,139990
+Bugatti,Chiron Super Sport 300+,2022,False,8.0,1578,1180,2.3,5200000
+McLaren,Senna,2020,False,4.0,789,590,2.7,1500000
+Porsche,Taycan Turbo S,2022,True,,750,774,2.6,185000
+Chevrolet,Camaro ZL1,2022,False,6.2,650,650,3.5,65000
+Audi,RS 7 Sportback,2022,False,4.0,591,590,3.5,114000
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,102550
+Lamborghini,Aventador,2022,False,6.5,770,531,2.8,393695
+Lamborghini,Aventador S,2022,False,6.5,729,507,2.9,460247
+Audi,RS 6 Avant,2022,False,4.0,591,590,3.1,110045
+Mercedes-Benz,AMG C 63 S,2021,False,4.0,503,516,3.7,77400
+Nissan,370Z Nismo,2020,False,3.7,350,276,5,46815
+Audi,TT RS,2021,False,2.5,394,354,3.6,67895
+Chevrolet,Corvette Z06,2023,False,5.5,625,650,2.6,85000
+Lamborghini,Urus,2022,False,4.0,641,626,3.2,218009
+Mercedes-Benz,AMG GT 63 S,2021,False,4.0,630,664,3.1,162900
+Ferrari,Portofino M,2022,False,3.9,612,560,3.5,245000
+Bugatti,Chiron,2021,False,8.0,1479,1180,2.5,3000000
+Porsche,Cayman GT4,2022,False,4.0,414,309,4.2,100200
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,74750
+Bentley,Continental GT,2021,False,6.0,626,664,3.3,218400
+BMW,M5,2021,False,4.4,600,553,3.2,103500
+Dodge,Challenger Hellcat,2021,False,6.2,717,656,3.5,70595
+Ford,GT,2022,False,3.5,647,550,3,500000
+McLaren,570S,2021,False,3.8,562,443,3.1,203500
+Mercedes-Benz,SLS AMG,2015,False,6.2,583,479,3.6,221580
+Nissan,370Z Nismo,2020,False,3.7,350,276,4.7,47190
+Porsche,Boxster,2021,False,2.0,300,280,4.9,62000
+Porsche,718 Cayman,2022,False,2.0,300,280,4.9,61500
+Lamborghini,Aventador,2021,False,6.5,759,531,2.9,393695
+Ferrari,Roma,2021,False,3.9,612,561,3.3,222630
+Audi,RS 5,2022,False,2.9,444,442,3.5,75400
+McLaren,570S,2020,False,3.8,562,443,3.1,208000
+BMW,M2,2022,False,3.0,405,406,4.2,58900
+Mercedes-Benz,SL,2022,False,3.0,429,384,4.9,96250
+Chevrolet,Camaro,2021,False,6.2,455,455,4,25000
+Porsche,Panamera,2022,False,2.9,325,331,5.2,88550
+Audi,RS 6,2022,False,4.0,591,590,3.5,109000
+Porsche,Taycan 4S,2021,True,,429,472,3.8,103800
+Audi,RS 7,2022,False,4.0,591,590,3.5,117000
+BMW,M4,2021,False,3.0,473,406,4,72800
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.5,228000
+Nissan,370Z Nismo,2021,False,3.7,350,276,5,48000
+Aston Martin,DBS Superleggera,2021,False,5.2,715,664,3.2,307820
+Lexus,LC 500,2021,False,5.0,471,398,4.4,93000
+Bentley,Continental GT,2021,False,4.0,626,664,3.3,202500
+Tesla,Model S Plaid,2022,True,,1020,1050,1.98,131190
+Rolls-Royce,Dawn,2021,False,6.6,563,605,4.3,346300
+Bugatti,Chiron Pur Sport,2021,False,8.0,1500,1180,2.3,3599000
+McLaren,Senna,2019,False,4.0,789,590,2.7,1050000
+Porsche,Panamera Turbo S E-Hybrid,2021,False,,690,641,3,186350
+Aston Martin,DB11,2021,False,4.0,503,498,3.7,205600
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,201000
+Bugatti,Chiron,2021,False,8.0,1500,1180,2.5,3000000
+Chevrolet,Camaro ZL1,2022,False,6.2,650,650,3.5,67000
+Dodge,Challenger Hellcat,2021,False,6.2,717,656,3.5,64000
+Ferrari,812 Superfast,2021,False,6.5,789,530,2.8,340000
+Lamborghini,Aventador SVJ,2021,False,6.5,770,531,2.8,517770
+Mercedes-AMG,GT Black Series,2021,False,4.0,720,590,3.1,325000
+Nissan,400Z,2023,False,3.0,400,350,4,40000
+Porsche,Cayman GT4,2021,False,4.0,414,309,4.2,101000
+Rimac,Nevera,2021,True,,1914,1696,1.9,2400000
+Tesla,Model S Plaid,2021,True,,1020,,1.9,139990
+Toyota,Supra,2021,False,3.0,382,368,3.9,43000
+BMW,M2,2022,False,3.0,405,406,4.1,58900
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.8,45000
+Dodge,Charger Hellcat,2021,False,6.2,707,650,3.6,69995
+Aston Martin,DBS Superleggera,2021,False,5.2,715,663,3.2,305000
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,75000
+Audi,TT RS,2021,False,2.5,394,354,3.6,68000
+Bentley,Continental GT,2021,False,6.0,626,664,3.6,203825
+Chevrolet,Corvette Stingray,2021,False,6.2,495,470,2.9,58900
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,63000
+Ford,Mustang GT,2022,False,5.0,460,420,4,45000
+Ferrari,Roma,2022,False,3.9,612,560,3.3,222630
+McLaren,570S,2021,False,3.8,562,443,2.7,204995
+BMW,M4,2022,False,3.0,473,406,4.1,71800
+Mercedes-Benz,SLS AMG,2021,False,6.2,622,468,3.5,243600
+Nissan,370Z Nismo,2021,False,3.7,350,276,5,47190
+Audi,RS6,2022,False,4.0,591,590,3.5,113000
+Mercedes-Benz,GT 63,2021,False,4.0,577,590,3.3,161200
+Aston Martin,DBS Superleggera,2021,False,5.2,715,663,3.2,310000
+Pagani,Huayra,2021,False,6.0,764,737,3,2600000
+Rimac,C_Two,2022,False,,1914,1696,1.85,2400000
+McLaren,Senna,2021,False,4.0,789,590,2.7,1000000
+Porsche,918 Spyder,2015,False,4.6,887,944,2.2,1800000
+Lamborghini,Aventador SVJ,2020,False,6.5,759,531,2.8,517000
+Audi,RS 6 Avant,2021,False,4.0,591,590,3.5,110000
+Bentley,Continental GT Speed,2022,False,6.0,650,664,3.5,300000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,68000
+Lotus,Evija,2022,False,,1972,1254,2.5,2700000
+Mercedes-AMG,GT Black Series,2021,False,4.0,720,590,3.1,330000
+Aston Martin,DB11,2021,False,4.0,503,513,3.9,205000
+Bentley,Continental GT,2022,False,4.0,542,568,3.9,229000
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,100000
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,135000
+Porsche,Boxster,2022,False,2.0,300,280,4.9,63000
+Alfa Romeo,4C,2020,False,1.8,237,258,4.2,67150
+Chevrolet,Camaro,2022,False,6.2,455,455,4,62195
+Dodge,Challenger,2022,False,3.6,305,268,6.4,28000
+Mercedes-Benz,AMG C 63,2021,False,4.0,469,479,3.8,69900
+Nissan,370Z,2021,False,3.7,350,276,5.3,30090
+Porsche,Cayman,2022,False,2.0,300,280,4.9,68000
+BMW,i8,2022,False,1.5,369,184,4.2,147500
+Lamborghini,Aventador S,2021,False,6.5,729,507,2.9,417650
+Audi,RS7,2022,False,4.0,591,590,3.5,115000
+McLaren,GT,2022,False,4.0,620,465,3.1,208000
+Mercedes-Benz,SLS AMG,2021,False,4.0,730,590,2.9,250000
+Nissan,370Z Nismo,2021,False,3.7,350,276,5,46100
+Porsche,Panamera Turbo S,2022,False,4.0,630,604,3.1,180000
+Ferrari,Portofino,2022,False,3.9,591,561,3.4,250000
+Audi,TT RS,2022,False,2.5,394,354,3.6,70000
+McLaren,570S,2021,False,3.8,562,443,3.1,200000
+BMW,i8,2022,False,,369,184,4.2,148500
+Ferrari,Portofino,2022,False,3.9,612,561,3.3,245000
+Audi,TT RS,2022,False,2.5,394,354,3.6,67800
+McLaren,GT,2022,False,4.0,620,465,3.1,211300
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.5,222500
+Chevrolet,Camaro SS,2022,False,6.2,455,455,4,43995
+Porsche,911 Turbo S,2022,False,3.8,640,590,2.6,208000
+BMW,M5 Competition,2022,False,4.4,617,553,3.1,103500
+Aston Martin,Vantage,2022,False,4.0,503,505,3.5,152995
+Ferrari,F8 Spider,2021,False,3.9,710,568,2.9,274280
+Lexus,LC 500,2022,False,5.0,471,398,4.4,102550
+Porsche,Taycan,2022,False,,469,479,3.8,79900
+Audi,RS6 Avant,2021,False,4.0,591,590,3.5,109000
+BMW,M4,2022,False,3.0,473,406,3.8,71800
+Mercedes-Benz,AMG GT R,2021,False,4.0,577,516,3.5,180000
+Porsche,Panamera Turbo S E-Hybrid,2021,False,4.0,690,642,3,190000
+Lamborghini,Urus,2021,False,4.0,641,627,3.5,218000
+Ferrari,Portofino M,2021,False,3.9,612,561,3.4,235000
+Audi,TT RS,2022,False,2.5,394,354,3.6,67600
+Mercedes-Benz,SLS AMG Black Series,2021,False,6.2,622,468,3.5,335000
+Porsche,718 Boxster,2022,False,2.0,300,280,4.9,63000
+Lamborghini,Aventador SVJ,2020,False,6.5,759,531,2.8,573966
+Audi,TT RS Coupe,2022,False,2.5,394,354,3.5,68000
+McLaren,GT,2020,False,4.0,612,465,3.1,210000
+BMW,Z4 Roadster,2022,False,2.0,255,295,5.2,50000
+Mercedes-Benz,SLS AMG,2015,False,6.2,622,468,3.6,200000
+Chevrolet,Camaro SS Convertible,2022,False,6.2,455,455,4,49000
+Nissan,370Z Coupe,2020,False,3.7,332,270,5,30090
+Aston Martin,Vantage,2021,False,4.0,503,505,3.6,142086
+Bentley,Continental GT,2022,False,6.0,626,664,3.3,225000
+Bugatti,Chiron,2021,False,8.0,1479,1180,2.4,3000000
+Dodge,Challenger SRT Hellcat,2022,False,6.2,717,656,3.5,68000
+Jaguar,F-Type,2022,False,2.0,296,295,5.4,63700
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,98395
+Porsche,Panamera Turbo S E-Hybrid,2021,False,4.0,689,642,3,190000
+Lamborghini,Aventador SVJ,2021,False,6.5,759,531,2.8,517000
+Mercedes-Benz,S63 AMG,2021,False,4.0,603,664,3.4,168000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,64500
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.7,46000
+Porsche,718 Cayman GT4,2022,False,4.0,414,309,4.2,102000
+Mercedes-AMG,C63 S Coupe,2021,False,4.0,503,516,3.7,77500
+Aston Martin,Vantage,2021,False,4.0,503,505,3.5,147000
+McLaren,570S,2021,False,3.8,562,443,3.1,193000
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,64000
+Mercedes-AMG,GT 63 S,2021,False,4.0,630,664,3.1,162000
+Audi,RS 5,2022,False,2.9,444,443,3.5,76700
+McLaren,570S Spider,2020,False,3.8,562,443,3.1,208800
+BMW,M2 Competition,2022,False,3.0,405,406,4.2,58900
+Mercedes-Benz,C 63 AMG,2022,False,4.0,469,479,3.9,69000
+Ford,Mustang GT,2022,False,5.0,460,420,4.5,43000
+Dodge,Challenger R/T,2021,False,5.7,372,400,5.1,35000
+Aston Martin,Vantage,2021,False,4.0,503,505,3.6,151000
+Alfa Romeo,4C Spider,2020,False,1.7,237,258,4.1,69000
+Jaguar,F-Type,2022,False,2.0,296,295,5.4,62500
+Tesla,Roadster,2022,True,,1000,737,1.9,200000
+Bugatti,Chiron Super Sport 300+,2021,False,8.0,1578,1180,2.4,5200000
+Rimac,Nevera,2021,True,,1914,1696,1.85,2400000
+Chevrolet,Camaro ZL1,2022,False,6.2,650,650,3.5,63000
+Aston Martin,Vantage,2021,False,4.0,503,505,3.5,142086
+Alfa Romeo,Giulia Quadrifoglio,2022,False,2.9,505,443,3.8,83250
+Audi,RS 7 Sportback,2021,False,4.0,591,590,3.5,114000
+BMW,M4 Competition,2022,False,3.0,503,479,3.8,74700
+Mercedes-Benz,C63 S AMG,2022,False,4.0,503,516,3.9,77600
+Porsche,Panamera Turbo S,2022,False,4.0,630,604,2.9,181100
+Lamborghini,Aventador S,2021,False,6.5,730,507,2.9,417826
+Aston Martin,DBS Superleggera,2022,False,5.2,715,664,3.2,329100
+Mercedes-Benz,AMG C43 Coupe,2021,False,3.0,385,384,4.5,59900
+Chevrolet,Corvette Stingray,2021,False,6.2,490,465,2.9,59900
+Porsche,Taycan,2022,True,,469,263,3.8,81250
+Lamborghini,Aventador,2021,False,6.5,730,509,2.9,517000
+Ferrari,Roma,2021,False,3.9,611,560,3.3,222620
+Mercedes-Benz,C63 AMG,2021,False,4.0,469,479,3.9,77000
+Chevrolet,Camaro SS,2021,False,6.2,455,455,4.1,43995
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4.1,51720
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.8,46610
+Porsche,Panamera,2022,False,2.9,325,331,5.3,88550
+Ferrari,SF90 Stradale,2021,False,,986,590,2.5,625000
+Audi,RS6,2022,False,4.0,591,590,3.5,120000
+BMW,M4,2022,False,3.0,503,479,3.8,74000
+Mercedes-Benz,AMG A45,2021,False,2.0,382,354,4,50000
+Chevrolet,Camaro ZL1,2021,False,6.2,650,650,3.5,63995
+Bentley,Continental GT,2021,False,4.0,542,568,3.3,202500
+Bugatti,Chiron,2022,False,8.0,1479,1180,2.4,2900000
+Ferrari,F8 Tributo,2022,False,3.9,710,568,2.8,275000
+McLaren,GT,2021,False,4.0,612,465,3.1,201500
+Dodge,Challenger SRT Hellcat Redeye,2022,False,6.2,797,707,3.5,80190
+Jaguar,F-Type,2021,False,3.0,380,339,4.4,62750
+Lexus,LC 500,2021,False,5.0,471,398,4.4,92000
+Lotus,Evija,2021,True,,2000,1254,2.8,2800000
+Maserati,GranTurismo,2021,True,,550,,2.8,200000
+Rolls-Royce,Ghost,2021,False,6.8,563,627,4.6,332500
+Porsche,Taycan,2021,False,2.0,402,254,5.1,81250
+Aston Martin,DB11,2021,False,4.0,630,516,3.7,198995
+Tesla,Roadster,2022,False,0.0,"10,000","7,376",1.9,200000
+Chevrolet,Camaro,2022,False,6.2,455,455,4,25000
+Dodge,Charger,2021,False,6.2,797,707,3.3,72000
+Jaguar,F-Type,2021,False,3.0,380,339,4.9,62750
+Mercedes-Benz,SLS AMG,2021,False,6.2,622,468,3.6,254995
+Nissan,370Z,2021,False,3.7,332,270,5.2,30000
+Audi,RS 7,2021,False,4.0,591,590,3.4,114000
+Bentley,Continental GT,2021,False,4.0,542,568,3.9,220000
+Bugatti,Chiron,2021,False,8.0,"1,500","1,180",2.4,3000000
+Porsche,Cayman,2022,False,2.0,300,280,4.5,59900
+Audi,RS 5,2022,False,2.9,444,443,3.5,75100
+Dodge,Challenger SRT Hellcat,2021,False,6.2,717,656,3.5,60695
+Ferrari,F8 Spider,2022,False,3.9,710,568,2.9,274390
+Jaguar,F-Type,2021,False,3.0,296,295,5.4,64700
+Lamborghini,Aventador,2021,False,6.5,759,531,2.9,517770
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,99990
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,150800
+Mercedes-Benz,AMG C 63,2021,False,4.0,469,479,3.8,67600
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.5,45790
+Porsche,Panamera,2022,False,2.9,325,331,5.3,88800
+Subaru,WRX STI,2021,False,2.5,310,290,5.2,38170
+Tesla,Roadster,2022,False,,"10,000+",,1.9,200000
+Lamborghini,Aventador,2021,False,6.5,729,509,2.9,393695
+Audi,RS5 Coupe,2022,False,2.9,444,443,3.5,76350
+McLaren,570S,2021,False,3.8,562,443,3.1,202000
+Mercedes-Benz,SL,2022,False,3.0,429,384,4.4,96000
+Nissan,370Z,2021,False,3.7,332,270,5.3,33000
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,75250
+Aston Martin,DB11,2022,False,4.0,630,516,3.7,201495
+Bentley,Continental GT,2021,False,6.0,626,664,3.3,201000
+Dodge,Challenger,2021,False,6.4,485,475,3.8,62000
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,99000
+Maserati,GranTurismo,2021,False,4.7,454,384,4.7,150000
+Aston Martin,Vantage,2022,False,4.0,503,505,3.5,149995
+Dodge,Charger SRT Hellcat,2022,False,6.2,717,650,3.5,78595
+Chevrolet,Camaro SS,2022,False,6.2,455,455,4.1,37500
+Ford,Mustang GT,2022,False,5.0,460,420,4,38500
+McLaren,570S,2021,False,3.8,562,443,3.1,208800
+Mercedes-Benz,AMG C63,2022,False,4.0,469,479,3.8,71450
+Nissan,370Z Nismo,2021,False,3.7,350,276,4.9,47820
+Porsche,Panamera GTS,2021,False,4.0,473,457,3.9,134150
+BMW,M4,2021,False,3.0,473,406,3.8,71800
+Lamborghini,Aventador,2021,False,6.5,770,531,2.9,393695
+McLaren,GT,2021,False,4.0,612,465,3.1,250000
+Mercedes-Benz,AMG GT 4-Door Coupe,2021,False,4.0,630,664,3.1,171200
+Aston Martin,DBS Superleggera,2022,False,5.2,715,663,3.4,321000
+Lotus,Evora GT,2021,False,3.5,416,317,3.8,100500
+McLaren,570S,2021,False,3.8,562,443,3.1,195000
+Audi,RS7 Sportback,2022,False,4.0,591,590,3.5,114000
+Mercedes-AMG,C63 S,2022,False,4.0,503,516,3.7,78100
+Dodge,Charger Hellcat,2021,False,6.2,717,650,3.6,70000
+Alfa Romeo,Giulia Quadrifoglio,2021,False,2.9,505,443,3.8,78450
+Tesla,Model S Plaid,2022,True,,"1,020","1,050",1.9,141190
+Porsche,Panamera Turbo S E-Hybrid,2021,False,,689,642,3,190000
+Ford,Mustang Mach 1,2021,False,5.0,480,420,4,52915
+Aston Martin,Vantage,2021,False,4.0,503,505,3.6,147000
+Bugatti,Chiron,2022,False,8.0,1500,1180,2.5,3900000
+Pagani,Huayra,2021,False,6.0,764,740,2.8,2600000
+Lotus,Evija,2022,True,,1973,1254,2.5,2000000
+Pininfarina,Battista,2021,True,,1872,1696,1.9,2500000
+Maserati,MC20,2021,False,3.0,621,538,2.9,210000
+Porsche,Cayman,2021,False,2.0,300,280,5.1,59900
+McLaren,GT,2022,False,4.0,612,465,3.1,210000
+BMW,M2,2021,False,3.0,405,406,4,58900
+Mercedes-Benz,SLS AMG,2021,False,6.3,622,468,3.6,254500
+Ford,Mustang,2021,False,2.3,310,350,5.3,27205
+Nissan,370Z,2021,False,3.7,332,270,5.1,30090
+Koenigsegg,Jesko,2022,False,5.0,1280,1106,2.5,3000000
+Lotus,Evija,2021,True,,1972,1254,2,2000000
+Pagani,Huayra,2021,False,6.0,764,738,3,2600000
+Rimac,Nevera,2021,True,,1888,1696,1.85,2400000
