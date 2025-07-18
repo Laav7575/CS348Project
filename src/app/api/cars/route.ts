@@ -15,20 +15,17 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
   } else if (action === 'search') {
-    // try {
-    //     const [rows] = await db.query(
-    //         `SELECT * FROM Cars WHERE make LIKE ? OR model LIKE ?`,
-    //         [`%${query}%`, `%${query}%`]
-    //     );
-    //     console.log("here",rows);
-    //     return NextResponse.json(rows);
-    // } catch (err) {
-    //     console.error('Search error:', err);
-    //     return NextResponse.json({ error: 'Database query failed' }, { status: 500 });
-    // }
     try {
-    let sql = `SELECT * FROM Cars WHERE (make LIKE ? OR model LIKE ?)`;
-    let values: any[] = [`%${query}%`, `%${query}%`];
+    const words = query.trim().split(/\s+/);
+    let sql = `SELECT * FROM Cars WHERE `;
+      const conditions: string[] = [];
+    const values: any[] = [];
+
+    for (const word of words) {
+      conditions.push(`(make LIKE ? OR model LIKE ?)`);
+      values.push(`%${word}%`, `%${word}%`);
+    }
+    sql += conditions.join(" AND ");
 
     const numericFilters = [
       'price', 'year', 'engineSize', 'horsePower', 'torque', 'acceleration'
