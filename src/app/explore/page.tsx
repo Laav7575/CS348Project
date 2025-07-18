@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavBar from "../../components/NavBar";
 import Link from "next/link";
 
+
 function FilterRange({
   name,
   minKey,
@@ -128,6 +129,9 @@ const [filters, setFilters] = useState(localFilters);
           <button onClick={() =>handleSearch(filters)} 
             className="grow-3 items-center gap-2 p-2 w-fit cursor-pointer border-2 border-solid border-amber-400 text-amber-500 hover:bg-amber-400 hover:text-white">
             Search</button>
+            <div className="grow-0.5 items-center gap-2 p-2 w-fit cursor-pointer border-2 border-solid border-amber-400 text-white-500 bg-amber-400 rounded-full hover:bg-white-400 hover:text-amber">
+               <Link href="/trending" >Trending</Link>
+            </div>
           <div className="align-middle m-auto select-none cursor-pointer" onClick={toggleFilters}>Filters</div>
         </div>
         {showFilters && (

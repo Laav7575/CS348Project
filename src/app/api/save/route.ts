@@ -34,7 +34,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Folder not found or not owned by user' }, { status: 403 });
     }
 
-    await db.query('INSERT IGNORE INTO Saves (fID, cID) VALUES (?, ?)', [fID, cID]);
+    await db.query('INSERT IGNORE INTO Saves (fID, cID, date) VALUES (?, ?, CURDATE())', [fID, cID]);
 
     return NextResponse.json({ success: true, message: 'Car saved to folder!' });
   } catch (err) {
