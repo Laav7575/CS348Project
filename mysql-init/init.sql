@@ -156,3 +156,21 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 7, '2025-07-03'),
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
+
+
+CREATE OR REPLACE VIEW carsInFolder AS
+SELECT f.fID, c.*
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON s.cID = c.cID;
+
+-- Load data from CSV
+-- IMPORTANT: The path '/docker-entrypoint-initdb.d/your_dataset.csv' is relative to the MySQL container's filesystem.
+-- Make sure your docker-compose.yml mounts the CSV correctly.
+-- LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/cleanedsports.csv'
+-- INTO TABLE fullCars
+-- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+-- LINES TERMINATED BY '\n'
+-- IGNORE 1 ROWS
+-- (make, model, year, engineSize, horsePower, torque, acceleration, price);
+

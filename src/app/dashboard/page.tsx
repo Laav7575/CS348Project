@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar";
+import Link from "next/link";
 
 export default function MyDashboard() {
   const [folders, setFolders] = useState([]);
@@ -49,6 +50,15 @@ export default function MyDashboard() {
     <div className="h-screen">
       <NavBar />
       <div className="p-10 flex flex-col relative h-full">
+        {/* All Cars button */}
+        <div className="mb-6">
+          <Link href="/dashboard/all-cars">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+              All Cars
+            </button>
+          </Link>
+        </div>
+
         {error ? (
           <div className="text-xl font-semibold mb-4 text-red-600">{error}</div>
         ) : (
@@ -56,19 +66,10 @@ export default function MyDashboard() {
             {folders.map((folder: any) => (
               <div key={folder.fID} className="border p-4 rounded shadow">
                 <h2 className="text-xl font-semibold mb-2">
-                  {folder.folderName}
+                  <Link href={`/dashboard/${folder.fID}`}>
+                    {folder.folderName}
+                  </Link>
                 </h2>
-                {folder.cars.length > 0 ? (
-                  <ul className="list-disc ml-6 space-y-1">
-                    {folder.cars.map((car: any) => (
-                      <li key={car.cID}>
-                        {car.year} {car.make} {car.model}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-500">No cars in this folder.</p>
-                )}
               </div>
             ))}
 
@@ -94,3 +95,4 @@ export default function MyDashboard() {
     </div>
   );
 }
+

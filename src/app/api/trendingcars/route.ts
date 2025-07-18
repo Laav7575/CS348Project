@@ -4,7 +4,7 @@ import { db } from '@/lib/db';
 export async function GET(req: NextRequest) {
     try {
         const [rows] = await db.query(
-            `SELECT top.cID, c.make, c.model, c.price, top.saveCount,
+            `SELECT top.cID, c.make, c.model, c.price, c.year, top.saveCount,
             (top.cID = mostSaved.cID) AS isMostSaved
             FROM (
                 SELECT s.cID, COUNT(*) AS saveCount
@@ -22,8 +22,7 @@ export async function GET(req: NextRequest) {
                 GROUP BY s.cID
                 ORDER BY COUNT(*) DESC
                 LIMIT 1
-            ) AS mostSaved ON mostSaved.cID = top.cID;
-            `
+            ) AS mostSaved ON mostSaved.cID = top.cID;`
         )
         console.log("Fetched rows:", rows);
         return NextResponse.json(rows);
