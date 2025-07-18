@@ -67,7 +67,7 @@ CREATE TABLE Reviews (
 CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
    uID 			INT NOT NULL,
-   folderName 		VARCHAR(30) NOT NULL UNIQUE,
+   folderName 		VARCHAR(30) NOT NULL,
    isLikes BOOLEAN DEFAULT FALSE,
    PRIMARY KEY(fID),
    FOREIGN KEY(uID) REFERENCES Users(uID) ON DELETE CASCADE
@@ -91,16 +91,17 @@ CREATE TABLE Adds(
 
 DELIMITER //
 
+DROP TRIGGER IF EXISTS create_likes_folder_after_user_insert//
+
 CREATE TRIGGER create_likes_folder_after_user_insert
 AFTER INSERT ON Users
 FOR EACH ROW
 BEGIN
   INSERT INTO Folders (uID, folderName, isLikes)
   VALUES (NEW.uID, 'Likes', TRUE);
-END;
-//
+END//
 
-DELIMITER;
+DELIMITER ;
 
 -- insert test data
 INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
@@ -137,11 +138,11 @@ INSERT INTO Folders (uID, folderName) VALUES
 (3, 'LaavanyaLuxe'),
 (4, 'JahnaviCollection');
 
-INSERT INTO Saves (fID, cID, date, isLikes) VALUES
-(1, 1, '2025-07-03', FALSE),
-(2, 2, '2025-07-03', FALSE),
-(3, 3, '2025-07-03', FALSE),
-(4, 4, '2025-07-03', FALSE);
+INSERT INTO Saves (fID, cID, date) VALUES
+(1, 1, '2025-07-03'),
+(2, 2, '2025-07-03'),
+(3, 3, '2025-07-03'),
+(4, 4, '2025-07-03');
 
 INSERT INTO Adds (uID, cID, date) VALUES 
 (1, 1, '2025-07-03'),

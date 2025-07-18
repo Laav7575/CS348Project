@@ -47,7 +47,7 @@ export default function SignInPage() {
     }
 
     localStorage.setItem('token', data.token);
-    window.location.href = '/explore';
+    window.location.href = '/dashboard';
   };
 
   return (
