@@ -1,38 +1,563 @@
-+-----+--------------+------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
-| cID | make         | model                  | image        | year | isElectric | engineSize | horsePower | torque | acceleration | price   |
-+-----+--------------+------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
-|   4 | Aston Martin | DB11                   | NULL         | 2022 |          0 |        5.2 |        630 |    516 |          3.7 |  205600 |
-|   6 | Dodge        | Challenger SRT Hellcat | NULL         | 2022 |          0 |        6.2 |        717 |    656 |          3.6 |   74500 |
-|   7 | Koenigsegg   | Jesko                  | NULL         | 2022 |          0 |          5 |       1600 |   1106 |          2.5 | 3000000 |
-|   8 | Rimac        | Nevera                 | NULL         | 2022 |          1 |       NULL |       1914 |   1741 |         1.85 | 2400000 |
-|  10 | Porsche      | 911                    | NULL         | 2022 |       NULL |          3 |        379 |    331 |            4 |  101200 |
-|  12 | Ferrari      | 488 GTB                | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 |  333750 |
-|  13 | Audi         | R8                     | NULL         | 2022 |       NULL |        5.2 |        562 |    406 |          3.2 |  142700 |
-|  15 | BMW          | M8                     | NULL         | 2022 |       NULL |        4.4 |        617 |    553 |          3.1 |  130000 |
-|  18 | Ford         | Mustang Shelby GT500   | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |   81000 |
-|  22 | Dodge        | Challenger SRT Hellcat | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   61000 |
-+-----+--------------+------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
-10 rows in set (0.00 sec)
++------+---------------+-------------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
+| cID  | make          | model                         | image        | year | isElectric | engineSize | horsePower | torque | acceleration | price   |
++------+---------------+-------------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
+|    4 | Aston Martin  | DB11                          | NULL         | 2022 |          0 |        5.2 |        630 |    516 |          3.7 |  205600 |
+|    6 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |          0 |        6.2 |        717 |    656 |          3.6 |   74500 |
+|    7 | Koenigsegg    | Jesko                         | NULL         | 2022 |          0 |          5 |       1600 |   1106 |          2.5 | 3000000 |
+|    8 | Rimac         | Nevera                        | NULL         | 2022 |          1 |       NULL |       1914 |   1741 |         1.85 | 2400000 |
+|   10 | Porsche       | 911                           | NULL         | 2022 |       NULL |          3 |        379 |    331 |            4 |  101200 |
+|   12 | Ferrari       | 488 GTB                       | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 |  333750 |
+|   13 | Audi          | R8                            | NULL         | 2022 |       NULL |        5.2 |        562 |    406 |          3.2 |  142700 |
+|   15 | BMW           | M8                            | NULL         | 2022 |       NULL |        4.4 |        617 |    553 |          3.1 |  130000 |
+|   18 | Ford          | Mustang Shelby GT500          | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |   81000 |
+|   22 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   61000 |
+|   23 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        296 |    295 |          5.4 |   70100 |
+|   29 | Alfa Romeo    | Giulia Quadrifoglio           | NULL         | 2022 |       NULL |        2.9 |        505 |    443 |          3.8 |   78000 |
+|   32 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|   36 | Rimac         | Nevera                        | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |         1.85 | 2400000 |
+|   37 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          3.8 |  100200 |
+|   40 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  117000 |
+|   42 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        503 |    479 |          3.8 |   72800 |
+|   45 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|   47 | Porsche       | Taycan 4S                     | NULL         | 2022 |       NULL |          0 |        562 |    479 |          3.8 |  104000 |
+|   50 | Audi          | RS3                           | NULL         | 2022 |       NULL |        2.5 |        394 |    369 |          3.9 |   57000 |
+|   57 | Audi          | RS3                           | NULL         | 2022 |       NULL |        2.5 |        394 |    369 |          3.9 |   56200 |
+|   59 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        503 |    479 |          3.8 |   71800 |
+|   62 | Ford          | Mustang GT                    | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.3 |   39000 |
+|   69 | Audi          | S5                            | NULL         | 2022 |       NULL |          3 |        349 |    369 |          4.4 |   52500 |
+|   71 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|   72 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.5 |  146000 |
+|   74 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|   76 | Dodge         | Challenger SRT Hellcat Redeye | NULL         | 2022 |       NULL |        6.2 |        797 |    707 |          3.4 |   78595 |
+|   78 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          2 |        296 |    295 |          5.4 |   62750 |
+|   81 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|   84 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.3 |   88700 |
+|   86 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   72800 |
+|   91 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.5 |   61000 |
+|   92 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.9 |  159495 |
+|   93 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.5 |  142086 |
+|   95 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.4 | 3000000 |
+|   96 | Dodge         | Challenger SRT Hellcat Redeye | NULL         | 2022 |       NULL |        6.2 |        797 |    707 |          3.4 |   74290 |
+|   97 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        380 |    339 |          4.9 |   71900 |
+|   98 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1600 |   1106 |          2.5 | 3000000 |
+|   99 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  101 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.7 |  134300 |
+|  103 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 |  213195 |
+|  105 | Pagani        | Huayra                        | NULL         | 2022 |       NULL |          6 |        764 |    738 |          2.8 | 2800000 |
+|  106 | Porsche       | 718 Cayman GT4                | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  100550 |
+|  107 | Rimac         | Nevera                        | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |         1.95 | 2400000 |
+|  109 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |    737 |          1.9 |  200000 |
+|  110 | Toyota        | Supra                         | NULL         | 2022 |       NULL |          3 |        382 |    368 |          3.9 |   43090 |
+|  111 | W Motors      | Fenyr Supersport              | NULL         | 2022 |       NULL |        3.8 |        800 |    723 |          2.7 | 1700000 |
+|  112 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.7 |   60500 |
+|  115 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.4 |   67000 |
+|  117 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        503 |    479 |          3.8 |   75000 |
+|  120 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  130 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |          4.2 |   59000 |
+|  131 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102100 |
+|  135 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  138 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  142 | Porsche       | Panamera Turbo S              | NULL         | 2022 |       NULL |          4 |        620 |    604 |          2.9 |  187700 |
+|  146 | Audi          | S5                            | NULL         | 2022 |       NULL |          3 |        349 |    369 |          4.4 |   52500 |
+|  147 | Porsche       | Cayman                        | NULL         | 2022 |       NULL |        2.5 |        365 |    309 |          4.5 |   68900 |
+|  149 | Ferrari       | F8 Tributo                    | NULL         | 2022 |       NULL |        3.9 |        710 |    568 |          2.9 |  276550 |
+|  152 | BMW           | Z4 M40i                       | NULL         | 2022 |       NULL |          3 |        382 |    369 |          3.9 |   63700 |
+|  154 | Chevrolet     | Camaro SS                     | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |          4.1 |   44000 |
+|  157 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.4 |   88550 |
+|  160 | Audi          | RS 3                          | NULL         | 2022 |       NULL |        2.5 |        401 |    369 |          3.6 |   56200 |
+|  162 | BMW           | M2 CS                         | NULL         | 2022 |       NULL |          3 |        444 |    406 |          3.8 |   84595 |
+|  166 | Aston Martin  | DB11                          | NULL         | 2022 |       NULL |          4 |        503 |    513 |          3.7 |  204100 |
+|  170 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        380 |    339 |          4.9 |   69900 |
+|  171 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1600 |   1106 |          2.5 | 3000000 |
+|  172 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  177 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102900 |
+|  178 | Rimac         | C_Two                         | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |          1.9 | 2400000 |
+|  182 | Toyota        | GR Supra                      | NULL         | 2022 |       NULL |          3 |        382 |    368 |          3.9 |   43090 |
+|  183 | TVR           | Griffith                      | NULL         | 2022 |       NULL |          5 |        500 |    479 |          3.8 |  123500 |
+|  187 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  507000 |
+|  190 | BMW           | M2 CS                         | NULL         | 2022 |       NULL |          3 |        444 |    406 |          3.8 |   84595 |
+|  193 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  198 | Audi          | RS 3                          | NULL         | 2022 |       NULL |        2.5 |        401 |    354 |          3.5 |   56000 |
+|  200 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  104000 |
+|  203 | Porsche       | Taycan                        | NULL         | 2022 |       NULL |          2 |        402 |    254 |          5.1 |   81250 |
+|  205 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    663 |          3.4 |  330000 |
+|  208 | Mercedes-AMG  | C 63 S Coupe                  | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.7 |   77000 |
+|  209 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   72800 |
+|  211 | Dodge         | Challenger SRT Hellcat Redeye | NULL         | 2022 |       NULL |        6.2 |        797 |    707 |          3.5 |   76000 |
+|  212 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 |  500000 |
+|  214 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    332 |          5.3 |   87200 |
+|  220 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.5 |  142086 |
+|  221 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  225 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115045 |
+|  227 | BMW           | M2 Competition                | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   59895 |
+|  230 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   69995 |
+|  231 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 |  500000 |
+|  235 | Audi          | R8 Spyder                     | NULL         | 2022 |       NULL |        5.2 |        562 |    406 |          3.5 |  183300 |
+|  237 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   73795 |
+|  240 | Aston Martin  | DB11                          | NULL         | 2022 |       NULL |        5.2 |        630 |    516 |          3.5 |  207000 |
+|  241 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.5 |  203825 |
+|  243 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.7 |  157500 |
+|  247 | Audi          | RS5                           | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.7 |   77250 |
+|  250 | Dodge         | Charger SRT Hellcat           | NULL         | 2022 |       NULL |        6.2 |        717 |    650 |          3.6 |   71490 |
+|  251 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  252 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  255 | Rolls-Royce   | Wraith                        | NULL         | 2022 |       NULL |        6.8 |        624 |    605 |          4.4 |  330000 |
+|  257 | Tesla         | Model S Plaid                 | NULL         | 2022 |       NULL |          0 |       1020 |   1050 |          1.9 |  131190 |
+|  260 | Ferrari       | Portofino                     | NULL         | 2022 |       NULL |        3.9 |        591 |    413 |          3.3 |  218750 |
+|  263 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  268 | Porsche       | Panamera Turbo                | NULL         | 2022 |       NULL |          4 |        620 |    604 |          3.1 |  174300 |
+|  270 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  271 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.4 |   67895 |
+|  276 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   93050 |
+|  277 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  101200 |
+|  278 | BMW           | M2 Competition                | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   59895 |
+|  281 | Lotus         | Evora GT                      | NULL         | 2022 |       NULL |        3.5 |        416 |    317 |          3.8 |  105000 |
+|  288 | Rimac         | C_Two                         | NULL         | 2022 |       NULL |          0 |       1914 |   1732 |         1.85 | 2400000 |
+|  290 | Pininfarina   | Battista                      | NULL         | 2022 |       NULL |          0 |       1874 |   1696 |          1.9 | 2500000 |
+|  291 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.9 |  157500 |
+|  293 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 |  219800 |
+|  294 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   70000 |
+|  295 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          2 |        296 |    295 |          5.4 |   61600 |
+|  296 | Kia           | Stinger                       | NULL         | 2022 |       NULL |        3.3 |        368 |    376 |          4.7 |   52200 |
+|  299 | Porsche       | 718 Cayman GT4                | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102550 |
+|  302 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|  303 | Chevrolet     | Camaro ZL1                    | NULL         | 2022 |       NULL |        6.2 |        650 |    650 |          3.5 |   69000 |
+|  304 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  309 | Porsche       | Taycan                        | NULL         | 2022 |       NULL |          0 |        616 |    774 |          2.6 |   79900 |
+|  310 | Tesla         | Model S                       | NULL         | 2022 |       NULL |          0 |       1020 |   1050 |         1.98 |  119000 |
+|  311 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    664 |          3.2 |  307820 |
+|  312 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.4 |  207825 |
+|  317 | Ferrari       | F8 Tributo                    | NULL         | 2022 |       NULL |        3.9 |        710 |    568 |          2.8 |  276550 |
+|  318 | Audi          | RS 7                          | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  319 | BMW           | M2 CS                         | NULL         | 2022 |       NULL |          3 |        444 |    406 |            4 |   84595 |
+|  322 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  325 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.8 |  134300 |
+|  332 | Dodge         | Challenger Hellcat Redeye     | NULL         | 2022 |       NULL |        6.2 |        797 |    707 |          3.4 |   82190 |
+|  337 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        380 |    339 |          4.9 |   70100 |
+|  338 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1280 |   1015 |          2.5 | 3000000 |
+|  340 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.8 |  132795 |
+|  341 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.1 |  215500 |
+|  342 | Mercedes-AMG  | C 63 S Coupe                  | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.7 |   80900 |
+|  345 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |      0 |          1.9 |  200000 |
+|  347 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  348 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.7 |  157500 |
+|  350 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 |  202500 |
+|  352 | Dodge         | Challenger Hellcat            | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   67500 |
+|  354 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1280 |   1106 |          2.5 | 2800000 |
+|  359 | Mercedes-Benz | AMG C63                       | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.8 |   69900 |
+|  361 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102900 |
+|  362 | Rimac         | Nevera                        | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |         1.85 | 2400000 |
+|  364 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |   NULL |         NULL |     1.9 |
+|  365 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.7 |  157500 |
+|  369 | Jaguar        | F-Type R                      | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  381 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        296 |    295 |          5.4 |   61600 |
+|  386 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.4 | 3000000 |
+|  388 | Jaguar        | F-Type R                      | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  389 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1280 |   1015 |          2.5 | 2800000 |
+|  393 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  394 | Mercedes-AMG  | C 63 S                        | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.7 |   81550 |
+|  397 | Rimac         | C_Two                         | NULL         | 2022 |       NULL |          0 |       1888 |   1696 |          1.8 | 2400000 |
+|  399 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |      0 |          1.9 |  200000 |
+|  400 | Toyota        | Supra                         | NULL         | 2022 |       NULL |          3 |        382 |    368 |          3.9 |   43090 |
+|  403 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 |  207825 |
+|  405 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        380 |    339 |          4.8 |   62250 |
+|  406 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92000 |
+|  408 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.7 |  134300 |
+|  409 | McLaren       | 570S                          | NULL         | 2022 |       NULL |        3.8 |        562 |    443 |          2.9 |  204550 |
+|  413 | BMW           | M2 Competition                | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   59895 |
+|  417 | Porsche       | Taycan 4S                     | NULL         | 2022 |       NULL |        2.5 |        482 |    472 |          3.8 |  102900 |
+|  420 | Alfa Romeo    | Giulia Quadrifoglio           | NULL         | 2022 |       NULL |        2.9 |        505 |    443 |          3.8 |   81250 |
+|  421 | Audi          | RS7 Sportback                 | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115045 |
+|  423 | Chevrolet     | Camaro SS                     | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |          4.1 |   42000 |
+|  428 | Koenigsegg    | Jesko Absolut                 | NULL         | 2022 |       NULL |          5 |       1600 |   1106 |          2.1 | 2800000 |
+|  430 | Lotus         | Evija                         | NULL         | 2022 |       NULL |          0 |       1973 |   1254 |          2.5 | 2750000 |
+|  431 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.2 |  210000 |
+|  436 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   69000 |
+|  438 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   72800 |
+|  439 | Mercedes-Benz | AMG C 63                      | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.8 |   70000 |
+|  444 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.4 | 3000000 |
+|  450 | Porsche       | Cayman                        | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   59900 |
+|  453 | Audi          | RS 5                          | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.7 |   75100 |
+|  455 | BMW           | Z4 M40i                       | NULL         | 2022 |       NULL |          3 |        382 |    369 |          4.3 |   63700 |
+|  457 | Chevrolet     | Camaro SS                     | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |          4.3 |   42500 |
+|  458 | Ford          | Mustang GT                    | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.3 |   36120 |
+|  460 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.6 |  146000 |
+|  462 | Porsche       | 718 Boxster                   | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   62000 |
+|  465 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   69900 |
+|  467 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |            4 |   72800 |
+|  468 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   60500 |
+|  470 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  471 | Audi          | RS5                           | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.7 |   75100 |
+|  473 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  476 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  480 | Alfa Romeo    | Giulia Quadrifoglio           | NULL         | 2022 |       NULL |        2.9 |        505 |    443 |          3.8 |   80500 |
+|  484 | Porsche       | Panamera Turbo S              | NULL         | 2022 |       NULL |          4 |        630 |    604 |          2.9 |  180800 |
+|  489 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          3 |        380 |    339 |          4.9 |   70900 |
+|  492 | Audi          | RS5 Coupe                     | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.7 |   76450 |
+|  494 | Chevrolet     | Camaro ZL1                    | NULL         | 2022 |       NULL |        6.2 |        650 |    650 |          3.5 |   64000 |
+|  495 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   61500 |
+|  497 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  498 | McLaren       | 570S                          | NULL         | 2022 |       NULL |        3.8 |        562 |    443 |          3.1 |  198950 |
+|  507 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    664 |          3.4 |  314500 |
+|  508 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.3 |  214425 |
+|  509 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.3 | 3000000 |
+|  510 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   71490 |
+|  515 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.7 |  150980 |
+|  516 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  518 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102000 |
+|  522 | Toyota        | GR Supra                      | NULL         | 2022 |       NULL |          3 |        382 |    368 |          3.9 |   43090 |
+|  525 | W Motors      | Fenyr SuperSport              | NULL         | 2022 |       NULL |        3.8 |        800 |    723 |          2.7 | 1550000 |
+|  527 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    663 |          3.2 |  308000 |
+|  533 | Lotus         | Evija                         | NULL         | 2022 |       NULL |          0 |       1973 |   1254 |          2.5 | 2600000 |
+|  536 | Rimac         | C_Two                         | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |          1.9 | 2400000 |
+|  537 | Tesla         | Model S Plaid                 | NULL         | 2022 |       NULL |          0 |       1020 |   1050 |         1.98 |  140000 |
+|  538 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  543 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  545 | Lotus         | Evora GT                      | NULL         | 2022 |       NULL |        3.5 |        416 |    317 |          3.8 |  105000 |
+|  547 | Subaru        | WRX STI                       | NULL         | 2022 |       NULL |        2.5 |        310 |    290 |          5.2 |   38170 |
+|  548 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.7 |  157500 |
+|  550 | Tesla         | Model S Plaid                 | NULL         | 2022 |       NULL |          0 |       1020 |   1050 |         1.98 |  139990 |
+|  551 | Bugatti       | Chiron Super Sport 300+       | NULL         | 2022 |       NULL |          8 |       1578 |   1180 |          2.3 | 5200000 |
+|  553 | Porsche       | Taycan Turbo S                | NULL         | 2022 |       NULL |          0 |        750 |    774 |          2.6 |  185000 |
+|  555 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   93050 |
+|  556 | Chevrolet     | Camaro ZL1                    | NULL         | 2022 |       NULL |        6.2 |        650 |    650 |          3.5 |   65000 |
+|  557 | Audi          | RS 7 Sportback                | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  558 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  559 | BMW           | M2 CS                         | NULL         | 2022 |       NULL |          3 |        444 |    406 |          3.8 |   84595 |
+|  560 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102550 |
+|  561 | Lamborghini   | Aventador                     | NULL         | 2022 |       NULL |        6.5 |        770 |    531 |          2.8 |  393695 |
+|  565 | Lamborghini   | Aventador S                   | NULL         | 2022 |       NULL |        6.5 |        729 |    507 |          2.9 |  460247 |
+|  567 | Audi          | RS 6 Avant                    | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.1 |  110045 |
+|  569 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|  578 | Lamborghini   | Urus                          | NULL         | 2022 |       NULL |          4 |        641 |    626 |          3.2 |  218009 |
+|  580 | Ferrari       | Portofino M                   | NULL         | 2022 |       NULL |        3.9 |        612 |    560 |          3.5 |  245000 |
+|  584 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  100200 |
+|  593 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        647 |    550 |            3 |  500000 |
+|  600 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   61500 |
+|  603 | Audi          | RS 5                          | NULL         | 2022 |       NULL |        2.9 |        444 |    442 |          3.5 |   75400 |
+|  605 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |          4.2 |   58900 |
+|  606 | Mercedes-Benz | SL                            | NULL         | 2022 |       NULL |          3 |        429 |    384 |          4.9 |   96250 |
+|  608 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  613 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.2 |   88550 |
+|  616 | Audi          | RS 6                          | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  109000 |
+|  617 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  621 | Audi          | RS 7                          | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  117000 |
+|  632 | Tesla         | Model S Plaid                 | NULL         | 2022 |       NULL |          0 |       1020 |   1050 |         1.98 |  131190 |
+|  642 | Chevrolet     | Camaro ZL1                    | NULL         | 2022 |       NULL |        6.2 |        650 |    650 |          3.5 |   67000 |
+|  655 | Porsche       | 718 Boxster                   | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   62000 |
+|  657 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  658 | Audi          | RS 7                          | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  660 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |          4.1 |   58900 |
+|  663 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        647 |    550 |            3 |  500000 |
+|  670 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|  673 | Ford          | Mustang GT                    | NULL         | 2022 |       NULL |          5 |        460 |    420 |            4 |   45000 |
+|  674 | Porsche       | Cayman                        | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   59900 |
+|  676 | Ferrari       | Roma                          | NULL         | 2022 |       NULL |        3.9 |        612 |    560 |          3.3 |  222630 |
+|  677 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  679 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   71800 |
+|  682 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  684 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.4 |   88550 |
+|  687 | Audi          | RS6                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  113000 |
+|  689 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  693 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.4 | 3000000 |
+|  696 | Rimac         | C_Two                         | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |         1.85 | 2400000 |
+|  702 | Bentley       | Continental GT Speed          | NULL         | 2022 |       NULL |          6 |        650 |    664 |          3.5 |  300000 |
+|  706 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92000 |
+|  707 | Lotus         | Evija                         | NULL         | 2022 |       NULL |          0 |       1972 |   1254 |          2.5 | 2700000 |
+|  710 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 |  229000 |
+|  711 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          2 |        296 |    295 |          5.4 |   62750 |
+|  714 | Porsche       | Boxster                       | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   63000 |
+|  716 | Chevrolet     | Camaro                        | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |            4 |   62195 |
+|  717 | Dodge         | Challenger                    | NULL         | 2022 |       NULL |        3.6 |        305 |    268 |          6.4 |   28000 |
+|  718 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 |  500000 |
+|  719 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115045 |
+|  720 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   71800 |
+|  724 | Porsche       | Cayman                        | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   68000 |
+|  725 | BMW           | i8                            | NULL         | 2022 |       NULL |        1.5 |        369 |    184 |          4.2 |  147500 |
+|  727 | Porsche       | Taycan Turbo S                | NULL         | 2022 |       NULL |          0 |        750 |    774 |          2.6 |  185000 |
+|  729 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  730 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115000 |
+|  731 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 |  208000 |
+|  732 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|  735 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  737 | Porsche       | Panamera Turbo S              | NULL         | 2022 |       NULL |          4 |        630 |    604 |          3.1 |  180000 |
+|  739 | Ferrari       | Portofino                     | NULL         | 2022 |       NULL |        3.9 |        591 |    561 |          3.4 |  250000 |
+|  740 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   70000 |
+|  742 | BMW           | i8                            | NULL         | 2022 |       NULL |          0 |        369 |    184 |          4.2 |  148500 |
+|  743 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   61500 |
+|  745 | Ferrari       | Portofino                     | NULL         | 2022 |       NULL |        3.9 |        612 |    561 |          3.3 |  245000 |
+|  746 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   67800 |
+|  747 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 |  211300 |
+|  748 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   71800 |
+|  750 | Chevrolet     | Camaro SS                     | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |            4 |   43995 |
+|  751 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 |  500000 |
+|  753 | Porsche       | 911 Turbo S                   | NULL         | 2022 |       NULL |        3.8 |        640 |    590 |          2.6 |  208000 |
+|  757 | BMW           | M5 Competition                | NULL         | 2022 |       NULL |        4.4 |        617 |    553 |          3.1 |  103500 |
+|  758 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115000 |
+|  759 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.5 |  152995 |
+|  761 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |  102550 |
+|  762 | Porsche       | Taycan                        | NULL         | 2022 |       NULL |          0 |        469 |    479 |          3.8 |   79900 |
+|  767 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          3.8 |   71800 |
+|  770 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 |  500000 |
+|  775 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   67600 |
+|  776 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  777 | BMW           | M2 CS                         | NULL         | 2022 |       NULL |          3 |        444 |    406 |          3.8 |   84595 |
+|  780 | Porsche       | 718 Boxster                   | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   63000 |
+|  782 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  783 | Audi          | TT RS Coupe                   | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.5 |   68000 |
+|  785 | BMW           | Z4 Roadster                   | NULL         | 2022 |       NULL |          2 |        255 |    295 |          5.2 |   50000 |
+|  787 | Chevrolet     | Camaro SS Convertible         | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |            4 |   49000 |
+|  791 | Bentley       | Continental GT                | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.3 |  225000 |
+|  793 | Dodge         | Challenger SRT Hellcat        | NULL         | 2022 |       NULL |        6.2 |        717 |    656 |          3.5 |   68000 |
+|  794 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          2 |        296 |    295 |          5.4 |   63700 |
+|  796 | Maserati      | GranTurismo                   | NULL         | 2022 |       NULL |        4.7 |        454 |    384 |          4.7 |  150980 |
+|  802 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  117000 |
+|  807 | Porsche       | 718 Cayman GT4                | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102000 |
+|  811 | BMW           | M5                            | NULL         | 2022 |       NULL |        4.4 |        600 |    553 |          3.2 |  103500 |
+|  820 | Audi          | RS 5                          | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.5 |   76700 |
+|  822 | BMW           | M2 Competition                | NULL         | 2022 |       NULL |          3 |        405 |    406 |          4.2 |   58900 |
+|  823 | Mercedes-Benz | C 63 AMG                      | NULL         | 2022 |       NULL |          4 |        469 |    479 |          3.9 |   69000 |
+|  825 | Ford          | Mustang GT                    | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.5 |   43000 |
+|  830 | Jaguar        | F-Type                        | NULL         | 2022 |       NULL |          2 |        296 |    295 |          5.4 |   62500 |
+|  831 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       1000 |    737 |          1.9 |  200000 |
+|  832 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1600 |   1106 |          2.5 | 3000000 |
+|  835 | Porsche       | Cayman GT4                    | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 |  102100 |
+|  836 | Chevrolet     | Camaro ZL1                    | NULL         | 2022 |       NULL |        6.2 |        650 |    650 |          3.5 |   63000 |
+|  838 | Alfa Romeo    | Giulia Quadrifoglio           | NULL         | 2022 |       NULL |        2.9 |        505 |    443 |          3.8 |   83250 |
+|  840 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   93050 |
+|  842 | BMW           | M4 Competition                | NULL         | 2022 |       NULL |          3 |        503 |    479 |          3.8 |   74700 |
+|  843 | Mercedes-Benz | C63 S AMG                     | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.9 |   77600 |
+|  844 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 |  500000 |
+|  846 | Porsche       | Panamera Turbo S              | NULL         | 2022 |       NULL |          4 |        630 |    604 |          2.9 |  181100 |
+|  848 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    664 |          3.2 |  329100 |
+|  849 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   67600 |
+|  851 | BMW           | i8                            | NULL         | 2022 |       NULL |        1.5 |        369 |    184 |          4.2 |  147500 |
+|  853 | Porsche       | Taycan                        | NULL         | 2022 |       NULL |          0 |        469 |    263 |          3.8 |   81250 |
+|  856 | Audi          | RS7                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  115000 |
+|  858 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |          4.2 |   58900 |
+|  863 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.3 |   88550 |
+|  866 | Audi          | RS6                           | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  120000 |
+|  868 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        503 |    479 |          3.8 |   74000 |
+|  874 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1479 |   1180 |          2.4 | 2900000 |
+|  875 | Ferrari       | F8 Tributo                    | NULL         | 2022 |       NULL |        3.9 |        710 |    568 |          2.8 |  275000 |
+|  883 | Dodge         | Challenger SRT Hellcat Redeye | NULL         | 2022 |       NULL |        6.2 |        797 |    707 |          3.5 |   80190 |
+|  884 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  894 | Acura         | NSX                           | NULL         | 2022 |       NULL |        3.5 |        573 |    476 |          2.7 |  157500 |
+|  895 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |   NULL |         NULL |     376 |
+|  896 | Chevrolet     | Camaro                        | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |            4 |   25000 |
+|  900 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   71800 |
+|  909 | Porsche       | Cayman                        | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.5 |   59900 |
+|  912 | Audi          | RS 5                          | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.5 |   75100 |
+|  913 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  915 | Ferrari       | F8 Spider                     | NULL         | 2022 |       NULL |        3.9 |        710 |    568 |          2.9 |  274390 |
+|  918 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  924 | Porsche       | Panamera                      | NULL         | 2022 |       NULL |        2.9 |        325 |    331 |          5.3 |   88800 |
+|  926 | Tesla         | Roadster                      | NULL         | 2022 |       NULL |          0 |       NULL |   NULL |            0 |     1.9 |
+|  927 | Porsche       | 718 Cayman                    | NULL         | 2022 |       NULL |          2 |        300 |    280 |          4.9 |   61500 |
+|  929 | Ferrari       | SF90 Stradale                 | NULL         | 2022 |       NULL |          4 |        986 |    590 |          2.5 |  625000 |
+|  930 | Audi          | RS5 Coupe                     | NULL         | 2022 |       NULL |        2.9 |        444 |    443 |          3.5 |   76350 |
+|  932 | BMW           | M2                            | NULL         | 2022 |       NULL |          3 |        405 |    406 |            4 |   58900 |
+|  933 | Mercedes-Benz | SL                            | NULL         | 2022 |       NULL |          3 |        429 |    384 |          4.4 |   96000 |
+|  935 | Ford          | GT                            | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 |  500000 |
+|  938 | Aston Martin  | DB11                          | NULL         | 2022 |       NULL |          4 |        630 |    516 |          3.7 |  201495 |
+|  941 | Jaguar        | F-Type R                      | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  942 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  946 | Aston Martin  | Vantage                       | NULL         | 2022 |       NULL |          4 |        503 |    505 |          3.5 |  149995 |
+|  947 | Dodge         | Charger SRT Hellcat           | NULL         | 2022 |       NULL |        6.2 |        717 |    650 |          3.5 |   78595 |
+|  949 | Chevrolet     | Camaro SS                     | NULL         | 2022 |       NULL |        6.2 |        455 |    455 |          4.1 |   37500 |
+|  950 | Ford          | Mustang GT                    | NULL         | 2022 |       NULL |          5 |        460 |    420 |            4 |   38500 |
+|  951 | Jaguar        | F-Type R                      | NULL         | 2022 |       NULL |          5 |        575 |    516 |          3.5 |  103200 |
+|  952 | Lexus         | LC 500                        | NULL         | 2022 |       NULL |          5 |        471 |    398 |          4.4 |   92950 |
+|  954 | Mercedes-Benz | AMG C63                       | NULL         | 2022 |       NULL |          4 |        469 |    479 |          3.8 |   71450 |
+|  957 | Audi          | TT RS                         | NULL         | 2022 |       NULL |        2.5 |        394 |    354 |          3.6 |   67600 |
+|  963 | Aston Martin  | DBS Superleggera              | NULL         | 2022 |       NULL |        5.2 |        715 |    663 |          3.4 |  321000 |
+|  969 | Audi          | RS7 Sportback                 | NULL         | 2022 |       NULL |          4 |        591 |    590 |          3.5 |  114000 |
+|  970 | BMW           | M4                            | NULL         | 2022 |       NULL |          3 |        473 |    406 |          4.1 |   72800 |
+|  971 | Mercedes-AMG  | C63 S                         | NULL         | 2022 |       NULL |          4 |        503 |    516 |          3.7 |   78100 |
+|  975 | Tesla         | Model S Plaid                 | NULL         | 2022 |       NULL |          0 |       NULL |   NULL |         NULL |      50 |
+|  978 | McLaren       | Artura                        | NULL         | 2022 |       NULL |          3 |        671 |    531 |            3 |  225000 |
+|  981 | Porsche       | 911                           | NULL         | 2022 |       NULL |          3 |        379 |    331 |            4 |  101200 |
+|  983 | Ferrari       | 488 GTB                       | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 |  333750 |
+|  984 | Audi          | R8                            | NULL         | 2022 |       NULL |        5.2 |        562 |    406 |          3.2 |  142700 |
+|  986 | BMW           | M8                            | NULL         | 2022 |       NULL |        4.4 |        617 |    553 |          3.1 |  130000 |
+|  989 | Ford          | Mustang Shelby GT500          | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |   81000 |
+|  993 | Bugatti       | Chiron                        | NULL         | 2022 |       NULL |          8 |       1500 |   1180 |          2.5 | 3900000 |
+|  994 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1280 |   1015 |          2.5 | 3000000 |
+|  996 | Rimac         | Nevera                        | NULL         | 2022 |       NULL |          0 |       1914 |   1696 |         1.85 | 2400000 |
+|  997 | Lotus         | Evija                         | NULL         | 2022 |       NULL |          0 |       1973 |   1254 |          2.5 | 2000000 |
+| 1004 | McLaren       | GT                            | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.1 |  210000 |
+| 1012 | Koenigsegg    | Jesko                         | NULL         | 2022 |       NULL |          5 |       1280 |   1106 |          2.5 | 3000000 |
++------+---------------+-------------------------------+--------------+------+------------+------------+------------+--------+--------------+---------+
+386 rows in set (0.00 sec)
 
-+-----+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
-| cID | make          | model                | image        | year | isElectric | engineSize | horsePower | torque | acceleration | price  |
-+-----+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
-|   3 | Nissan        | GT-R Nismo           | NULL         | 2021 |          0 |        3.8 |        600 |    481 |          2.9 | 210740 |
-|   9 | Lotus         | Evora GT             | NULL         | 2021 |          0 |        3.5 |        416 |    317 |          3.8 |  99600 |
-|  12 | Ferrari       | 488 GTB              | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 | 333750 |
-|  16 | Mercedes-Benz | AMG GT               | NULL         | 2021 |       NULL |          4 |        523 |    494 |          3.8 | 118500 |
-|  18 | Ford          | Mustang Shelby GT500 | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |  81000 |
-|  19 | Nissan        | GT-R Nismo           | NULL         | 2021 |       NULL |        3.8 |        600 |    481 |          2.5 | 212000 |
-|  26 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 104450 |
-|  31 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 225000 |
-|  37 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          3.8 | 100200 |
-|  45 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
-+-----+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
-10 rows in set (0.00 sec)
-
-Query OK, 1 row affected (0.00 sec)
++------+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
+| cID  | make          | model                | image        | year | isElectric | engineSize | horsePower | torque | acceleration | price  |
++------+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
+|    3 | Nissan        | GT-R Nismo           | NULL         | 2021 |          0 |        3.8 |        600 |    481 |          2.9 | 210740 |
+|    9 | Lotus         | Evora GT             | NULL         | 2021 |          0 |        3.5 |        416 |    317 |          3.8 |  99600 |
+|   12 | Ferrari       | 488 GTB              | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 | 333750 |
+|   16 | Mercedes-Benz | AMG GT               | NULL         | 2021 |       NULL |          4 |        523 |    494 |          3.8 | 118500 |
+|   18 | Ford          | Mustang Shelby GT500 | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |  81000 |
+|   19 | Nissan        | GT-R Nismo           | NULL         | 2021 |       NULL |        3.8 |        600 |    481 |          2.5 | 212000 |
+|   26 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 104450 |
+|   31 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 225000 |
+|   37 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          3.8 | 100200 |
+|   45 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|   51 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|   62 | Ford          | Mustang GT           | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.3 |  39000 |
+|   65 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|   77 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|   94 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.3 | 219800 |
+|  100 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  103 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 | 213195 |
+|  106 | Porsche       | 718 Cayman GT4       | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 100550 |
+|  116 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 212500 |
+|  120 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  124 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  131 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102100 |
+|  134 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 220300 |
+|  161 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.2 | 200000 |
+|  167 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.4 | 220300 |
+|  173 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105950 |
+|  177 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102900 |
+|  189 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  193 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  212 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  231 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  236 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  238 | Mercedes-Benz | AMG GT R             | NULL         | 2021 |       NULL |          4 |        577 |    516 |          3.5 | 183000 |
+|  241 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.5 | 203825 |
+|  244 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.7 |  99800 |
+|  245 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 100200 |
+|  251 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  258 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102000 |
+|  264 | Mercedes-Benz | AMG GT               | NULL         | 2021 |       NULL |          4 |        523 |    494 |          3.8 | 118500 |
+|  272 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  277 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 101200 |
+|  281 | Lotus         | Evora GT             | NULL         | 2022 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  282 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 211000 |
+|  293 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 | 219800 |
+|  297 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100450 |
+|  299 | Porsche       | 718 Cayman GT4       | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102550 |
+|  304 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  312 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.4 | 207825 |
+|  322 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  324 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 |  96950 |
+|  336 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.3 | 202500 |
+|  341 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.1 | 215500 |
+|  347 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  350 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 | 202500 |
+|  356 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 104200 |
+|  361 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102900 |
+|  367 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 218400 |
+|  371 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 104970 |
+|  373 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 101200 |
+|  385 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 202500 |
+|  391 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100450 |
+|  396 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102550 |
+|  403 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 | 207825 |
+|  407 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  410 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102000 |
+|  416 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  426 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  431 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.2 | 210000 |
+|  432 | Mercedes-Benz | AMG GT Black Series  | NULL         | 2021 |       NULL |          4 |        720 |    590 |          3.2 | 326050 |
+|  433 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102500 |
+|  454 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        620 |    465 |          3.1 | 210000 |
+|  458 | Ford          | Mustang GT           | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.3 |  36120 |
+|  461 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          4 |        626 |    664 |          3.3 | 220000 |
+|  472 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.2 | 208800 |
+|  476 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  482 | Lotus         | Evora GT             | NULL         | 2020 |       NULL |        3.5 |        416 |    317 |          3.8 |  96950 |
+|  491 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 100200 |
+|  496 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        647 |    550 |          2.8 | 500000 |
+|  508 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.3 | 214425 |
+|  514 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 104400 |
+|  518 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102000 |
+|  528 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 202500 |
+|  539 | Mercedes-Benz | AMG GT Black Series  | NULL         | 2021 |       NULL |          4 |        720 |    590 |          3.1 | 325000 |
+|  541 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        647 |    550 |            3 | 500000 |
+|  545 | Lotus         | Evora GT             | NULL         | 2022 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  558 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  560 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102550 |
+|  563 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 |  96950 |
+|  573 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  575 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102550 |
+|  579 | Mercedes-Benz | AMG GT 63 S          | NULL         | 2021 |       NULL |          4 |        630 |    664 |          3.1 | 162900 |
+|  583 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100450 |
+|  584 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 100200 |
+|  589 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.3 | 218400 |
+|  593 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        647 |    550 |            3 | 500000 |
+|  608 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  611 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100450 |
+|  626 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  630 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          4 |        626 |    664 |          3.3 | 202500 |
+|  640 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 201000 |
+|  647 | Mercedes-AMG  | GT Black Series      | NULL         | 2021 |       NULL |          4 |        720 |    590 |          3.1 | 325000 |
+|  649 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 101000 |
+|  663 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        647 |    550 |            3 | 500000 |
+|  669 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.6 | 203825 |
+|  673 | Ford          | Mustang GT           | NULL         | 2022 |       NULL |          5 |        460 |    420 |            4 |  45000 |
+|  682 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  690 | Mercedes-Benz | GT 63                | NULL         | 2021 |       NULL |          4 |        577 |    590 |          3.3 | 161200 |
+|  702 | Bentley       | Continental GT Speed | NULL         | 2022 |       NULL |          6 |        650 |    664 |          3.5 | 300000 |
+|  705 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  708 | Mercedes-AMG  | GT Black Series      | NULL         | 2021 |       NULL |          4 |        720 |    590 |          3.1 | 330000 |
+|  710 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          4 |        542 |    568 |          3.9 | 229000 |
+|  712 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100000 |
+|  718 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  731 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 | 208000 |
+|  735 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  747 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        620 |    465 |          3.1 | 211300 |
+|  751 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  756 | Mercedes-AMG  | GT Black Series      | NULL         | 2021 |       NULL |          4 |        720 |    590 |          3.1 | 325000 |
+|  768 | Mercedes-Benz | AMG GT R             | NULL         | 2021 |       NULL |          4 |        577 |    516 |          3.5 | 180000 |
+|  770 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  784 | McLaren       | GT                   | NULL         | 2020 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  788 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  791 | Bentley       | Continental GT       | NULL         | 2022 |       NULL |          6 |        626 |    664 |          3.3 | 225000 |
+|  795 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100000 |
+|  798 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 |  98395 |
+|  805 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  807 | Porsche       | 718 Cayman GT4       | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102000 |
+|  814 | Mercedes-AMG  | GT 63 S              | NULL         | 2021 |       NULL |          4 |        630 |    664 |          3.1 | 162000 |
+|  817 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102000 |
+|  825 | Ford          | Mustang GT           | NULL         | 2022 |       NULL |          5 |        460 |    420 |          4.5 |  43000 |
+|  828 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  835 | Porsche       | Cayman GT4           | NULL         | 2022 |       NULL |          4 |        414 |    309 |          4.2 | 102100 |
+|  844 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  845 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        620 |    465 |          3.1 | 210000 |
+|  857 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  873 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          4 |        542 |    568 |          3.3 | 202500 |
+|  877 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 201500 |
+|  878 | Mercedes-Benz | AMG GT R             | NULL         | 2021 |       NULL |          4 |        577 |    516 |          3.5 | 183000 |
+|  884 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  893 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 105000 |
+|  901 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |          2.9 | 500000 |
+|  907 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          4 |        542 |    568 |          3.9 | 220000 |
+|  919 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 |  99990 |
+|  921 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
+|  935 | Ford          | GT                   | NULL         | 2022 |       NULL |        3.5 |        660 |    550 |          2.8 | 500000 |
+|  939 | Bentley       | Continental GT       | NULL         | 2021 |       NULL |          6 |        626 |    664 |          3.3 | 201000 |
+|  943 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 |  99000 |
+|  945 | Porsche       | Cayman GT4           | NULL         | 2021 |       NULL |          4 |        414 |    309 |          4.2 | 102500 |
+|  950 | Ford          | Mustang GT           | NULL         | 2022 |       NULL |          5 |        460 |    420 |            4 |  38500 |
+|  956 | Porsche       | Panamera GTS         | NULL         | 2021 |       NULL |          4 |        473 |    457 |          3.9 | 134150 |
+|  961 | McLaren       | GT                   | NULL         | 2021 |       NULL |          4 |        612 |    465 |          3.1 | 250000 |
+|  962 | Mercedes-Benz | AMG GT 4-Door Coupe  | NULL         | 2021 |       NULL |          4 |        630 |    664 |          3.1 | 171200 |
+|  964 | Lotus         | Evora GT             | NULL         | 2021 |       NULL |        3.5 |        416 |    317 |          3.8 | 100500 |
+|  968 | Ford          | GT                   | NULL         | 2021 |       NULL |        3.5 |        660 |    550 |            3 | 500000 |
+|  983 | Ferrari       | 488 GTB              | NULL         | 2022 |       NULL |        3.9 |        661 |    561 |            3 | 333750 |
+|  987 | Mercedes-Benz | AMG GT               | NULL         | 2021 |       NULL |          4 |        523 |    494 |          3.8 | 118500 |
+|  989 | Ford          | Mustang Shelby GT500 | NULL         | 2022 |       NULL |        5.2 |        760 |    625 |          3.5 |  81000 |
+|  990 | Nissan        | GT-R Nismo           | NULL         | 2021 |       NULL |        3.8 |        600 |    481 |          2.5 | 212000 |
+| 1004 | McLaren       | GT                   | NULL         | 2022 |       NULL |          4 |        612 |    465 |          3.1 | 210000 |
++------+---------------+----------------------+--------------+------+------------+------------+------------+--------+--------------+--------+
+159 rows in set (0.00 sec)
 
 Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
 
 +-----+-----+--------+------------+------+
 | fID | cID | make   | model      | year |
@@ -41,5 +566,5 @@ Query OK, 1 row affected (0.01 sec)
 +-----+-----+--------+------------+------+
 1 row in set (0.00 sec)
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0

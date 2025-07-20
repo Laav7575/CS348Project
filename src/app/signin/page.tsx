@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import { useRouter } from "next/navigation";
 
 export default function SignInPage() {
-  const [email, setEmail] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,7 +38,7 @@ export default function SignInPage() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password, type: 'login' }),
+      body: JSON.stringify({ email: identifier, password, username: identifier, type: 'login' }),
     });
     const data = await res.json();
     if (!res.ok) {
@@ -56,7 +56,7 @@ export default function SignInPage() {
       <div className="p-10 flex flex-col relative">
         <form className="flex flex-col items-center gap-4 box-border" onSubmit={handleSignIn}>
           <h2 className="text-2xl mb-4">Welcome back!</h2>
-          <input className="border p-2 w-full max-w-100" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+          <input className="border p-2 w-full max-w-100" value={identifier} onChange={e => setIdentifier(e.target.value)} placeholder="Email or Username" />
           <input className="border p-2 w-full max-w-100" value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className="mt-4 gap-4 w-full max-w-100 flex flex-col">
