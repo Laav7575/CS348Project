@@ -10,11 +10,11 @@ export async function GET(req: Request) {
   }
 
   try {
-    const decoded = Jwt.verify(token, process.env.JWT_SECRET!) as { id: number };
+    const decoded = Jwt.verify(token, process.env.JWT_SECRET!) as { userId: number };
+    const userId = decoded.userId;
 
-    const [rows] = await db.query("SELECT uID, email, isAdmin FROM Users WHERE uID = ?", [
-      decoded.id,
-    ]);
+    const [rows] = await db.query("SELECT uID, email, isAdmin FROM Users WHERE uID = ?", [userId]);
+
 
     const user = Array.isArray(rows) ? (rows as any[])[0] : null;
 
