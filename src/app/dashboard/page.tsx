@@ -43,6 +43,7 @@ export default function MyDashboard() {
       .then((data) => {
         if (data.error) setError(data.error);
         else setLikes(data);
+        console.log(likes);
       });
   }, []);
 
@@ -63,6 +64,13 @@ export default function MyDashboard() {
           <div className="text-xl font-semibold mb-4 text-red-600">{error}</div>
         ) : (
           <div className="space-y-6">
+            {/* create button that spans the full width to open fyp*/}
+            <Link href="/fyp" >
+            <button className="mb-7 w-full grow-0.5 items-center gap-2 p-2 w-fit cursor-pointer border-2 border-solid border-amber-400 text-white-500 bg-amber-400 rounded-full hover:bg-white-400 hover:text-amber">
+              Recommended Cars For You
+            </button>
+            </Link>
+
             {folders.map((folder: any) => (
               <div key={folder.fID} className="border p-4 rounded shadow">
                 <h2 className="text-xl font-semibold mb-2">
@@ -70,23 +78,6 @@ export default function MyDashboard() {
                     {folder.folderName}
                   </Link>
                 </h2>
-              </div>
-            ))}
-
-            {likes.map((likeFolder: any) => (
-              <div key={likeFolder.fID} className="border p-4 rounded shadow">
-                <h2 className="text-xl font-semibold mb-2">Likes</h2>
-                {likeFolder.cars.length > 0 ? (
-                  <ul className="list-disc ml-6 space-y-1">
-                    {likeFolder.cars.map((car: any) => (
-                      <li key={car.cID}>
-                        {car.year} {car.make} {car.model}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-500">No cars liked yet.</p>
-                )}
               </div>
             ))}
           </div>

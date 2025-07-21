@@ -6,6 +6,7 @@ import NavBar from "../../../components/NavBar";
 export default function AllCarsPage() {
   const [folders, setFolders] = useState<any[]>([]);
   const [cars, setCars] = useState<any[]>([]);
+  const [stats, setStats] = useState<any[]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -16,19 +17,15 @@ export default function AllCarsPage() {
     }
 
     // Fetch folders and all cars (joined)
-    fetch("/api/folders", {
+    fetch("/api/folders/all-cars", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.error) setError(data.error);
         else {
-          setFolders(data);
-          // Combine all cars from all folders
-          const allCars = data.reduce((acc: any[], folder: any) => {
-            return acc.concat(folder.cars);
-          }, []);
-          setCars(allCars);
+          setCars(data.cars || []);
+          setStats(data.stats || null);
         }
       })
       .catch(() => setError("Failed to fetch data"));

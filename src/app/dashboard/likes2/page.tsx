@@ -23,7 +23,7 @@ export default function FolderPage() {
 
     console.log("token: ", token);
 
-    fetch(`http://localhost:3000/api/folders/${fid}`, {
+    fetch(`http://localhost:3000/api/folders/likes2`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -54,15 +54,15 @@ export default function FolderPage() {
                 <h2 className="text-lg font-semibold mb-2"></h2>
                 <ul className="list-disc ml-6 space-y-1 text-sm">
                   <li><strong>Folder Size:</strong> {stats.folderSize}</li>
-                  <li><strong>Average Price:</strong> ${stats.avgPrice}</li>
+                  <li><strong>Avgerage Price:</strong> ${stats.avgPrice}</li>
                   <li><strong>Most Common Make:</strong> {stats.commonMake}</li>
                   <li><strong>Most Common Model:</strong> {stats.commonModel}</li>
-                  <li><strong>Average Year:</strong> {stats.avgYear}</li>
+                  <li><strong>Avgerage Year:</strong> {stats.avgYear}</li>
                   <li><strong>Electric Cars:</strong> {stats.electricCount}</li>
-                  <li><strong>Average Engine Size:</strong> {stats.avgEngineSize}L</li>
-                  <li><strong>Average Horsepower:</strong> {stats.avgHorsePower} HP</li>
-                  <li><strong>Average Torque:</strong> {stats.avgTorque} Nm</li>
-                  <li><strong>Average Acceleration:</strong> {stats.avgAcceleration} sec (0-100 km/h)</li>
+                  <li><strong>Avgerage Engine Size:</strong> {stats.avgEngineSize}L</li>
+                  <li><strong>Avgerage Horsepower:</strong> {stats.avgHorsePower} HP</li>
+                  <li><strong>Avgerage Torque:</strong> {stats.avgTorque} Nm</li>
+                  <li><strong>Avgerage Acceleration:</strong> {stats.avgAcceleration} sec (0-100 km/h)</li>
                 </ul>
               </div>
             )}

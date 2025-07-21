@@ -15,23 +15,19 @@ async function getUserId(req: Request): Promise<number | null> {
 }
 
 export async function GET(
-  req: Request,
-  { params }: { params: { fid: string } }
+  req: Request
 ) {
     const userId = await getUserId(req);
     if (!userId)
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const folderId = params.fid;
-  console.log(folderId);
-
   try {
+
+    
     const [cars] = await db.query(
-      "SELECT DISTINCT cID, make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price FROM carsInFolder WHERE fid = ? ORDER BY year DESC",
-      [folderId]
+      "SELECT DISTINCT * FROM likesFolder WHERE uid = ? ORDER BY year DESC",
+      [userId]
     );
-
-
 
     if ((cars as any[]).length === 0) {
         return NextResponse.json({ cars: [], stats: null });
@@ -43,15 +39,15 @@ export async function GET(
          COUNT(*) AS folderSize, 
          ROUND(AVG(price)) AS avgPrice,  
          (
-           SELECT make FROM carsInFolder
-           WHERE fID = ?
+           SELECT make FROM likesFolder
+           WHERE uid = ?
            GROUP BY make
            ORDER BY COUNT(*) DESC
            LIMIT 1
          ) AS commonMake,
          (
-           SELECT model FROM carsInFolder
-           WHERE fID = ?
+           SELECT model FROM likesFolder
+           WHERE uid = ?
            GROUP BY model
            ORDER BY COUNT(*) DESC
            LIMIT 1
@@ -62,9 +58,9 @@ export async function GET(
          ROUND(AVG(horsePower)) AS avgHorsePower,
          ROUND(AVG(torque)) AS avgTorque,
          ROUND(AVG(acceleration), 2) AS avgAcceleration
-       FROM carsInFolder
-       WHERE fID = ?`,
-      [folderId, folderId, folderId]
+       FROM likesFolder
+       WHERE uid = ?`,
+       [userId, userId, userId]
     );
 
     const stats = (rawStats as any[])[0];
@@ -76,6 +72,6 @@ export async function GET(
 
   } catch (err) {
     console.error("[FOLDER-GET-BY-ID] DB error:", err);
-    return NextResponse.json({ error: "Database error 1" }, { status: 500 });
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 }

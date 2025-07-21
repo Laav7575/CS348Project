@@ -18,6 +18,7 @@ df['Engine Size (L)'] = pd.to_numeric(df['Engine Size (L)'], errors='coerce')
 
 # 5. Remove duplicates
 df = df.drop_duplicates()
+df = df.drop_duplicates(subset=['Car Make', 'Car Model', 'Year'])
 
 # 6. Move 'isElectric' after 'Year'
 cols = df.columns.tolist()
