@@ -274,19 +274,6 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- password: finalguy
 ('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);
 
-CREATE OR REPLACE VIEW user_liked_cars_view AS
-SELECT
-    f.uID,
-    s.cID,
-    c.make,
-    c.model,
-    c.year,
-    c.price
-FROM Folders f
-JOIN Saves s ON f.fID = s.fID
-JOIN Cars c ON s.cID = c.cID
-WHERE f.isLikes = TRUE;
-
 CREATE OR REPLACE VIEW user_preferences_view AS
 SELECT
     uID,
@@ -297,8 +284,9 @@ SELECT
     AVG(year) AS avg_year,
     MIN(year) - 5 AS min_year_range,
     MAX(year) + 5 AS max_year_range
-FROM user_liked_cars_view
+FROM likesFolder
 GROUP BY uID;
+
 
 CREATE OR REPLACE VIEW car_recommendations_view AS
 SELECT
@@ -326,7 +314,7 @@ FROM Cars c
 JOIN user_preferences_view up ON 1=1
 WHERE NOT EXISTS (
     SELECT 1
-    FROM user_liked_cars_view ulcv
+    FROM likesFolder ulcv
     WHERE ulcv.uID = up.uID AND ulcv.cID = c.cID
 );
 
