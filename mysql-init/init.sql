@@ -296,7 +296,7 @@ CREATE OR REPLACE VIEW car_recommendations_view AS
 SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
     -- Score 55 if the car's make matches a liked make, otherwise 0
     CASE
-        WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 100
+        WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 50
         ELSE 0
     END AS make_score,
     
@@ -304,7 +304,7 @@ SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
     -- Price score is higher if the car's price is close to the user's average liked price
     CASE
         WHEN c.price BETWEEN up.min_price_range AND up.max_price_range THEN
-            50 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
+            35 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
         ELSE 0
     END AS price_score,
     
@@ -312,7 +312,7 @@ SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
     -- Year score is higher if the car's year is close to the user's average liked year
     CASE
         WHEN c.year BETWEEN up.min_year_range AND up.max_year_range THEN
-            30 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
+            15 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
         ELSE 0
     END AS year_score
 FROM Cars c

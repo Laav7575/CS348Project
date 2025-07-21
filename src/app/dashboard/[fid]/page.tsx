@@ -50,7 +50,7 @@ export default function FolderPage() {
             <h1 className="text-2xl font-bold">Folder Details</h1>
 
             {stats && (
-              <div className="bg-gray-100 p-4 rounded shadow">
+              <div className="p-4 rounded shadow">
                 <h2 className="text-lg font-semibold mb-2"></h2>
                 <ul className="list-disc ml-6 space-y-1 text-sm">
                   <li><strong>Folder Size:</strong> {stats.folderSize}</li>

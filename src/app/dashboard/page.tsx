@@ -72,12 +72,12 @@ export default function MyDashboard() {
             </Link>
 
             {folders.map((folder: any) => (
-              <div key={folder.fID} className="border p-4 rounded shadow">
-                <h2 className="text-xl font-semibold mb-2">
-                  <Link href={`/dashboard/${folder.fID}`}>
+              <div key={folder.fID} className="border rounded shadow">
+                <Link href={`/dashboard/${folder.fID}`}>
+                <h2 className="text-xl font-semibold m-4">
                     {folder.folderName}
-                  </Link>
                 </h2>
+                </Link>
               </div>
             ))}
           </div>
