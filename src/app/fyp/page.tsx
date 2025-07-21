@@ -145,7 +145,9 @@ export default function FYPPage() {
                     {car.make} {car.model}
                   </h3>
                   <p className="text-gray-300 text-lg mb-1">Year: {car.year}</p>
-                  <p className="text-gray-300 text-lg mb-3">Price: ${car.price.toLocaleString()}</p>
+                  <p className="text-gray-300 text-lg mb-3">
+                    Price: ${typeof car.price === 'number' ? car.price.toLocaleString() : 'N/A'}
+                  </p>
                   <p className="text-gray-400 text-sm">
                     Recommendation Score: {car.recommendation_score}
                   </p>

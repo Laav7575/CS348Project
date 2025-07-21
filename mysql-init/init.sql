@@ -50,7 +50,8 @@ CREATE TABLE Users (
     isAdmin        BOOLEAN,
     isDeleted      BOOLEAN,
     PRIMARY KEY (uID),
-    CHECK (username REGEXP '^[A-Za-z0-9_-]+$'),
+    -- CHECK (username REGEXP '^[A-Za-z0-9_-]+$.'),
+    CHECK (regexp_like(`username`, _latin1'^[A-Za-z0-9_.-]+$')), 
     CHECK (email LIKE '%@%')
 );
 
@@ -157,7 +158,6 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 7, '2025-07-03'),
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
-
 
 CREATE OR REPLACE VIEW carsInFolder AS
 SELECT DISTINCT f.uID, f.fID, c.*
@@ -273,3 +273,65 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
  ('americo67', 'bria.kovacek@hotmail.com', '$2b$10$IIDOUSc4DMQwSs/CqsfELODZR0w6zQuj6f0c7gbBPEr1V1.XEXrES', false, false),
 -- password: finalguy
 ('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);
+
+CREATE OR REPLACE VIEW user_liked_cars_view AS
+SELECT
+    f.uID,
+    s.cID,
+    c.make,
+    c.model,
+    c.year,
+    c.price
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON s.cID = c.cID
+WHERE f.isLikes = TRUE;
+
+CREATE OR REPLACE VIEW user_preferences_view AS
+SELECT
+    uID,
+    GROUP_CONCAT(DISTINCT make) AS liked_makes,
+    AVG(price) AS avg_price,
+    MIN(price) * 0.7 AS min_price_range,
+    MAX(price) * 1.3 AS max_price_range,
+    AVG(year) AS avg_year,
+    MIN(year) - 5 AS min_year_range,
+    MAX(year) + 5 AS max_year_range
+FROM user_liked_cars_view
+GROUP BY uID;
+
+CREATE OR REPLACE VIEW car_recommendations_view AS
+SELECT
+    c.cID,
+    c.make,
+    c.model,
+    c.year,
+    c.price,
+    up.uID,
+    CASE
+        WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 100
+        ELSE 0
+    END AS make_score,
+    CASE
+        WHEN c.price BETWEEN up.min_price_range AND up.max_price_range THEN
+            50 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
+        ELSE 0
+    END AS price_score,
+    CASE
+        WHEN c.year BETWEEN up.min_year_range AND up.max_year_range THEN
+            30 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
+        ELSE 0
+    END AS year_score
+FROM Cars c
+JOIN user_preferences_view up ON 1=1
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM user_liked_cars_view ulcv
+    WHERE ulcv.uID = up.uID AND ulcv.cID = c.cID
+);
+
+CREATE OR REPLACE VIEW final_recommendations_view AS
+SELECT *,
+    ROUND(make_score + price_score + year_score, 2) AS recommendation_score
+FROM car_recommendations_view
+WHERE (make_score + price_score + year_score) > 0;
