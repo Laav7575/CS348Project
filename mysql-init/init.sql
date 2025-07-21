@@ -274,6 +274,8 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- password: finalguy
 ('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);
 
+-- View to summarize a user's preferences based on their liked cars.
+-- Calculates average, min, and max values to determine flexible preference ranges.
 CREATE OR REPLACE VIEW user_preferences_view AS
 SELECT
     uID,
@@ -287,37 +289,43 @@ SELECT
 FROM likesFolder
 GROUP BY uID;
 
-
+-- View to score out of 100 and recommend cars to users based on how well each car matches their preferences.
+-- Excludes any cars the user has already liked.
+-- Using a linear proximity score for year and price
 CREATE OR REPLACE VIEW car_recommendations_view AS
-SELECT
-    c.cID,
-    c.make,
-    c.model,
-    c.year,
-    c.price,
-    up.uID,
+SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
+    -- Score 55 if the car's make matches a liked make, otherwise 0
     CASE
         WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 100
         ELSE 0
     END AS make_score,
+    
+    -- Price score: 28 points max
+    -- Price score is higher if the car's price is close to the user's average liked price
     CASE
         WHEN c.price BETWEEN up.min_price_range AND up.max_price_range THEN
             50 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
         ELSE 0
     END AS price_score,
+    
+    -- Year score: 17 points max
+    -- Year score is higher if the car's year is close to the user's average liked year
     CASE
         WHEN c.year BETWEEN up.min_year_range AND up.max_year_range THEN
             30 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
         ELSE 0
     END AS year_score
 FROM Cars c
-JOIN user_preferences_view up ON 1=1
+JOIN user_preferences_view up ON 1=1 -- Cross join: apply every user's preferences to all cars
+-- Exclude cars the user has already liked
 WHERE NOT EXISTS (
     SELECT 1
     FROM likesFolder ulcv
     WHERE ulcv.uID = up.uID AND ulcv.cID = c.cID
 );
 
+-- Final view that combines all recommendation scores and filters out zero-score cars.
+-- The higher the recommendation_score, the better the match.
 CREATE OR REPLACE VIEW final_recommendations_view AS
 SELECT *,
     ROUND(make_score + price_score + year_score, 2) AS recommendation_score
