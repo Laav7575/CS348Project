@@ -158,6 +158,7 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
 
+
 CREATE OR REPLACE VIEW carsInFolder AS
 SELECT DISTINCT f.uID, f.fID, c.*
 FROM Folders f
@@ -171,7 +172,7 @@ JOIN Saves s ON f.fID = s.fID
 JOIN Cars c ON s.cID = c.cID
 WHERE isLikes = TRUE;
 
-INSERT INTO Users (username, email, password, isAdmin, isDeleted) VALUES
+INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- password: XGbB_MHktBspFnF
  ('herminia.gibson10', 'jerald68@yahoo.com', '$2b$10$VLxhawoB7TjHgoR/UU8.p.RHH2Sn2FHX17fDACC5tZjvxs81.uHUW', false, false),
 -- password: QWQOeNNQmQjPMv5
