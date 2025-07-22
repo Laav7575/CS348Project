@@ -24,6 +24,7 @@ export default function ManageCars() {
   const [adding, setAdding] = useState(false);
   const [newCarData, setNewCarData] = useState<Partial<Car>>({});
   const [error, setError] = useState("");
+  const [selectedCars, setSelectedCars] = useState<Set<number>>(new Set());
 
   const fetchCars = async () => {
     try {
@@ -100,6 +101,7 @@ export default function ManageCars() {
         setEditData({});
         fetchCars();
         setError("");
+        setSearch("");
       } else {
         setError(json.error || "Update failed");
       }
@@ -129,11 +131,45 @@ export default function ManageCars() {
       if (res.ok) {
         fetchCars();
         setError("");
+        setSearch("");
       } else {
         setError(json.error || "Delete failed");
       }
     } catch {
       setError("Delete failed");
+    }
+  };
+
+  const handleBulkDelete = async () => {
+    if (selectedCars.size === 0) return;
+    if (!confirm("Are you sure you want to delete the selected cars?")) return;
+
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setError("Not logged in");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/admin/cars/bulk-delete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ cIDs: Array.from(selectedCars) }),
+      });
+      const json = await res.json();
+      if (res.ok) {
+        fetchCars();
+        setSelectedCars(new Set());
+        setError("");
+        setSearch("");
+      } else {
+        setError(json.error || "Bulk delete failed");
+      }
+    } catch {
+      setError("Bulk delete failed");
     }
   };
 
@@ -173,12 +209,25 @@ export default function ManageCars() {
         setNewCarData({});
         fetchCars();
         setError("");
+        setSearch("");
       } else {
         setError(json.error || "Add failed");
       }
     } catch {
       setError("Add failed");
     }
+  };
+
+  const toggleCarSelection = (cID: number) => {
+    setSelectedCars((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(cID)) {
+        newSet.delete(cID);
+      } else {
+        newSet.add(cID);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -197,12 +246,16 @@ export default function ManageCars() {
             placeholder="Search by make/model..."
             className="border rounded px-2 py-1 flex-grow"
           />
-          <button onClick={handleSearch} className="px-3 py-1 border rounded">
+          <button onClick={handleSearch} className="cursor-pointer px-3 py-1 border rounded cursor-pointer text-amber-500 hover:text-white border border-amber-400 hover:bg-amber-500">
             Search
           </button>
-          <button onClick={() => setAdding(true)} className="px-3 py-1 border rounded">
+          <button onClick={() => setAdding(true)} className="cursor-pointer px-3 py-1 border rounded text-green-800 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
             + Add Car
           </button>
+          {selectedCars.size > 0 && (
+            <button onClick={handleBulkDelete} className="cursor-pointer text-red-700 px-3 py-1 rounded hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+              🗑️ Bulk Delete
+            </button>)}
         </div>
 
         {adding && (
@@ -370,10 +423,11 @@ export default function ManageCars() {
                     </button>
                     <button
                       onClick={() => handleDelete(car.cID)}
-                      className="px-3 py-1 border rounded"
+                      className="px-3 py-1 border rounded cursor-pointer text-red-700 px-3 py-1 rounded hover:text-white border border-red-700 hover:bg-red-800 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600"
                     >
                       Delete
                     </button>
+                    <input type="checkbox" checked={selectedCars.has(car.cID)} onChange={() => toggleCarSelection(car.cID)}/>
                   </td>
                 </tr>
               )
