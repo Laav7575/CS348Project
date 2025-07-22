@@ -21,7 +21,7 @@ export async function GET(req: Request) {
 
     try {
         const [rows] = await db.query(
-        "SELECT r.*, u.email FROM Reviews r JOIN Users u ON u.uID = r.uID WHERE cID = ?", cid
+        "SELECT r.*, u.email FROM Reviews r JOIN Users u ON u.uID = r.uID WHERE cID = ? ORDER BY r.createdDate DESC", cid
         );
 
         return NextResponse.json(rows);
@@ -47,6 +47,7 @@ export async function POST(req: Request) {
 
         if ((existing as any[]).length > 0) {
             await db.query(
+                // Basic Feature 5
                 "UPDATE Reviews SET comment = ?, stars = ?, updatedDate = ? WHERE uid = ? AND cid = ?",
                 [comment, stars, today, userId, cID]
             );

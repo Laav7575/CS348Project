@@ -20,10 +20,10 @@ export async function POST(req: Request) {
   if (type === "signup") {
     try {
       await db.query(
+        // Basic Feature 2
         "INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES (?, ?, ?, FALSE, FALSE)",
         [username, email, hashedPassword]
       );
-      // return NextResponse.json({ message: 'User registered' });
 
       const [rows] = await db.query("SELECT * FROM Users WHERE email = ?", [
         email,
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         }
       }
       return NextResponse.json(
-        { error: "Could not sign up" },
+        { error: "Could not sign up. Ensure email is correct and username does not contain any special characters." },
         { status: 409 }
       );
     }

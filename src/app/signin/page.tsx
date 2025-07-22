@@ -12,24 +12,6 @@ export default function SignInPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     try {
-  //       const decoded = jwt.decode(token);
-  //       if (decoded) {
-  //         setIsAuthenticated(true);
-  //         router.replace('/');
-  //       }
-  //     } catch (error) {
-  //       console.error("Invalid token", error);
-  //       setIsAuthenticated(false);
-  //     }
-  //   } else {
-  //     setIsAuthenticated(false);
-  //   }
-  // }, []);
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) return;

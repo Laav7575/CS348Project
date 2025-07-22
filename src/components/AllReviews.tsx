@@ -89,7 +89,7 @@ export default function AllReviews({ cid }: { cid: string }) {
                                 <span key={i} className="text-yellow-500">⭐</span>
                             ))}
                         </span>
-                        <p className="text-sm text-gray-600">{new Date(review.createdDate).toLocaleDateString()}</p>
+                        <p className="text-sm text-gray-600">{new Date(review.createdDate).toLocaleDateString()}{review.updatedDate && (", Edited " + new Date(review.updatedDate).toLocaleDateString())}</p>
                         {isEditing ? (
                             <div className="flex flex-col gap-4 max-w-md">
                                 {/* <AddReview cid={cid}/> */}
