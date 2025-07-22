@@ -50,7 +50,7 @@ export default function AllCarsPage() {
             ))}
           </ul>
         ) : (
-          <p className="text-gray-500">No cars found.</p>
+          <p className="text-gray-500">loading..</p>
         )}
       </div>
     </div>

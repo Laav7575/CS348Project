@@ -78,7 +78,7 @@ export default function FolderPage() {
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-500">No cars in this folder.</p>
+                <p className="text-gray-500">loading..</p>
               )}
             </div>
           </>
