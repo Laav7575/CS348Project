@@ -12,7 +12,7 @@ export async function GET(req: Request) {
   try {
     const decoded = Jwt.verify(token, process.env.JWT_SECRET!) as { id: number };
 
-    const [rows] = await db.query("SELECT uID, email, isAdmin FROM Users WHERE uID = ?", [
+    const [rows] = await db.query("SELECT uID, username, email, isAdmin FROM Users WHERE uID = ?", [
       decoded.id,
     ]);
 
@@ -24,6 +24,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json({
       id: user.uID,
+      username: user.username,
       email: user.email,
       isAdmin: user.isAdmin,
     });

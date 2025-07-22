@@ -12,22 +12,43 @@ export default function SignInPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     try {
+  //       const decoded = jwt.decode(token);
+  //       if (decoded) {
+  //         setIsAuthenticated(true);
+  //         router.replace('/');
+  //       }
+  //     } catch (error) {
+  //       console.error("Invalid token", error);
+  //       setIsAuthenticated(false);
+  //     }
+  //   } else {
+  //     setIsAuthenticated(false);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      try {
-        const decoded = jwt.decode(token);
-        if (decoded) {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+  
+    fetch("/api/users/me", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.error) {
           setIsAuthenticated(true);
-          router.replace('/');
         }
-      } catch (error) {
-        console.error("Invalid token", error);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch user info", err);
         setIsAuthenticated(false);
-      }
-    } else {
-      setIsAuthenticated(false);
-    }
+      });
   }, []);
 
   const handleSignIn = async (e: React.FormEvent) => {
