@@ -25,6 +25,9 @@ CREATE TABLE IF NOT EXISTS Cars (
     PRIMARY KEY(cID)
 );
 
+CREATE INDEX idx_cars_price ON Cars(price);
+CREATE INDEX idx_cars_year ON Cars(year);
+
 -- create tables
 CREATE TABLE testCars (
    cID                     INT AUTO_INCREMENT not NULL,
@@ -67,6 +70,8 @@ CREATE TABLE Reviews (
   FOREIGN KEY (cid) REFERENCES Cars(cID) ON DELETE CASCADE
 );
 
+CREATE INDEX idx_uid_cid ON Reviews(uid, cid);
+
 CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
    uID 			INT NOT NULL,
@@ -83,6 +88,8 @@ CREATE TABLE Saves(
   FOREIGN KEY (fID) REFERENCES Folders(fID) ON DELETE CASCADE,
   FOREIGN KEY (cID) REFERENCES Cars(cID) ON DELETE CASCADE
 );
+
+CREATE INDEX idx_saves_date_cid ON Saves(date, cID); 
 
 CREATE TABLE Adds(
   uID INT NOT NULL,
