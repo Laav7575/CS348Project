@@ -27,34 +27,48 @@ export default function TrendingPage() {
     }, []);
 
     return (
-    <div className="h-screen">
+    <div className="min-h-screen bg-gray-900 text-white">
       <NavBar />
-      <div className="p-10 flex flex-col relative">
-        <h2 className="text-2xl mb-4">Trending This Week 🔥</h2>
-        
-        <ul className="flex flex-col gap-4 mt-4">
-          {cars.map((car) => (
-            <li key={car.cID} className={`border p-4 rounded shadow ${
-      car.isMostSaved === 1 ? "border-amber-500 border-2" : ""
-    }`}>
-                <Link
-                href={`/car/${car.cID}`}
-                className="block hover:bg-neutral-800/40 p-2 rounded"
+      <div className="p-4 sm:p-10 flex flex-col items-center">
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-9 text-center text-amber-400">
+          Trending Cars This Week
+        </h2>
+
+        {cars.length === 0 ? (
+          <p className="text-lg text-gray-400">loading..</p>
+        ) : (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+            {cars.map((car) => (
+              <li
+                key={car.cID}
+                className={`transition-transform duration-300 hover:scale-105 hover:shadow-amber-500/50 relative p-6 rounded-xl shadow-lg transition-shadow duration-300 ease-in-out border 
+                ${car.isMostSaved === 1 ? "border-amber-500 shadow-amber-500/30" : "border-gray-700 bg-gray-800"}`}
               >
-               
-              <h3 className="text-xl font-bold"> {car.year} {car.make} {car.model} 
                 {car.isMostSaved === 1 && (
-                <span className="ml-2 text-amber-500 text-sm font-semibold">
-                    ⭐ Most Popular
-                </span>
+                  <div className="absolute -top-4 -right-3 text-3xl animate-bounce z-10 ">
+                    🔥
+                  </div>
                 )}
-              </h3>
-              <p>Price: ${car.price}</p>
-              </Link>
-            </li>
-          ))}  
-        </ul>
+                <Link href={`/car/${car.cID}`} className="block hover:bg-neutral-800/40 p-2 rounded">
+                  <h3 className="text-2xl font-bold text-amber-400 mb-2">
+                    {car.make} {car.model}
+                    {car.isMostSaved === 1 && (
+                      <span className="ml-2 text-amber-500 text-sm font-semibold">
+                        ⭐ Most Popular
+                      </span>
+                    )}
+                  </h3>
+                  <p>Year: {car.year}</p>
+                  <p className="text-gray-300 text-lg mb-1">
+                    Price: ${typeof car.price === 'number' ? car.price.toLocaleString() : 'N/A'}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
+
 };
