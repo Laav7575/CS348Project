@@ -27,8 +27,8 @@ export async function GET(
 
   try {
     const [cars] = await db.query(
-      "SELECT DISTINCT cID, make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price FROM carsInFolder WHERE fid = ? ORDER BY year DESC",
-      [folderId]
+      "SELECT * FROM carsInFolder WHERE fid = ? AND uid = ? ORDER BY year DESC",
+      [folderId, userId]
     );
 
 
@@ -44,14 +44,14 @@ export async function GET(
          ROUND(AVG(price)) AS avgPrice,  
          (
            SELECT make FROM carsInFolder
-           WHERE fID = ?
+           WHERE fID = ? AND uid = ?
            GROUP BY make
            ORDER BY COUNT(*) DESC
            LIMIT 1
          ) AS commonMake,
          (
            SELECT model FROM carsInFolder
-           WHERE fID = ?
+           WHERE fID = ? AND uid = ?
            GROUP BY model
            ORDER BY COUNT(*) DESC
            LIMIT 1
@@ -63,8 +63,8 @@ export async function GET(
          ROUND(AVG(torque)) AS avgTorque,
          ROUND(AVG(acceleration), 2) AS avgAcceleration
        FROM carsInFolder
-       WHERE fID = ?`,
-      [folderId, folderId, folderId]
+       WHERE fID = ? AND uid = ?`,
+      [folderId, userId, folderId, userId, folderId, userId]
     );
 
     const stats = (rawStats as any[])[0];
