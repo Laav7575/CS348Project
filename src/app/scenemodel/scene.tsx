@@ -16,10 +16,10 @@ const Model: React.FC<ModelProps> = ({ path, position = [0, 0, 0], scale = 1 }) 
   const { scene } = useGLTF(path);
 
   useFrame(() => {
-    if (group.current) group.current.rotation.y += 0.005;
+    if (group.current) group.current.rotation.y += 0.001;
   });
 
-  return <primitive ref={group} object={scene} position={position} scale={scale} />;
+  return <primitive ref={group} object={scene} position={position} scale={scale} rotation={[0, - Math.PI / 7, 0]} />;
 };
 
 export default Model;
