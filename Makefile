@@ -2,7 +2,7 @@
 
 DB_PASSWORD=ELHDD.J!w9bdNnL-
 CONTAINER=mysql-db
-SQL_FILE=/mysql-init/test-production.sql
+SQL_FILE=other-sql/test-production.sql
 DB_NAME=cs348_project
 
 .PHONY: run-sql run-sql-save shell

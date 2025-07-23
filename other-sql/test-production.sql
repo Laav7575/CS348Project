@@ -1,5 +1,9 @@
 -- This files used the data in init.sql
 
+CREATE INDEX idx_saves_date_cid ON Saves(date, cID);
+CREATE INDEX idx_cars_price ON Cars(price); 
+CREATE INDEX idx_cars_year ON Cars(year);
+
 SELECT * 
 FROM Cars
 WHERE year = 2022;
