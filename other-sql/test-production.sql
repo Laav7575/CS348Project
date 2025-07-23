@@ -74,7 +74,7 @@ SELECT
          ) AS commonMake,
          (
            SELECT model FROM carsInFolder
-           WHERE fID = 1AND uID = 1
+           WHERE fID = 1 AND uID = 1
            GROUP BY model
            ORDER BY COUNT(*) DESC
            LIMIT 1
