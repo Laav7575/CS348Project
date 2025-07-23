@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NavBar from "../../../components/NavBar";
+import Link from "next/link";
 
 export default function AllCarsPage() {
   const [folders, setFolders] = useState<any[]>([]);
@@ -64,9 +65,11 @@ export default function AllCarsPage() {
               {cars.length > 0 ? (
                 <ul className="list-disc ml-6 space-y-1">
                   {cars.map((car) => (
+                    <Link href={`/car/${car.cID}`}>
                     <li key={car.cID}>
                       {car.year} {car.make} {car.model}
                     </li>
+                    </Link>
                   ))}
                 </ul>
               ) : (
