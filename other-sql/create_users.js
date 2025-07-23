@@ -26,11 +26,13 @@ const generateUsers = async (count = 10) => {
 const outputSQL = async (count) => {
     const users = await generateUsers(count);
 
-    console.log("INSERT INTO Users (username, email, password, isAdmin, isDeleted) VALUES");
+    console.log("INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES");
+    i = 0;
     users.forEach(u => {
-        console.log(`--password: ${u.plainPassword}\n ('${u.username}', '${u.email}', '${u.hashedPassword}', ${u.isAdmin}, ${u.isDeleted}),`);
+        console.log(`-- password: ${u.plainPassword}\n ('${u.username+i}', '${u.email+i}', '${u.hashedPassword}', ${u.isAdmin}, ${u.isDeleted}),`);
+        i++;
     });
-    console.log("--password: finalguy\n('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);");
+    console.log("-- password: finalguy\n('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);");
 };
 
 const n = parseInt(process.argv[2]) || 10;
