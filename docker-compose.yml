@@ -14,7 +14,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
       - ./cleanedsports.csv:/docker-entrypoint-initdb.d/cleanedsports.csv
-      - ./mysql-init/test-production.sql:/mysql-init/test-production.sql
+      - ./other-sql/test-production.sql:/other-sql/test-production.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
