@@ -14,7 +14,7 @@ function parseBoolean(val) {
 }
 
 async function seed() {
-  const connection = await mysql.createConnection({
+  const pool =  mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 3307,
     user: process.env.DB_USER || 'root',
@@ -31,19 +31,22 @@ async function seed() {
 
   console.log(`Processing ${csv.length} rows from CSV...`);
 
-  for (const row of csv) {
+  const BATCH_SIZE = 50;
+
+  for (let i = 0; i < csv.length; i += BATCH_SIZE) {
+     const batch = csv.slice(i, i + BATCH_SIZE);
+  const promises = batch.map(row => {
     let [make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price] = row.split(',');
 
-    // Convert isElectric string ('True'/'False') to 1 or 0
     const electricValue = parseBoolean(isElectric);
-
-    await connection.execute(
+  
+    return pool.execute(
       'INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [
         make,
         model,
         parseNumber(year),
-        electricValue, // Use the converted numerical value here
+        electricValue,
         parseNumber(engineSize),
         parseNumber(horsePower),
         parseNumber(torque),
@@ -51,10 +54,11 @@ async function seed() {
         parseNumber(price.replace(/"/g, '').replace(/,/g, ''))
       ]
     );
-  }
+  });
 
-  console.log('Done!');
-  await connection.end();
+  await Promise.all(promises);
+  console.log(`Inserted batch ${i / BATCH_SIZE + 1}`);
 }
-
+console.log("Done!");
+}
 seed().catch(console.error);
