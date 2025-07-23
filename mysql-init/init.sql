@@ -70,7 +70,6 @@ CREATE TABLE Reviews (
   FOREIGN KEY (cid) REFERENCES Cars(cID) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_uid_cid ON Reviews(uid, cid);
 
 CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
