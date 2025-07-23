@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     }
 
     try {
-        await db.query("BEGIN");
+        await db.query("START TRANSACTION");
 
         const placeholders = cIDs.map(() => '?').join(',');
         const sql = `DELETE FROM Cars WHERE cID IN (${placeholders})`;

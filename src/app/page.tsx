@@ -21,24 +21,16 @@ export default function Home() {
 
           </div>
         </div>
-     <div>
-        <div style={{ display: 'flex', margin: 0, padding: 0 }}>
-        <div style={{ flex: 1, margin: 0, padding: 0 }}>
-        <div style={{ width: '800px', height: '600px', overflow: 'hidden' }}>
-    
-        <Canvas 
-          style={{ display: 'block', width: '100%', height: '100%' }}
-          camera={{ position: [0, 0.6, 3], fov: 60 }}>
-          <ambientLight intensity={1} />
-          <directionalLight position={[5, 10, 7]} intensity={2} />
-          <pointLight position={[0, 5, 10]} intensity={1.5} />
-          <hemisphereLight  groundColor="gray" intensity={0.6} />
-          <Model path={'./scene.gltf'} scale={1.5} position={[-0.4, 0, 0]}/>
+     <div className="m-0 p-0 h-full w-full display-block overflow-visible">
+        <Canvas className="block h-full w-full"
+          camera={{ position: [0, 1, 3], fov: 60 }}>
+          <ambientLight intensity={2} />
+          <directionalLight position={[5, 10, 7]} intensity={4} />
+          <pointLight position={[0, 5, 10]} intensity={3} />
+          <hemisphereLight groundColor="gray" intensity={3} />
+          <Model path={'./scene.gltf'} scale={1.4} position={[-0.4, -0.1, 0]}/>
           <OrbitControls />
         </Canvas>
-        </div>
-        </div>
-        </div>
       </div>
     </div>
     </div>
