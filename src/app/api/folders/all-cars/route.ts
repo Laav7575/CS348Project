@@ -22,7 +22,11 @@ export async function GET(req: Request) {
 
   try {
     const [cars] = await db.query(
-      "SELECT DISTINCT cID, make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price FROM carsInFolder WHERE uid = ? ORDER BY year DESC",
+      `SELECT DISTINCT f.fID, c.cID, c.make, c.model, c.year
+         FROM Folders f
+         JOIN Saves s ON f.fID = s.fID
+         JOIN Cars c ON c.cID = s.cID
+         WHERE f.uID = ?`,
       [userId]
     );
 
