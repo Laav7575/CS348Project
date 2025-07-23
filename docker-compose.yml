@@ -12,8 +12,9 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      # - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./mysql-init/init-sample.sql:/docker-entrypoint-initdb.d/init-sample.sql
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql-init/users.sql:/docker-entrypoint-initdb.d/users.sql
+      # - ./mysql-init/init-sample.sql:/docker-entrypoint-initdb.d/init-sample.sql
       - ./cleanedsports.csv:/docker-entrypoint-initdb.d/cleanedsports.csv
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]

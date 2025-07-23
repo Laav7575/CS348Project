@@ -63,30 +63,30 @@ WHERE uid = 1
 ORDER BY year DESC;
 
 SELECT 
-    COUNT(*) AS folderSize, 
-    ROUND(AVG(price)) AS avgPrice,  
-    (
-    SELECT make FROM carsInFolder
-    WHERE fID = 1 AND uID = 1
-    GROUP BY make
-    ORDER BY COUNT(*) DESC
-    LIMIT 1
-    ) AS commonMake,
-    (
-    SELECT model FROM carsInFolder
-    WHERE fID = 1AND uID = 1
-    GROUP BY model
-    ORDER BY COUNT(*) DESC
-    LIMIT 1
-    ) AS commonModel,
-    ROUND(AVG(year)) AS avgYear,
-    SUM(CASE WHEN isElectric THEN 1 ELSE 0 END) AS electricCount,
-    ROUND(AVG(engineSize), 2) AS avgEngineSize,
-    ROUND(AVG(horsePower)) AS avgHorsePower,
-    ROUND(AVG(torque)) AS avgTorque,
-    ROUND(AVG(acceleration), 2) AS avgAcceleration
-FROM carsInFolder
-WHERE fID = 1 AND uID = 1;
+        COUNT(*) AS folderSize, 
+        ROUND(AVG(price)) AS avgPrice,  
+        (
+        SELECT make FROM carsInFolder
+        WHERE fID = 1 AND uID = 1
+        GROUP BY make
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+        ) AS commonMake,
+        (
+        SELECT model FROM carsInFolder
+        WHERE fID = 1 AND uID = 1
+        GROUP BY model
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+        ) AS commonModel,
+        ROUND(AVG(year)) AS avgYear,
+        SUM(CASE WHEN isElectric THEN 1 ELSE 0 END) AS electricCount,
+        ROUND(AVG(engineSize), 2) AS avgEngineSize,
+        ROUND(AVG(horsePower)) AS avgHorsePower,
+        ROUND(AVG(torque)) AS avgTorque,
+        ROUND(AVG(acceleration), 2) AS avgAcceleration
+    FROM carsInFolder
+    WHERE fID = 1 AND uID = 1;
 
 SELECT cID, make, model, year, price, recommendation_score, make_score, price_score, year_score
 FROM final_recommendations_view

@@ -113,12 +113,14 @@ END//
 
 DELIMITER ;
 
+-- view of all cars saved and/or liked by any user
 CREATE OR REPLACE VIEW carsInFolder AS
 SELECT DISTINCT f.uID, f.fID, c.*
 FROM Folders f
 JOIN Saves s ON f.fID = s.fID
 JOIN Cars c ON s.cID = c.cID;
 
+-- view of all cars liked by any user
 CREATE OR REPLACE VIEW likesFolder AS
 SELECT DISTINCT f.uID, f.fID, c.*
 FROM Folders f
