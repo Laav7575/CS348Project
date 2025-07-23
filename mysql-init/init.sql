@@ -70,7 +70,6 @@ CREATE TABLE Reviews (
   FOREIGN KEY (cid) REFERENCES Cars(cID) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_uid_cid ON Reviews(uid, cid);
 
 CREATE TABLE Folders (
    fID 			INT AUTO_INCREMENT NOT NULL,
@@ -112,6 +111,77 @@ BEGIN
 END//
 
 DELIMITER ;
+
+CREATE OR REPLACE VIEW carsInFolder AS
+SELECT DISTINCT f.uID, f.fID, c.*
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON s.cID = c.cID;
+
+CREATE OR REPLACE VIEW likesFolder AS
+SELECT DISTINCT f.uID, f.fID, c.*
+FROM Folders f
+JOIN Saves s ON f.fID = s.fID
+JOIN Cars c ON s.cID = c.cID
+WHERE isLikes = TRUE;
+
+-- View to summarize a user's preferences based on their liked cars.
+-- Calculates average, min, and max values to determine flexible preference ranges.
+CREATE OR REPLACE VIEW user_preferences_view AS
+SELECT
+    uID,
+    GROUP_CONCAT(DISTINCT make) AS liked_makes,
+    AVG(price) AS avg_price,
+    MIN(price) * 0.7 AS min_price_range,
+    MAX(price) * 1.3 AS max_price_range,
+    AVG(year) AS avg_year,
+    MIN(year) - 5 AS min_year_range,
+    MAX(year) + 5 AS max_year_range
+FROM likesFolder
+GROUP BY uID;
+
+-- View to score out of 100 and recommend cars to users based on how well each car matches their preferences.
+-- Excludes any cars the user has already liked.
+-- Using a linear proximity score for year and price
+CREATE OR REPLACE VIEW car_recommendations_view AS
+SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
+    -- Score 55 if the car's make matches a liked make, otherwise 0
+    CASE
+        WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 50
+        ELSE 0
+    END AS make_score,
+    
+    -- Price score: 28 points max
+    -- Price score is higher if the car's price is close to the user's average liked price
+    CASE
+        WHEN c.price BETWEEN up.min_price_range AND up.max_price_range THEN
+            35 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
+        ELSE 0
+    END AS price_score,
+    
+    -- Year score: 17 points max
+    -- Year score is higher if the car's year is close to the user's average liked year
+    CASE
+        WHEN c.year BETWEEN up.min_year_range AND up.max_year_range THEN
+            15 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
+        ELSE 0
+    END AS year_score
+FROM Cars c
+JOIN user_preferences_view up ON 1=1 -- Cross join: apply every user's preferences to all cars
+-- Exclude cars the user has already liked
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM likesFolder ulcv
+    WHERE ulcv.uID = up.uID AND ulcv.cID = c.cID
+);
+
+-- Final view that combines all recommendation scores and filters out zero-score cars.
+-- The higher the recommendation_score, the better the match.
+CREATE OR REPLACE VIEW final_recommendations_view AS
+SELECT *,
+    ROUND(make_score + price_score + year_score, 2) AS recommendation_score
+FROM car_recommendations_view
+WHERE (make_score + price_score + year_score) > 0;
 
 -- insert test data
 INSERT INTO Cars (make, model, year, isElectric, engineSize, horsePower, torque, acceleration, price) VALUES
@@ -165,19 +235,6 @@ INSERT INTO Adds (uID, cID, date) VALUES
 (1, 7, '2025-07-03'),
 (3, 8, '2025-07-03'),
 (1, 9, '2025-07-03');
-
-CREATE OR REPLACE VIEW carsInFolder AS
-SELECT DISTINCT f.uID, f.fID, c.*
-FROM Folders f
-JOIN Saves s ON f.fID = s.fID
-JOIN Cars c ON s.cID = c.cID;
-
-CREATE OR REPLACE VIEW likesFolder AS
-SELECT DISTINCT f.uID, f.fID, c.*
-FROM Folders f
-JOIN Saves s ON f.fID = s.fID
-JOIN Cars c ON s.cID = c.cID
-WHERE isLikes = TRUE;
 
 INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
 -- password: XGbB_MHktBspFnF
@@ -280,64 +337,6 @@ INSERT INTO Users (username, email, userPassword, isAdmin, isDeleted) VALUES
  ('americo67', 'bria.kovacek@hotmail.com', '$2b$10$IIDOUSc4DMQwSs/CqsfELODZR0w6zQuj6f0c7gbBPEr1V1.XEXrES', false, false),
 -- password: finalguy
 ('final2025','feffthegoat2025@mail.com','$2b$10$/ImRjPj9FV9n6qkr9XUzX.0f3yTCXMeaUk4zD2gey8rbU4xks0toy',false,false);
-
--- View to summarize a user's preferences based on their liked cars.
--- Calculates average, min, and max values to determine flexible preference ranges.
-CREATE OR REPLACE VIEW user_preferences_view AS
-SELECT
-    uID,
-    GROUP_CONCAT(DISTINCT make) AS liked_makes,
-    AVG(price) AS avg_price,
-    MIN(price) * 0.7 AS min_price_range,
-    MAX(price) * 1.3 AS max_price_range,
-    AVG(year) AS avg_year,
-    MIN(year) - 5 AS min_year_range,
-    MAX(year) + 5 AS max_year_range
-FROM likesFolder
-GROUP BY uID;
-
--- View to score out of 100 and recommend cars to users based on how well each car matches their preferences.
--- Excludes any cars the user has already liked.
--- Using a linear proximity score for year and price
-CREATE OR REPLACE VIEW car_recommendations_view AS
-SELECT c.cID, c.make, c.model, c.year, c.price, up.uID,
-    -- Score 55 if the car's make matches a liked make, otherwise 0
-    CASE
-        WHEN FIND_IN_SET(c.make, up.liked_makes) > 0 THEN 50
-        ELSE 0
-    END AS make_score,
-    
-    -- Price score: 28 points max
-    -- Price score is higher if the car's price is close to the user's average liked price
-    CASE
-        WHEN c.price BETWEEN up.min_price_range AND up.max_price_range THEN
-            35 * (1 - ABS(c.price - up.avg_price) / GREATEST(up.avg_price, 1))
-        ELSE 0
-    END AS price_score,
-    
-    -- Year score: 17 points max
-    -- Year score is higher if the car's year is close to the user's average liked year
-    CASE
-        WHEN c.year BETWEEN up.min_year_range AND up.max_year_range THEN
-            15 * (1 - ABS(c.year - up.avg_year) / GREATEST(up.avg_year - 1900, 1))
-        ELSE 0
-    END AS year_score
-FROM Cars c
-JOIN user_preferences_view up ON 1=1 -- Cross join: apply every user's preferences to all cars
--- Exclude cars the user has already liked
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM likesFolder ulcv
-    WHERE ulcv.uID = up.uID AND ulcv.cID = c.cID
-);
-
--- Final view that combines all recommendation scores and filters out zero-score cars.
--- The higher the recommendation_score, the better the match.
-CREATE OR REPLACE VIEW final_recommendations_view AS
-SELECT *,
-    ROUND(make_score + price_score + year_score, 2) AS recommendation_score
-FROM car_recommendations_view
-WHERE (make_score + price_score + year_score) > 0;
 
 -- AUTO-GENERATED MASS TEST DATA
 

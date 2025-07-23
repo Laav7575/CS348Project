@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import NavBar from "../../../components/NavBar";
+import Link from "next/link";
 
 export default function FolderPage() {
   const { fid } = useParams();
@@ -72,9 +73,11 @@ export default function FolderPage() {
               {cars.length > 0 ? (
                 <ul className="list-disc ml-6 space-y-1">
                   {cars.map((car) => (
+                    <Link href={`/car/${car.cID}`}>
                     <li key={car.cID}>
                       {car.year} {car.make} {car.model}
                     </li>
+                    </Link>
                   ))}
                 </ul>
               ) : (
