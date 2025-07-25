@@ -1,5 +1,13 @@
 # CS348 Project: LuxeGarage
+## Milestone 3
+### Implemented Features
+1. indexes, trending, reviews, auto-generated production dataset, Admin Manage Cars, Stats/Aggregated Info, Authorization – Admin vs. Regular Users
 
+**1 . Indexes**
+
+**2. T**
+
+---
 ## Milestone 2
 ### Implemented Functionalities
 **1. User Authentication**  
