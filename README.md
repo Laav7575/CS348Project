@@ -5,7 +5,7 @@
    SQL indexing has been applied to relevant attributes (e.g., make, price, year) to optimize search performance and query execution times.
 
 2. **Trending Cars Page**  
-   Displays trending vehicles based on a combination of `dateAdded` and the number of likes. Helps users discover popular cars among the community. *(Built by Jahnavi)*
+   Displays trending vehicles based on a combination of `dateAdded` and the number of likes. Helps users discover popular cars among the community. 
 
 3. **Admin Features**
    - **Admin vs. Regular User Authorization**  
@@ -32,6 +32,9 @@
    - **Overall Best Match**, prioritizing cars that meet multiple criteria  
    Users can filter recommendations by: **All**, **Make**, **Price**, or **Year**.  
    The system is powered by MySQL **Views** that compute relevance based on user folder data.
+
+  8. **Car Reviews & Comments**  
+   Users can leave reviews and comments on individual cars, and update them at any time. Enables community-driven discussion and sharing of feedback.
 ---
 ## Milestone 2
 ### Implemented Functionalities
