@@ -1,12 +1,37 @@
 # CS348 Project: LuxeGarage
 ## Milestone 3
 ### Implemented Features
-1. indexes, trending, reviews, auto-generated production dataset, Admin Manage Cars, Stats/Aggregated Info, Authorization – Admin vs. Regular Users
+1. **Indexes**  
+   SQL indexing has been applied to relevant attributes (e.g., make, price, year) to optimize search performance and query execution times.
 
-**1 . Indexes**
+2. **Trending Cars Page**  
+   Displays trending vehicles based on a combination of `dateAdded` and the number of likes. Helps users discover popular cars among the community. *(Built by Jahnavi)*
 
-**2. T**
+3. **Admin Features**
+   - **Admin vs. Regular User Authorization**  
+     Admin accounts have elevated privileges such as managing car data, while regular users have limited functionality.
+   - **Bulk Car Deletion**  
+     Admins can delete multiple cars at once from the database.
+   - **Transaction-Based Deletes**  
+     Deleting cars or related records is done within safe SQL transactions to ensure atomicity. 
 
+4. **Auto-Generated Production Dataset**  
+   Production-ready car data is auto-loaded and cleaned using Python scripts and integrated into MySQL on Docker container startup.
+
+5. **Likes and Default Folder**  
+   When a user likes a car, it is automatically saved into a special default “Liked” folder, improving UX. 
+
+6. **Advanced Analytics / Stats by Folder**  
+   Aggregated and in-depth statistics (e.g., average price, horsepower, etc.) are computed and displayed for each user folder. 
+
+7. **Recommender System via SQL Views** 
+   A "For You" recommendation page suggests cars based on:
+   - **Same Make** as previously liked cars  
+   - **Similar Price Range** to past likes  
+   - **Same or Similar Year**  
+   - **Overall Best Match**, prioritizing cars that meet multiple criteria  
+   Users can filter recommendations by: **All**, **Make**, **Price**, or **Year**.  
+   The system is powered by MySQL **Views** that compute relevance based on user folder data.
 ---
 ## Milestone 2
 ### Implemented Functionalities
