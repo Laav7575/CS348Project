@@ -5,7 +5,7 @@
    SQL indexing has been applied to relevant attributes (e.g., make, price, year) to optimize search performance and query execution times.
 
 2. **Trending Cars Page**  
-   Displays trending vehicles based on a combination of `dateAdded` and the number of likes. Helps users discover popular cars among the community. 
+   Displays trending vehicles based on a combination of date added and the number of likes. Helps users discover popular cars among the community. 
 
 3. **Admin Features**
    - **Admin vs. Regular User Authorization**  
